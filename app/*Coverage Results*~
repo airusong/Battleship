@@ -2,16 +2,20 @@
 |                   Class Name                    | Total Coverage% | Cvrd Stmts | Ttl Stmts | Cvrdd Brs | Ttl Brs |
 +-------------------------------------------------+-----------------+------------+-----------+-----------+---------+
 |        ece651.sp22.as1134.battleship.App        |       50        |     1      |     2     |     0     |    0    |
+|     ece651.sp22.as1134.battleship.Placement     |       84        |     18     |    20     |     4     |    6    |
+|    ece651.sp22.as1134.battleship.Coordinate     |       100       |     25     |    25     |     8     |    8    |
 |  ece651.sp22.as1134.battleship.BattleShipBoard  |       100       |     8      |     8     |     4     |    4    |
 |   ece651.sp22.as1134.battleship.BoardTextView   |       100       |     27     |    27     |     8     |    8    |
+|   ece651.sp22.as1134.battleship.PlacementTest   |       100       |     23     |    23     |     0     |    0    |
 |ece651.sp22.as1134.battleship.BattleShipBoardTest|       100       |     7      |     7     |     0     |    0    |
 | ece651.sp22.as1134.battleship.BoardTextViewTest |       100       |     22     |    22     |     0     |    0    |
 |      ece651.sp22.as1134.battleship.AppTest      |       100       |     2      |     2     |     0     |    0    |
+|  ece651.sp22.as1134.battleship.CoordinateTest   |       100       |     37     |    37     |     0     |    0    |
 +-------------------------------------------------+-----------------+------------+-----------+-----------+---------+
-|                     Totals                      |       98        |     67     |    68     |    12     |   12    |
+|                     Totals                      |       97        |    170     |    173    |    24     |   26    |
 +-------------------------------------------------+-----------------+------------+-----------+-----------+---------+
 
 
 Remove Colors From All Buffers
 
-Fundamental finished at Mon Jan 17 01:20:12
+Fundamental finished at Mon Jan 17 15:49:09
