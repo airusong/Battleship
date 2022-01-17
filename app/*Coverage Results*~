@@ -3,13 +3,15 @@
 +-------------------------------------------------+-----------------+------------+-----------+-----------+---------+
 |        ece651.sp22.as1134.battleship.App        |       50        |     1      |     2     |     0     |    0    |
 |  ece651.sp22.as1134.battleship.BattleShipBoard  |       100       |     8      |     8     |     4     |    4    |
+|   ece651.sp22.as1134.battleship.BoardTextView   |       100       |     27     |    27     |     8     |    8    |
 |ece651.sp22.as1134.battleship.BattleShipBoardTest|       100       |     7      |     7     |     0     |    0    |
+| ece651.sp22.as1134.battleship.BoardTextViewTest |       100       |     22     |    22     |     0     |    0    |
 |      ece651.sp22.as1134.battleship.AppTest      |       100       |     2      |     2     |     0     |    0    |
 +-------------------------------------------------+-----------------+------------+-----------+-----------+---------+
-|                     Totals                      |       95        |     18     |    19     |     4     |    4    |
+|                     Totals                      |       98        |     67     |    68     |    12     |   12    |
 +-------------------------------------------------+-----------------+------------+-----------+-----------+---------+
 
 
 Remove Colors From All Buffers
 
-Fundamental finished at Sun Jan 16 18:53:11
+Fundamental finished at Mon Jan 17 01:20:12
