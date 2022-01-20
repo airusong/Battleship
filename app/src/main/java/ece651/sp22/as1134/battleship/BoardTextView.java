@@ -28,15 +28,24 @@ public class BoardTextView {
     StringBuilder ans = new StringBuilder("");
     ans.append(makeHeader());
     int value = 65;
-    for (int i = 0; i < toDisplay.getHeight(); i++) {
+    int row=toDisplay.getHeight();;
+    int column=toDisplay.getWidth();
+    for (int i = 0; i < row; i++) {
       String name = Character.toString(value);
       ans.append(name);
       ans.append(" ");
-      for (int j = 0; j < toDisplay.getWidth() - 1; j++) {
-        ans.append(" ");
-        ans.append("|");
+      String sep = "";
+      for (int j = 0; j < column; j++) {
+        Coordinate c=new Coordinate(i,j);
+        ans.append(sep);
+        if(toDisplay.whatIsAt(c)==null){
+            ans.append(" ");
+        }else{
+          ans.append(toDisplay.whatIsAt(c));
+        }
+        sep= "|";
       }
-      ans.append("  ");
+      ans.append(" ");
       ans.append(name);
       value++;
       ans.append("\n");

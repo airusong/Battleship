@@ -7,18 +7,18 @@
 |     ece651.sp22.as1134.battleship.Placement     |       100       |     20     |    20     |     6     |    6    |
 |  ece651.sp22.as1134.battleship.BattleShipBoard  |       100       |     15     |    15     |     6     |    6    |
 |       ece651.sp22.as1134.battleship.Board       |       100       |     0      |     0     |     0     |    0    |
-|   ece651.sp22.as1134.battleship.BoardTextView   |       100       |     27     |    27     |     8     |    8    |
+|   ece651.sp22.as1134.battleship.BoardTextView   |       100       |     35     |    35     |    10     |   10    |
 |       ece651.sp22.as1134.battleship.Ship        |       100       |     0      |     0     |     0     |    0    |
 |   ece651.sp22.as1134.battleship.PlacementTest   |       100       |     29     |    29     |     0     |    0    |
 |ece651.sp22.as1134.battleship.BattleShipBoardTest|       100       |     29     |    29     |     4     |    4    |
-| ece651.sp22.as1134.battleship.BoardTextViewTest |       100       |     22     |    22     |     0     |    0    |
+| ece651.sp22.as1134.battleship.BoardTextViewTest |       100       |     30     |    30     |     0     |    0    |
 |      ece651.sp22.as1134.battleship.AppTest      |       100       |     2      |     2     |     0     |    0    |
 |  ece651.sp22.as1134.battleship.CoordinateTest   |       100       |     37     |    37     |     0     |    0    |
 +-------------------------------------------------+-----------------+------------+-----------+-----------+---------+
-|                     Totals                      |       98        |    210     |    213    |    32     |   32    |
+|                     Totals                      |       98        |    226     |    229    |    34     |   34    |
 +-------------------------------------------------+-----------------+------------+-----------+-----------+---------+
 
 
 Remove Colors From All Buffers
 
-Fundamental finished at Wed Jan 19 16:52:16
+Fundamental finished at Wed Jan 19 22:28:43

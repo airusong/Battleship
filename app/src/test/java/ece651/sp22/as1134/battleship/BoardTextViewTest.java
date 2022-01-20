@@ -50,5 +50,22 @@ public class BoardTextViewTest {
     assertThrows(IllegalArgumentException.class,() ->new BoardTextView(wideBoard));
     assertThrows(IllegalArgumentException.class, () -> new BoardTextView(tallBoard));
   }
-
+ @Test
+ public void test_board_view(){
+  Board<Character> b3 = new BattleShipBoard<Character>(3, 5);
+    BoardTextView view = new BoardTextView(b3);
+    String expectedHeader = "  0|1|2\n";
+    Coordinate c=new Coordinate(0,0);
+    Ship<Character> s=new BasicShip(c);
+    String expected=
+      expectedHeader+
+      "A s| |  A\n"+
+      "B  | |  B\n"+
+      "C  | |  C\n"+
+      "D  | |  D\n"+
+      "E  | |  E\n"+
+      expectedHeader;
+    boolean value=b3.tryAddShip(s);
+    assertEquals(expected, view.displayMyOwnBoard());
+ }
 }
