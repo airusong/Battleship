@@ -1,9 +1,9 @@
 +-------------------------------------------------+-----------------+------------+-----------+-----------+---------+
 |                   Class Name                    | Total Coverage% | Cvrd Stmts | Ttl Stmts | Cvrdd Brs | Ttl Brs |
 +-------------------------------------------------+-----------------+------------+-----------+-----------+---------+
-|        ece651.sp22.as1134.battleship.App        |       50        |     1      |     2     |     0     |    0    |
 |     ece651.sp22.as1134.battleship.BasicShip     |       60        |     3      |     5     |     0     |    0    |
-|    ece651.sp22.as1134.battleship.Coordinate     |       100       |     25     |    25     |     8     |    8    |
+|        ece651.sp22.as1134.battleship.App        |       100       |     17     |    17     |     0     |    0    |
+|    ece651.sp22.as1134.battleship.Coordinate     |       100       |     26     |    26     |     8     |    8    |
 |     ece651.sp22.as1134.battleship.Placement     |       100       |     20     |    20     |     6     |    6    |
 |  ece651.sp22.as1134.battleship.BattleShipBoard  |       100       |     15     |    15     |     6     |    6    |
 |       ece651.sp22.as1134.battleship.Board       |       100       |     0      |     0     |     0     |    0    |
@@ -12,13 +12,13 @@
 |   ece651.sp22.as1134.battleship.PlacementTest   |       100       |     29     |    29     |     0     |    0    |
 |ece651.sp22.as1134.battleship.BattleShipBoardTest|       100       |     29     |    29     |     4     |    4    |
 | ece651.sp22.as1134.battleship.BoardTextViewTest |       100       |     30     |    30     |     0     |    0    |
-|      ece651.sp22.as1134.battleship.AppTest      |       100       |     2      |     2     |     0     |    0    |
+|      ece651.sp22.as1134.battleship.AppTest      |       100       |     44     |    44     |     2     |    2    |
 |  ece651.sp22.as1134.battleship.CoordinateTest   |       100       |     37     |    37     |     0     |    0    |
 +-------------------------------------------------+-----------------+------------+-----------+-----------+---------+
-|                     Totals                      |       98        |    226     |    229    |    34     |   34    |
+|                     Totals                      |       99        |    285     |    287    |    36     |   36    |
 +-------------------------------------------------+-----------------+------------+-----------+-----------+---------+
 
 
 Remove Colors From All Buffers
 
-Fundamental finished at Wed Jan 19 22:28:43
+Fundamental finished at Thu Jan 20 23:08:28

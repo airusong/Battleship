@@ -1,5 +1,11 @@
 package ece651.sp22.as1134.battleship;
-
+/**
+   * Coordinate Class with specified row and column coordinate
+   * and height
+   * @param row is the row coordinate
+   * @param column is the column coordinate
+   * @throws IllegalArgumentException if input string coordinate is worng
+   */
 public class Coordinate {
   private final int row;
   private final int column;
@@ -20,7 +26,9 @@ public class Coordinate {
     if(length<=1||length>2){
       throw new IllegalArgumentException("input string wrong");
     }
-    char rowLetter=descr.charAt(0);
+    char rowLettero=descr.charAt(0);
+    char rowLetter=Character.toUpperCase(rowLettero);
+
     if (rowLetter < 'A' || rowLetter > 'Z'){
       throw new IllegalArgumentException("input string wrong");
     }else{

@@ -1,7 +1,13 @@
 package ece651.sp22.as1134.battleship;
 
 import java.util.ArrayList;
-
+/**
+   * Constructs a BattleShipBoard with the specified width
+   * and height
+   * @param w is the width of the newly constructed board.
+   * @param h is the height of the newly constructed board.
+   * @throws IllegalArgumentException if the width or height are less than or equal to zero.
+   */
 public class BattleShipBoard<T> implements Board<T>{
   private final int width;
   private final int height;

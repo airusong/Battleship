@@ -1,5 +1,9 @@
 package ece651.sp22.as1134.battleship;
-
+/**
+   * Construct Placement class with specifed corrdinate and orientation
+   * @param where is the coordinate of the Placement
+   * @param orientation is the direction of the Placement
+   */
 public class Placement {
   final Coordinate where;
   final char orientation;
