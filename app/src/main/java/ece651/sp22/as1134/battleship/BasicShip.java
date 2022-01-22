@@ -1,14 +1,36 @@
 package ece651.sp22.as1134.battleship;
 
-public class BasicShip implements Ship<Character> {
-  private final Coordinate myLocation;
-  public BasicShip(Coordinate myLocation){
-    this.myLocation=myLocation;
+import java.util.HashMap;
+
+public abstract class BasicShip<T> implements Ship<T> {
+  // private final Coordinate myLocation;
+  protected HashMap<Coordinate, Boolean> myPieces;
+  protected ShipDisplayInfo<T> myDisplayInfo;
+  /*
+   * public BasicShip(Coordinate myLocation){ this.myLocation=myLocation; }
+   */
+  /*
+  public BasicShip(Coordinate c) {
+    myPieces=new HashMap<Coordinate,Boolean>();
+    myPieces.put(c, false);
   }
+  */
+  public BasicShip(Iterable<Coordinate> where,ShipDisplayInfo<T> myDisplayInfo) {
+    this.myDisplayInfo=myDisplayInfo;
+     myPieces=new HashMap<Coordinate,Boolean>();          
+    for (Coordinate c : where) {
+      myPieces.put(c, false);
+    }
+  }
+
+  /*
+   * @Override public boolean occupiesCoordinates(Coordinate where) { // TODO
+   * Auto-generated method stub return where.equals(myLocation); }
+   */
   @Override
   public boolean occupiesCoordinates(Coordinate where) {
     // TODO Auto-generated method stub
-    return where.equals(myLocation);
+    return myPieces.containsKey(where);
   }
 
   @Override
@@ -20,7 +42,7 @@ public class BasicShip implements Ship<Character> {
   @Override
   public void recordHitAt(Coordinate where) {
     // TODO Auto-generated method stub
-    
+
   }
 
   @Override
@@ -30,9 +52,10 @@ public class BasicShip implements Ship<Character> {
   }
 
   @Override
-  public Character getDisplayInfoAt(Coordinate where) {
-    // TODO Auto-generated method stub
-    return 's';
+  public T getDisplayInfoAt(Coordinate where) {
+    //TODO this is not right.  We need to
+    //look up the hit status of this coordinate
+    return myDisplayInfo.getInfo(where, false);
   }
 
 }

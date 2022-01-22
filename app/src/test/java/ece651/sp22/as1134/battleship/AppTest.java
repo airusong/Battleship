@@ -46,7 +46,7 @@ class AppTest {
     ByteArrayOutputStream bytes = new ByteArrayOutputStream();
     PrintStream ps = new PrintStream(bytes, true);
     Board<Character> b = new BattleShipBoard<Character>(2, 2);
-    Ship<Character> s=new BasicShip(new Coordinate(0,0));
+    RectangleShip<Character> s = new RectangleShip<Character>((new Coordinate(0,0)),'s', '*');
     b.tryAddShip(s);
     App app = new App(b, sr, ps);
     app.doOnePlacement();

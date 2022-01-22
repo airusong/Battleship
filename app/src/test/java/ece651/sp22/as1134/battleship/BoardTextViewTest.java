@@ -56,7 +56,7 @@ public class BoardTextViewTest {
     BoardTextView view = new BoardTextView(b3);
     String expectedHeader = "  0|1|2\n";
     Coordinate c=new Coordinate(0,0);
-    Ship<Character> s=new BasicShip(c);
+    RectangleShip<Character> s = new RectangleShip<Character>(c, 's', '*');
     String expected=
       expectedHeader+
       "A s| |  A\n"+
