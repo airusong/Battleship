@@ -2,7 +2,7 @@ package ece651.sp22.as1134.battleship;
 
 import java.util.HashMap;
 
-public abstract class BasicShip<T> implements Ship<T> {
+abstract class BasicShip<T> implements Ship<T> {
   // private final Coordinate myLocation;
   protected HashMap<Coordinate, Boolean> myPieces;
   protected ShipDisplayInfo<T> myDisplayInfo;
@@ -22,6 +22,11 @@ public abstract class BasicShip<T> implements Ship<T> {
       myPieces.put(c, false);
     }
   }
+  protected void checkCoordinateInThisShip(Coordinate c){
+    if(!myPieces.containsKey(c)){
+      throw new IllegalArgumentException(c.toString()+"is not inside the pieces");
+    }
+  }
 
   /*
    * @Override public boolean occupiesCoordinates(Coordinate where) { // TODO
@@ -36,26 +41,34 @@ public abstract class BasicShip<T> implements Ship<T> {
   @Override
   public boolean isSunk() {
     // TODO Auto-generated method stub
-    return false;
+    for(Coordinate c:myPieces.keySet()){
+      if(myPieces.get(c)==false){
+        return false;
+      }
+    }
+    return true;
   }
 
   @Override
   public void recordHitAt(Coordinate where) {
     // TODO Auto-generated method stub
-
+    checkCoordinateInThisShip(where);
+    myPieces.replace(where,false,true);
   }
 
   @Override
   public boolean wasHitAt(Coordinate where) {
     // TODO Auto-generated method stub
-    return false;
+    checkCoordinateInThisShip(where);
+    return myPieces.get(where);
   }
 
   @Override
   public T getDisplayInfoAt(Coordinate where) {
     //TODO this is not right.  We need to
     //look up the hit status of this coordinate
-    return myDisplayInfo.getInfo(where, false);
+    checkCoordinateInThisShip(where);
+    return myDisplayInfo.getInfo(where, wasHitAt(where));
   }
 
 }

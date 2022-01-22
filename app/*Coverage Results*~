@@ -1,7 +1,7 @@
 +-------------------------------------------------------+-----------------+------------+-----------+-----------+---------+
 |                      Class Name                       | Total Coverage% | Cvrd Stmts | Ttl Stmts | Cvrdd Brs | Ttl Brs |
 +-------------------------------------------------------+-----------------+------------+-----------+-----------+---------+
-|        ece651.sp22.as1134.battleship.BasicShip        |       75        |     6      |     8     |     0     |    0    |
+|        ece651.sp22.as1134.battleship.Basicship        |       90        |     16     |    17     |     3     |    4    |
 |      ece651.sp22.as1134.battleship.RectangleShip      |       100       |     10     |    10     |     4     |    4    |
 |           ece651.sp22.as1134.battleship.App           |       100       |     17     |    17     |     0     |    0    |
 |       ece651.sp22.as1134.battleship.Coordinate        |       100       |     26     |    26     |     8     |    8    |
@@ -12,19 +12,19 @@
 |     ece651.sp22.as1134.battleship.ShipDisplayInfo     |       100       |     0      |     0     |     0     |    0    |
 |          ece651.sp22.as1134.battleship.Ship           |       100       |     0      |     0     |     0     |    0    |
 |  ece651.sp22.as1134.battleship.SimpleShipDisplayInfo  |       100       |     5      |     5     |     2     |    2    |
-|    ece651.sp22.as1134.battleship.RectangleShipTest    |       100       |     9      |     9     |     0     |    0    |
+|      ece651.sp22.as1134.battleship.BasicshipTest      |       100       |     0      |     0     |     0     |    0    |
+|    ece651.sp22.as1134.battleship.RectangleShipTest    |       100       |     18     |    18     |     0     |    0    |
 |ece651.sp22.as1134.battleship.SimpleShipDisplayInfoTest|       100       |     3      |     3     |     0     |    0    |
 |      ece651.sp22.as1134.battleship.PlacementTest      |       100       |     29     |    29     |     0     |    0    |
-|   ece651.sp22.as1134.battleship.BattleShipBoardTest   |       100       |     27     |    27     |     4     |    4    |
+|   ece651.sp22.as1134.battleship.BattleShipBoardTest   |       100       |     29     |    29     |     4     |    4    |
 |    ece651.sp22.as1134.battleship.BoardTextViewTest    |       100       |     30     |    30     |     0     |    0    |
 |         ece651.sp22.as1134.battleship.AppTest         |       100       |     44     |    44     |     2     |    2    |
-|      ece651.sp22.as1134.battleship.BasicShipTest      |       100       |     0      |     0     |     0     |    0    |
 |     ece651.sp22.as1134.battleship.CoordinateTest      |       100       |     37     |    37     |     0     |    0    |
 +-------------------------------------------------------+-----------------+------------+-----------+-----------+---------+
-|                        Totals                         |       99        |    313     |    315    |    42     |   42    |
+|                        Totals                         |       99        |    334     |    335    |    45     |   46    |
 +-------------------------------------------------------+-----------------+------------+-----------+-----------+---------+
 
 
 Remove Colors From All Buffers
 
-Fundamental finished at Sat Jan 22 14:03:37
+Fundamental finished at Sat Jan 22 17:04:49
