@@ -11,6 +11,7 @@ import java.util.ArrayList;
 public class BattleShipBoard<T> implements Board<T>{
   private final int width;
   private final int height;
+  private final PlacementRuleChecker<T> placementChecker;
   final ArrayList<Ship<T>> myShips;
   public int getWidth() {
     return width;
@@ -19,8 +20,7 @@ public class BattleShipBoard<T> implements Board<T>{
   public int getHeight() {
     return height;
   }
-
-  public BattleShipBoard(int w, int h) {
+  public BattleShipBoard(int w, int h,PlacementRuleChecker<T> placementChecker) {
       if (w <= 0) {
       throw new IllegalArgumentException("BattleShipBoard's width must be positive but is " + w);
     }
@@ -30,7 +30,13 @@ public class BattleShipBoard<T> implements Board<T>{
     this.width = w;
     this.height = h;
     this.myShips = new ArrayList<Ship<T>>();
+    this.placementChecker=placementChecker;
   }
+   public BattleShipBoard(int w, int h) {
+    this(w, h, new InBoundsRuleChecker<T>(null));
+  }
+
+  
   public boolean tryAddShip(Ship<T> toAdd){
     myShips.add(toAdd);
     return true;

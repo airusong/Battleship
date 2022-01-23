@@ -27,7 +27,9 @@ abstract class BasicShip<T> implements Ship<T> {
       throw new IllegalArgumentException(c.toString()+"is not inside the pieces");
     }
   }
-
+  public Iterable<Coordinate> getCoordinates(){
+    return myPieces.keySet();
+  }
   /*
    * @Override public boolean occupiesCoordinates(Coordinate where) { // TODO
    * Auto-generated method stub return where.equals(myLocation); }
