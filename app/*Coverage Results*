@@ -1,30 +1,33 @@
 +-------------------------------------------------------+-----------------+------------+-----------+-----------+---------+
 |                      Class Name                       | Total Coverage% | Cvrd Stmts | Ttl Stmts | Cvrdd Brs | Ttl Brs |
 +-------------------------------------------------------+-----------------+------------+-----------+-----------+---------+
-|      ece651.sp22.as1134.battleship.RectangleShip      |       100       |     10     |    10     |     4     |    4    |
-|           ece651.sp22.as1134.battleship.App           |       100       |     17     |    17     |     0     |    0    |
-|       ece651.sp22.as1134.battleship.Coordinate        |       100       |     26     |    26     |     8     |    8    |
+|           ece651.sp22.as1134.battleship.App           |       100       |     18     |    18     |     0     |    0    |
 |        ece651.sp22.as1134.battleship.Placement        |       100       |     20     |    20     |     6     |    6    |
+|   ece651.sp22.as1134.battleship.AbstractShipFactory   |       100       |     0      |     0     |     0     |    0    |
 |     ece651.sp22.as1134.battleship.BattleShipBoard     |       100       |     15     |    15     |     6     |    6    |
-|          ece651.sp22.as1134.battleship.Board          |       100       |     0      |     0     |     0     |    0    |
 |        ece651.sp22.as1134.battleship.Basicship        |       100       |     17     |    17     |     4     |    4    |
 |      ece651.sp22.as1134.battleship.BoardTextView      |       100       |     35     |    35     |    10     |   10    |
 |     ece651.sp22.as1134.battleship.ShipDisplayInfo     |       100       |     0      |     0     |     0     |    0    |
+|      ece651.sp22.as1134.battleship.V1ShipFactory      |       100       |     9      |     9     |     2     |    2    |
 |          ece651.sp22.as1134.battleship.Ship           |       100       |     0      |     0     |     0     |    0    |
 |  ece651.sp22.as1134.battleship.SimpleShipDisplayInfo  |       100       |     5      |     5     |     2     |    2    |
+|      ece651.sp22.as1134.battleship.RectangleShip      |       100       |     12     |    12     |     4     |    4    |
+|       ece651.sp22.as1134.battleship.Coordinate        |       100       |     26     |    26     |     8     |    8    |
+|          ece651.sp22.as1134.battleship.Board          |       100       |     0      |     0     |     0     |    0    |
 |      ece651.sp22.as1134.battleship.BasicshipTest      |       100       |     0      |     0     |     0     |    0    |
-|    ece651.sp22.as1134.battleship.RectangleShipTest    |       100       |     23     |    23     |     0     |    0    |
+|    ece651.sp22.as1134.battleship.RectangleShipTest    |       100       |     24     |    24     |     0     |    0    |
+|    ece651.sp22.as1134.battleship.V1ShipFactoryTest    |       100       |     20     |    20     |     2     |    2    |
 |ece651.sp22.as1134.battleship.SimpleShipDisplayInfoTest|       100       |     3      |     3     |     0     |    0    |
 |      ece651.sp22.as1134.battleship.PlacementTest      |       100       |     29     |    29     |     0     |    0    |
 |   ece651.sp22.as1134.battleship.BattleShipBoardTest   |       100       |     29     |    29     |     4     |    4    |
 |    ece651.sp22.as1134.battleship.BoardTextViewTest    |       100       |     30     |    30     |     0     |    0    |
-|         ece651.sp22.as1134.battleship.AppTest         |       100       |     44     |    44     |     2     |    2    |
+|         ece651.sp22.as1134.battleship.AppTest         |       100       |     46     |    46     |     2     |    2    |
 |     ece651.sp22.as1134.battleship.CoordinateTest      |       100       |     37     |    37     |     0     |    0    |
 +-------------------------------------------------------+-----------------+------------+-----------+-----------+---------+
-|                        Totals                         |       100       |    340     |    340    |    46     |   46    |
+|                        Totals                         |       100       |    375     |    375    |    50     |   50    |
 +-------------------------------------------------------+-----------------+------------+-----------+-----------+---------+
 
 
 Remove Colors From All Buffers
 
-Fundamental finished at Sat Jan 22 17:20:43
+Fundamental finished at Sat Jan 22 20:08:36

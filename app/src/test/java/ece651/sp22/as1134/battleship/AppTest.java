@@ -42,18 +42,22 @@ class AppTest {
   }
   @Test
   void test_do_placement() throws IOException{
-    StringReader sr = new StringReader("B2V\n");
+    StringReader sr = new StringReader("A0V\n");
     ByteArrayOutputStream bytes = new ByteArrayOutputStream();
     PrintStream ps = new PrintStream(bytes, true);
-    Board<Character> b = new BattleShipBoard<Character>(2, 2);
-    RectangleShip<Character> s = new RectangleShip<Character>((new Coordinate(0,0)),'s', '*');
+    Board<Character> b = new BattleShipBoard<Character>(2, 3);
+    // RectangleShip<Character> s = new RectangleShip<Character>((new Coordinate(0,0)),'s', '*');
+    Placement p=new Placement("A0V");
+    AbstractShipFactory<Character> shipFactory=new V1ShipFactory();
+    Ship<Character> s  = shipFactory.makeDestroyer(p);
     b.tryAddShip(s);
     App app = new App(b, sr, ps);
     app.doOnePlacement();
     String expectedHeader = "  0|1\n";
     String expected = expectedHeader +
-      "A s|  A\n" +
-      "B  |  B\n" +
+      "A d|  A\n" +
+      "B d|  B\n" +
+      "C d|  C\n" +
       expectedHeader;
     assertEquals("Where would you like to put your ship?" + "\n"+expected+"\n",bytes.toString());
     bytes.reset();

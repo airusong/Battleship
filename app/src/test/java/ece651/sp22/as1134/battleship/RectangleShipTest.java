@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
 public class RectangleShipTest {
   @Test
   public void test_makeCoords() {
-    RectangleShip<Character> s = new RectangleShip<Character>(new Coordinate(0, 0), 2, 2, 's', '*');
+    RectangleShip<Character> s = new RectangleShip<Character>("submarine",new Coordinate(0, 0), 2, 2, 's', '*');
     HashSet<Coordinate> rectangle = new HashSet<Coordinate>();
     rectangle = s.makeCoords(new Coordinate(0, 0), 2, 2);
     HashSet<Coordinate> expected = new HashSet<Coordinate>();
@@ -23,7 +23,7 @@ public class RectangleShipTest {
 
   @Test
   public void test_hit() {
-    BasicShip<Character> s = new RectangleShip<Character>(new Coordinate(0, 0), 2, 2, 's', '*');
+    BasicShip<Character> s = new RectangleShip<Character>("submarine",new Coordinate(0, 0), 2, 2, 's', '*');
     // no hit
     assertEquals(s.wasHitAt(new Coordinate(0, 0)), false);
     // hit
@@ -35,10 +35,11 @@ public class RectangleShipTest {
     assertEquals(false,s.isSunk());
     s.recordHitAt(new Coordinate(1, 1));
     assertEquals(true,s.isSunk());
+    assertEquals("submarine",s.getName());
   }
   @Test
   public void test_get_display(){
-    BasicShip<Character> s = new RectangleShip<Character>(new Coordinate(0, 0), 2, 2, 's', '*');
+    BasicShip<Character> s = new RectangleShip<Character>("submarine",new Coordinate(0, 0), 2, 2, 's', '*');
     s.recordHitAt(new Coordinate(0, 0));
     assertEquals(s.getDisplayInfoAt(new Coordinate(0,0)),'*');
     assertEquals(s.getDisplayInfoAt(new Coordinate(0,1)),'s');
