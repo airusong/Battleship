@@ -1,36 +1,39 @@
-+-------------------------------------------------------+-----------------+------------+-----------+-----------+---------+
-|                      Class Name                       | Total Coverage% | Cvrd Stmts | Ttl Stmts | Cvrdd Brs | Ttl Brs |
-+-------------------------------------------------------+-----------------+------------+-----------+-----------+---------+
-|  ece651.sp22.as1134.battleship.PlacementRuleChecker   |       10        |     1      |     6     |     0     |    4    |
-|           ece651.sp22.as1134.battleship.App           |       100       |     18     |    18     |     0     |    0    |
-|        ece651.sp22.as1134.battleship.Placement        |       100       |     20     |    20     |     6     |    6    |
-|   ece651.sp22.as1134.battleship.AbstractShipFactory   |       100       |     0      |     0     |     0     |    0    |
-|     ece651.sp22.as1134.battleship.BattleShipBoard     |       100       |     17     |    17     |     6     |    6    |
-|        ece651.sp22.as1134.battleship.Basicship        |       100       |     18     |    18     |     4     |    4    |
-|      ece651.sp22.as1134.battleship.BoardTextView      |       100       |     35     |    35     |    10     |   10    |
-|     ece651.sp22.as1134.battleship.ShipDisplayInfo     |       100       |     0      |     0     |     0     |    0    |
-|   ece651.sp22.as1134.battleship.InBoundsRuleChecker   |       100       |     8      |     8     |     2     |    2    |
-|      ece651.sp22.as1134.battleship.V1ShipFactory      |       100       |     9      |     9     |     2     |    2    |
-|          ece651.sp22.as1134.battleship.Ship           |       100       |     0      |     0     |     0     |    0    |
-|  ece651.sp22.as1134.battleship.SimpleShipDisplayInfo  |       100       |     5      |     5     |     2     |    2    |
-|      ece651.sp22.as1134.battleship.RectangleShip      |       100       |     12     |    12     |     4     |    4    |
-|       ece651.sp22.as1134.battleship.Coordinate        |       100       |     26     |    26     |     8     |    8    |
-|          ece651.sp22.as1134.battleship.Board          |       100       |     0      |     0     |     0     |    0    |
-|      ece651.sp22.as1134.battleship.BasicshipTest      |       100       |     0      |     0     |     0     |    0    |
-|    ece651.sp22.as1134.battleship.RectangleShipTest    |       100       |     29     |    29     |     0     |    0    |
-|    ece651.sp22.as1134.battleship.V1ShipFactoryTest    |       100       |     20     |    20     |     2     |    2    |
-|ece651.sp22.as1134.battleship.SimpleShipDisplayInfoTest|       100       |     3      |     3     |     0     |    0    |
-|      ece651.sp22.as1134.battleship.PlacementTest      |       100       |     29     |    29     |     0     |    0    |
-|   ece651.sp22.as1134.battleship.BattleShipBoardTest   |       100       |     29     |    29     |     4     |    4    |
-|    ece651.sp22.as1134.battleship.BoardTextViewTest    |       100       |     30     |    30     |     0     |    0    |
-| ece651.sp22.as1134.battleship.InBoundsRuleCheckerTest |       100       |     12     |    12     |     0     |    0    |
-|         ece651.sp22.as1134.battleship.AppTest         |       100       |     46     |    46     |     2     |    2    |
-|     ece651.sp22.as1134.battleship.CoordinateTest      |       100       |     37     |    37     |     0     |    0    |
-+-------------------------------------------------------+-----------------+------------+-----------+-----------+---------+
-|                        Totals                         |       98        |    404     |    409    |    52     |   56    |
-+-------------------------------------------------------+-----------------+------------+-----------+-----------+---------+
++--------------------------------------------------------+-----------------+------------+-----------+-----------+---------+
+|                      Class Name                        | Total Coverage% | Cvrd Stmts | Ttl Stmts | Cvrdd Brs | Ttl Brs |
++--------------------------------------------------------+-----------------+------------+-----------+-----------+---------+
+|   ece651.sp22.as1134.battleship.PlacementRuleChecker   |       80        |     5      |     6     |     3     |    4    |
+|           ece651.sp22.as1134.battleship.App            |       100       |     18     |    18     |     0     |    0    |
+|        ece651.sp22.as1134.battleship.Placement         |       100       |     20     |    20     |     6     |    6    |
+|   ece651.sp22.as1134.battleship.AbstractShipFactory    |       100       |     0      |     0     |     0     |    0    |
+|     ece651.sp22.as1134.battleship.BattleShipBoard      |       100       |     17     |    17     |     6     |    6    |
+|  ece651.sp22.as1134.battleship.NoCollisionRuleChecker  |       100       |     6      |     6     |     2     |    2    |
+|        ece651.sp22.as1134.battleship.Basicship         |       100       |     18     |    18     |     4     |    4    |
+|      ece651.sp22.as1134.battleship.BoardTextView       |       100       |     35     |    35     |    10     |   10    |
+|     ece651.sp22.as1134.battleship.ShipDisplayInfo      |       100       |     0      |     0     |     0     |    0    |
+|   ece651.sp22.as1134.battleship.InBoundsRuleChecker    |       100       |     8      |     8     |     2     |    2    |
+|      ece651.sp22.as1134.battleship.V1ShipFactory       |       100       |     9      |     9     |     2     |    2    |
+|           ece651.sp22.as1134.battleship.Ship           |       100       |     0      |     0     |     0     |    0    |
+|  ece651.sp22.as1134.battleship.SimpleShipDisplayInfo   |       100       |     5      |     5     |     2     |    2    |
+|      ece651.sp22.as1134.battleship.RectangleShip       |       100       |     12     |    12     |     4     |    4    |
+|        ece651.sp22.as1134.battleship.Coordinate        |       100       |     26     |    26     |     8     |    8    |
+|          ece651.sp22.as1134.battleship.Board           |       100       |     0      |     0     |     0     |    0    |
+|      ece651.sp22.as1134.battleship.BasicshipTest       |       100       |     0      |     0     |     0     |    0    |
+|    ece651.sp22.as1134.battleship.RectangleShipTest     |       100       |     29     |    29     |     0     |    0    |
+|    ece651.sp22.as1134.battleship.V1ShipFactoryTest     |       100       |     20     |    20     |     2     |    2    |
+|ece651.sp22.as1134.battleship.NoCollisionRuleCheckerTest|       100       |     21     |    21     |     0     |    0    |
+|ece651.sp22.as1134.battleship.SimpleShipDisplayInfoTest |       100       |     3      |     3     |     0     |    0    |
+|      ece651.sp22.as1134.battleship.PlacementTest       |       100       |     29     |    29     |     0     |    0    |
+| ece651.sp22.as1134.battleship.PlacementRuleCheckerTest |       100       |     0      |     0     |     0     |    0    |
+|   ece651.sp22.as1134.battleship.BattleShipBoardTest    |       100       |     29     |    29     |     4     |    4    |
+|    ece651.sp22.as1134.battleship.BoardTextViewTest     |       100       |     30     |    30     |     0     |    0    |
+| ece651.sp22.as1134.battleship.InBoundsRuleCheckerTest  |       100       |     12     |    12     |     0     |    0    |
+|         ece651.sp22.as1134.battleship.AppTest          |       100       |     46     |    46     |     2     |    2    |
+|      ece651.sp22.as1134.battleship.CoordinateTest      |       100       |     37     |    37     |     0     |    0    |
++--------------------------------------------------------+-----------------+------------+-----------+-----------+---------+
+|                         Totals                         |       99        |    435     |    436    |    57     |   58    |
++--------------------------------------------------------+-----------------+------------+-----------+-----------+---------+
 
 
 Remove Colors From All Buffers
 
-Fundamental finished at Sun Jan 23 13:57:41
+Fundamental finished at Mon Jan 24 10:04:25

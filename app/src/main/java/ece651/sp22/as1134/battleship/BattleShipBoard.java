@@ -33,7 +33,7 @@ public class BattleShipBoard<T> implements Board<T>{
     this.placementChecker=placementChecker;
   }
    public BattleShipBoard(int w, int h) {
-    this(w, h, new InBoundsRuleChecker<T>(null));
+     this(w, h, new NoCollisionRuleChecker<>(new InBoundsRuleChecker<T>(null)));
   }
 
   
