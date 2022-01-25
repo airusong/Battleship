@@ -11,7 +11,8 @@ public class InBoundsRuleChecker<T> extends PlacementRuleChecker<T> {
     int height = theBoard.getHeight();
     int width = theBoard.getWidth();
     for (Coordinate c : set) {
-      if (c.getColumn() >= height || c.getColumn() < 0 || c.getRow() >= width || c.getRow() < 0) {
+      if (c.getColumn() >= width || c.getColumn() < 0 || c.getRow() >= height || c.getRow() < 0) {
+        System.err.println(c + "is out of bounds:" +c.getColumn() + "/ "+ height + " : "  + c.getRow() + "/"+ width);
         return false;
       }
     }

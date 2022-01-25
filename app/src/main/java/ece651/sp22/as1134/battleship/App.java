@@ -36,7 +36,8 @@ public class App {
     Placement p = readPlacement(prompt);
     //    RectangleShip<Character> s = new RectangleShip<Character>(p.getWhere(), 's', '*');
     Ship<Character> s  = shipFactory.makeDestroyer(p);
-    theBoard.tryAddShip(s);
+    boolean b = theBoard.tryAddShip(s);
+    System.err.println(b);
     BoardTextView view = new BoardTextView(theBoard);
     out.println(view.displayMyOwnBoard());
     

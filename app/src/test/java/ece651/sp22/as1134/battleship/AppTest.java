@@ -40,7 +40,7 @@ class AppTest {
         bytes.reset(); //clear out bytes for next time around
       }
   }
-  /*
+  
   @Test
   void test_do_placement() throws IOException{
     StringReader sr = new StringReader("A0V\n");
@@ -64,7 +64,7 @@ class AppTest {
     assertEquals("Where would you like to put your ship?" + "\n"+expected+"\n",bytes.toString());
     bytes.reset();
   }
-  */
+  
   @Test
   @ResourceLock(value = Resources.SYSTEM_OUT, mode = ResourceAccessMode.READ_WRITE)
   void test_main() throws IOException{

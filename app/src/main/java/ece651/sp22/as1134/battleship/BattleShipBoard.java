@@ -42,14 +42,14 @@ public class BattleShipBoard<T> implements Board<T> {
   }
 
   public boolean tryAddShip(Ship<T> toAdd) {
-       if (placementChecker.checkPlacement(toAdd, this)) {
-   
+    if (placementChecker.checkPlacement(toAdd, this)) {
+
       this.myShips.add(toAdd);
       return true;
     } else {
       return false;
-      }
-    //    return true;
+    }
+    // return true;
   }
 
   public T whatIsAt(Coordinate where) {
