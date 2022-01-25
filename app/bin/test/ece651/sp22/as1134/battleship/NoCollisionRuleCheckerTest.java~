@@ -25,12 +25,12 @@ public class NoCollisionRuleCheckerTest {
     NoCollisionRuleChecker<Character> nocollision=new NoCollisionRuleChecker<>(inbounds);
     Board<Character> board = new BattleShipBoard<>(10, 20, nocollision);
     V1ShipFactory fac = new V1ShipFactory();
-    Placement p1 = new Placement(new Coordinate(2, 2), 'V');
-    Placement p3 = new Placement(new Coordinate(-1, 2), 'V');
+    Placement p1 = new Placement(new Coordinate(0, 0), 'V');
+    Placement p3 = new Placement(new Coordinate(11, 20), 'V');
      Ship<Character> battle3 = fac.makeBattleship(p3);
     Ship<Character> battle = fac.makeBattleship(p1);
     board.tryAddShip(battle);
-    Placement p2 = new Placement(new Coordinate(2, 2), 'V');
+    Placement p2 = new Placement(new Coordinate(0, 0), 'V');
     Ship<Character> battle2 = fac.makeBattleship(p2);
     assertEquals(nocollision.checkPlacement(battle2, board),false);
     board.tryAddShip(battle2);

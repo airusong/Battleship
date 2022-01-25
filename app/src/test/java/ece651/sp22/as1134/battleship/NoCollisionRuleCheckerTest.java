@@ -1,3 +1,4 @@
+
 package ece651.sp22.as1134.battleship;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -23,7 +24,7 @@ public class NoCollisionRuleCheckerTest {
   public void test_chain(){
     InBoundsRuleChecker<Character> inbounds= new InBoundsRuleChecker<>(null);
     PlacementRuleChecker<Character> nocollision=new NoCollisionRuleChecker<>(inbounds);
-    Board<Character> board = new BattleShipBoard<>(10, 20, nocollision);
+    Board<Character> board = new BattleShipBoard<>(10, 20);
     V1ShipFactory fac = new V1ShipFactory();
     Placement p1 = new Placement(new Coordinate(0, 0), 'V');
     Placement p3 = new Placement(new Coordinate(11, 20), 'V');

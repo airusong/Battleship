@@ -20,7 +20,7 @@
 |      ece651.sp22.as1134.battleship.BasicshipTest       |       100       |     0      |     0     |     0     |    0    |
 |    ece651.sp22.as1134.battleship.RectangleShipTest     |       100       |     29     |    29     |     0     |    0    |
 |    ece651.sp22.as1134.battleship.V1ShipFactoryTest     |       100       |     20     |    20     |     2     |    2    |
-|ece651.sp22.as1134.battleship.NoCollisionRuleCheckerTest|       100       |     21     |    21     |     0     |    0    |
+|ece651.sp22.as1134.battleship.NoCollisionRuleCheckerTest|       100       |     26     |    26     |     0     |    0    |
 |ece651.sp22.as1134.battleship.SimpleShipDisplayInfoTest |       100       |     3      |     3     |     0     |    0    |
 |      ece651.sp22.as1134.battleship.PlacementTest       |       100       |     29     |    29     |     0     |    0    |
 | ece651.sp22.as1134.battleship.PlacementRuleCheckerTest |       100       |     0      |     0     |     0     |    0    |
@@ -30,10 +30,10 @@
 |         ece651.sp22.as1134.battleship.AppTest          |       100       |     46     |    46     |     2     |    2    |
 |      ece651.sp22.as1134.battleship.CoordinateTest      |       100       |     37     |    37     |     0     |    0    |
 +--------------------------------------------------------+-----------------+------------+-----------+-----------+---------+
-|                         Totals                         |       99        |    435     |    436    |    57     |   58    |
+|                         Totals                         |       99        |    440     |    441    |    57     |   58    |
 +--------------------------------------------------------+-----------------+------------+-----------+-----------+---------+
 
 
 Remove Colors From All Buffers
 
-Fundamental finished at Mon Jan 24 10:04:25
+Fundamental finished at Mon Jan 24 10:18:46

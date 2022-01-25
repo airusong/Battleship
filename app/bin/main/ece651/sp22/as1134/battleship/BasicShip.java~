@@ -2,7 +2,7 @@ package ece651.sp22.as1134.battleship;
 
 import java.util.HashMap;
 
-abstract class BasicShip<T> implements Ship<T> {
+public abstract class Basicship<T> implements Ship<T> {
   // private final Coordinate myLocation;
   protected HashMap<Coordinate, Boolean> myPieces;
   protected ShipDisplayInfo<T> myDisplayInfo;
@@ -15,7 +15,7 @@ abstract class BasicShip<T> implements Ship<T> {
     myPieces.put(c, false);
   }
   */
-  public BasicShip(Iterable<Coordinate> where,ShipDisplayInfo<T> myDisplayInfo) {
+  public Basicship(Iterable<Coordinate> where,ShipDisplayInfo<T> myDisplayInfo) {
     this.myDisplayInfo=myDisplayInfo;
      myPieces=new HashMap<Coordinate,Boolean>();          
     for (Coordinate c : where) {
@@ -27,7 +27,9 @@ abstract class BasicShip<T> implements Ship<T> {
       throw new IllegalArgumentException(c.toString()+"is not inside the pieces");
     }
   }
-
+  public Iterable<Coordinate> getCoordinates(){
+    return myPieces.keySet();
+  }
   /*
    * @Override public boolean occupiesCoordinates(Coordinate where) { // TODO
    * Auto-generated method stub return where.equals(myLocation); }
@@ -68,7 +70,7 @@ abstract class BasicShip<T> implements Ship<T> {
     //TODO this is not right.  We need to
     //look up the hit status of this coordinate
     checkCoordinateInThisShip(where);
-    return myDisplayInfo.getInfo(where, false);
+    return myDisplayInfo.getInfo(where, wasHitAt(where));
   }
 
 }
