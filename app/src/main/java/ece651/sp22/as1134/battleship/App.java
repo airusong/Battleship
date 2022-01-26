@@ -23,8 +23,8 @@ public class App {
   }
 
   public void doPlacementPhase() throws IOException{
-    player1.doOnePlacement();
-    player2.doOnePlacement();
+    player1.doPlacementPhase();
+    player2.doPlacementPhase();
   }
   public static void main(String[] args) throws IOException {
 

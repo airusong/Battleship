@@ -4,7 +4,21 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.io.Reader;
-
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.function.Function;
+/**
+   * Constructs a TextPlayer
+   * @param theBoard is a user's borad
+   * @param view is the board to displayy
+   * @param BufferedReader inputReader
+   * @param PrintStream out
+   * @param shipFactory
+   * @param playername
+   * @param shipsToPlace:an ArrayList of the ship names that we want to work from    
+   * @param shipCreationFns:Hashmap connect ship's name with 
+   */
 
 public class TextPlayer {
   final Board<Character> theBoard;
@@ -13,6 +27,8 @@ public class TextPlayer {
   final PrintStream out;
   final AbstractShipFactory<Character> shipFactory;
   private final String playername;
+  final ArrayList<String> shipsToPlace;
+  final HashMap<String, Function<Placement, Ship<Character>>> shipCreationFns;
   public TextPlayer(Board<Character> theBoard,Reader inputSource, PrintStream out,AbstractShipFactory<Character> shipFactory,String name) {
     this.theBoard = theBoard;
     this.view = new BoardTextView(theBoard);
@@ -20,8 +36,26 @@ public class TextPlayer {
     this.out = out;
     this.shipFactory=shipFactory;
     this.playername=name;
-    
+    this.shipsToPlace=new ArrayList<String>();
+    this.shipCreationFns=new HashMap<String, Function<Placement, Ship<Character>>>();
+    setupShipCreationMap();
+    setupShipCreationList();
   }
+  protected void setupShipCreationMap(){
+    shipCreationFns.put("Submarine", (p) -> shipFactory.makeSubmarine(p));
+    shipCreationFns.put("Destroyer", (p) -> shipFactory.makeDestroyer(p));
+    shipCreationFns.put("Carrier", (p) -> shipFactory.makeCarrier(p));
+    shipCreationFns.put("Battleship", (p) -> shipFactory.makeBattleship(p));
+
+  }
+  protected void setupShipCreationList(){
+    shipsToPlace.addAll(Collections.nCopies(2, "Submarine"));
+    shipsToPlace.addAll(Collections.nCopies(3, "Destroyer"));
+    shipsToPlace.addAll(Collections.nCopies(3, "Battleship"));
+    shipsToPlace.addAll(Collections.nCopies(2, "Carrier"));
+
+  }
+
   public String getName(){
     return playername;
   }
@@ -33,13 +67,20 @@ public class TextPlayer {
   public void doPlacementPhase() throws IOException{
     //       BoardTextView view = new BoardTextView(theBoard);
        out.println(view.displayMyOwnBoard());
-       out.println("Player "+this.playername+" where do you want to place a Destroyer?");
-       doOnePlacement();
+       out.println("Player "+this.playername+": you are going to place the following ships (which are all rectangular). For each ship, type the coordinate of the upper left side of the ship, followed by either H (for horizontal) or V (for vertical). You have"+"\n"+
+       "2 Submarines ships that are 1x2"+"\n"+
+       "3 Destroyers that are 1x3"+"\n"+
+       "3 Battleships that are 1x4"+"\n"+
+       "2 Carriers that are 1x6"+"\n");
+       for(String shiptype:shipsToPlace){
+         //         out.println("Player "+this.playername+" where do you want to place a "+shiptype+"?");
+         doOnePlacement(shiptype,shipCreationFns.get(shiptype));
+       }
   }
-  public void doOnePlacement() throws IOException{
-    String prompt="Player "+this.playername+" Where would you like to put your ship?";
+  public void doOnePlacement(String shipName, Function<Placement, Ship<Character>> createFn) throws IOException{
+    String prompt="Player "+this.playername+" Where would you like to place a " + shipName + "?";
     Placement p = readPlacement(prompt);
-    Ship<Character> s  = shipFactory.makeDestroyer(p);
+    Ship<Character> s  = createFn.apply(p);
     boolean b = theBoard.tryAddShip(s);
     //    BoardTextView view = new BoardTextView(theBoard);
     out.println(view.displayMyOwnBoard());
