@@ -1,0 +1,74 @@
+package ece651.sp22.as1134.battleship;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import java.io.BufferedReader;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.PrintStream;
+import java.io.StringReader;
+
+import org.junit.jupiter.api.Test;
+
+public class TextPlayerTest {
+   private TextPlayer createTextPlayer(int w, int h, String inputData, ByteArrayOutputStream bytes) {
+    BufferedReader input = new BufferedReader(new StringReader(inputData));
+    PrintStream output = new PrintStream(bytes, true);
+    Board<Character> board = new BattleShipBoard<Character>(w, h);
+    V1ShipFactory shipFactory = new V1ShipFactory();
+    return new TextPlayer(board, input, output, shipFactory,"A");
+  }
+  @Test
+  public void test_read_placement() throws IOException {
+    ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+    TextPlayer player = createTextPlayer(10, 20, "B2V\nC8H\na4v\n", bytes);
+    String prompt = "Please enter a location for a ship:";
+    Placement[] expected = new Placement[3];
+    expected[0] = new Placement(new Coordinate(1, 2), 'V');
+    expected[1] = new Placement(new Coordinate(2, 8), 'H');
+    expected[2] = new Placement(new Coordinate(0, 4), 'V');
+    for (int i = 0; i < expected.length; i++) {
+      Placement p = player.readPlacement(prompt);
+      assertEquals(p, expected[i]); // did we get the right Placement back
+      assertEquals(prompt + "\n", bytes.toString()); // should have printed prompt and newline
+      bytes.reset(); // clear out bytes for next time around
+    }
+  }
+  @Test
+  public void test_do_phase_placement() throws IOException{
+    ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+    TextPlayer player = createTextPlayer(2, 4, "A0V\n", bytes);
+    player.doPlacementPhase();
+    String expectedHeader = "  0|1\n";
+    String expected = expectedHeader +
+      "A  |  A\n" +
+      "B  |  B\n" +
+      "C  |  C\n" +
+      "D  |  D\n" +
+      expectedHeader;
+    String expected2= expectedHeader +
+      "A d|  A\n" +
+      "B d|  B\n" +
+      "C d|  C\n" +
+      "D  |  D\n" +
+      expectedHeader;
+    assertEquals(expected+"\n"+"Player " + player.getName() + " where do you want to place a Destroyer?"+"\n"+
+                 "Player " + player.getName() + " Where would you like to put your ship?"+"\n"+expected2+"\n", bytes.toString());
+  }
+  @Test
+  public void test_do_one_placement() throws IOException {
+    ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+    TextPlayer player = createTextPlayer(2, 4, "A0V\n", bytes);
+    player.doOnePlacement();
+    String expectedHeader = "  0|1\n";
+    String expected = expectedHeader +
+      "A d|  A\n" +
+      "B d|  B\n" +
+      "C d|  C\n" +
+      "D  |  D\n" +
+      expectedHeader;
+    assertEquals("Player " + player.getName() + " Where would you like to put your ship?" + "\n"+expected+"\n",bytes.toString());
+    bytes.reset();
+
+  }
+}

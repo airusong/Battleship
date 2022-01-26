@@ -8,7 +8,6 @@ public class NoCollisionRuleChecker<T> extends PlacementRuleChecker<T> {
     Iterable<Coordinate> set = theShip.getCoordinates();
     for (Coordinate c : set) {
       if (theBoard.whatIsAt(c) != null) {
-        System.out.println(c +" collides with " + theBoard.whatIsAt(c));
         return false;
       }
     }
