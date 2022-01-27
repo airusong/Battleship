@@ -1,9 +1,11 @@
 package ece651.sp22.as1134.battleship;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
+import java.io.EOFException;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.io.StringReader;
@@ -19,7 +21,7 @@ public class TextPlayerTest {
     V1ShipFactory shipFactory = new V1ShipFactory();
     return new TextPlayer(board, input, output, shipFactory,"A");
   }
-  /*
+  
   @Test
   public void test_read_placement() throws IOException {
     ByteArrayOutputStream bytes = new ByteArrayOutputStream();
@@ -36,7 +38,7 @@ public class TextPlayerTest {
       bytes.reset(); // clear out bytes for next time around
     }
   }
-  
+   /*  
   @Test
   public void test_do_phase_placement() throws IOException{
     ByteArrayOutputStream bytes = new ByteArrayOutputStream();
@@ -208,6 +210,53 @@ public class TextPlayerTest {
       expectedHeader;
     assertEquals("Player " + player.getName() + " Where would you like to place a Destroyer?" + "\n"+expected+"\n",bytes.toString());
     bytes.reset();
+
+  }
+  @Test
+  public void test_do_wrong_placement() throws IOException {
+    ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+    TextPlayer player = createTextPlayer(2, 4, "00\nA0V\n", bytes);
+    V1ShipFactory shipFactory = new V1ShipFactory();
+    player.doOnePlacement("Destroyer", (p)->shipFactory.makeDestroyer(p));
+    String expectedHeader = "  0|1\n";
+    String expected = expectedHeader +
+      "A d|  A\n" +
+      "B d|  B\n" +
+      "C d|  C\n" +
+      "D  |  D\n" +
+      expectedHeader;
+    assertEquals("Player " + player.getName() + " Where would you like to place a Destroyer?" + "\n"+
+                 "That placement is invalid: it does not have the correct format."+"\n"+
+                 "Player " + player.getName() + " Where would you like to place a Destroyer?"+
+                 "\n"+expected+"\n",bytes.toString());
+    bytes.reset();
+  }
+  @Test
+  public void test_do_wrong_placement2() throws IOException {
+    ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+    TextPlayer player = createTextPlayer(2, 4, "C0V\nA0V\n", bytes);
+    V1ShipFactory shipFactory = new V1ShipFactory();
+    player.doOnePlacement("Destroyer", (p)->shipFactory.makeDestroyer(p));
+    String expectedHeader = "  0|1\n";
+    String expected = expectedHeader +
+      "A d|  A\n" +
+      "B d|  B\n" +
+      "C d|  C\n" +
+      "D  |  D\n" +
+      expectedHeader;
+    assertEquals("Player " + player.getName() + " Where would you like to place a Destroyer?" + "\n"+
+                 "That placement is invalid: the ship goes off the bottom of the board."+"\n"+
+                 "Player " + player.getName() + " Where would you like to place a Destroyer?"+
+                 "\n"+expected+"\n",bytes.toString());
+    bytes.reset();
+  }
+  
+  @Test
+  public void test_eofException() throws IOException{
+    ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+    TextPlayer player = createTextPlayer(2, 4, "", bytes);
+    V1ShipFactory shipFactory = new V1ShipFactory();
+    assertThrows(EOFException.class, ()->player.readPlacement(" Where would you like to place a Destroyer?"));
 
   }
 }

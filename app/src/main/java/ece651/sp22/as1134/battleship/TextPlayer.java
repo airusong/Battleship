@@ -1,6 +1,7 @@
 package ece651.sp22.as1134.battleship;
 
 import java.io.BufferedReader;
+import java.io.EOFException;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.io.Reader;
@@ -32,7 +33,7 @@ public class TextPlayer {
   public TextPlayer(Board<Character> theBoard,Reader inputSource, PrintStream out,AbstractShipFactory<Character> shipFactory,String name) {
     this.theBoard = theBoard;
     this.view = new BoardTextView(theBoard);
-    this.inputReader = ( BufferedReader )(inputSource);
+    this.inputReader =(BufferedReader)inputSource;
     this.out = out;
     this.shipFactory=shipFactory;
     this.playername=name;
@@ -40,29 +41,40 @@ public class TextPlayer {
     this.shipCreationFns=new HashMap<String, Function<Placement, Ship<Character>>>();
     setupShipCreationMap();
     setupShipCreationList();
-  }
-  protected void setupShipCreationMap(){
-    shipCreationFns.put("Submarine", (p) -> shipFactory.makeSubmarine(p));
-    shipCreationFns.put("Destroyer", (p) -> shipFactory.makeDestroyer(p));
-    shipCreationFns.put("Carrier", (p) -> shipFactory.makeCarrier(p));
-    shipCreationFns.put("Battleship", (p) -> shipFactory.makeBattleship(p));
+   }
+ protected void setupShipCreationMap(){
+     shipCreationFns.put("Submarine", (p) -> shipFactory.makeSubmarine(p));
+     shipCreationFns.put("Destroyer", (p) -> shipFactory.makeDestroyer(p));
+     shipCreationFns.put("Carrier", (p) -> shipFactory.makeCarrier(p));
+     shipCreationFns.put("Battleship", (p) -> shipFactory.makeBattleship(p));
 
   }
   protected void setupShipCreationList(){
-    shipsToPlace.addAll(Collections.nCopies(2, "Submarine"));
-    shipsToPlace.addAll(Collections.nCopies(3, "Destroyer"));
-    shipsToPlace.addAll(Collections.nCopies(3, "Battleship"));
-    shipsToPlace.addAll(Collections.nCopies(2, "Carrier"));
+     shipsToPlace.addAll(Collections.nCopies(2, "Submarine"));
+     shipsToPlace.addAll(Collections.nCopies(3, "Destroyer"));
+     shipsToPlace.addAll(Collections.nCopies(3, "Battleship"));
+     shipsToPlace.addAll(Collections.nCopies(2, "Carrier"));
 
   }
 
   public String getName(){
-    return playername;
+      return playername;
   }
   public Placement readPlacement(String prompt) throws IOException {
-    out.println(prompt);
-    String s = inputReader.readLine();
-    return new Placement(s);
+     Placement p=null;
+     out.println(prompt);    
+        try{
+          //    out.println(prompt);
+         String s = inputReader.readLine();
+         //p=new Placement(s);
+         if(s==null){
+            throw new EOFException();
+         }
+         p=new Placement(s); 
+        }catch(IllegalArgumentException error) {
+          throw new IllegalArgumentException("That placement is invalid: it does not have the correct format.");
+       }
+      return p;
   }
   public void doPlacementPhase() throws IOException{
     //       BoardTextView view = new BoardTextView(theBoard);
@@ -73,18 +85,26 @@ public class TextPlayer {
        "3 Battleships that are 1x4"+"\n"+
        "2 Carriers that are 1x6"+"\n");
        for(String shiptype:shipsToPlace){
-         //         out.println("Player "+this.playername+" where do you want to place a "+shiptype+"?");
          doOnePlacement(shiptype,shipCreationFns.get(shiptype));
        }
   }
   public void doOnePlacement(String shipName, Function<Placement, Ship<Character>> createFn) throws IOException{
     String prompt="Player "+this.playername+" Where would you like to place a " + shipName + "?";
-    Placement p = readPlacement(prompt);
-    Ship<Character> s  = createFn.apply(p);
-    boolean b = theBoard.tryAddShip(s);
-    //    BoardTextView view = new BoardTextView(theBoard);
-    out.println(view.displayMyOwnBoard());
+    while(true){
+      try{
+        Placement p = readPlacement(prompt);
+        Ship<Character> s  = createFn.apply(p);
+        String message=theBoard.tryAddShip(s);
+        if(message==null){
+           out.println(view.displayMyOwnBoard());
+           break;
+          }else{
+          out.println(message);
+          }
+      }catch(IllegalArgumentException error){
+        out.println("That placement is invalid: it does not have the correct format.");
+      }
   }
-
+ }
 
 }

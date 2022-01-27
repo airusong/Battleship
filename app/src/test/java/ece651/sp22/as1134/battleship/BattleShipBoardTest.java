@@ -43,7 +43,13 @@ public class BattleShipBoardTest {
     Board<Character> b = new BattleShipBoard<Character>(2, 3);
     Coordinate c = new Coordinate(0, 0);
     RectangleShip<Character> s = new RectangleShip<Character>(c, 's', '*');
-    assertEquals(b.tryAddShip(s), true);
+    assertEquals(b.tryAddShip(s), null);
+    PlacementRuleChecker<Character> placementChecker = new InBoundsRuleChecker<Character>(null);
+    Board<Character> board = new BattleShipBoard<>(10, 20, placementChecker);
+    V1ShipFactory fac = new V1ShipFactory();
+    Placement p1 = new Placement(new Coordinate(19, 0), 'V');
+    Ship<Character> battle = fac.makeBattleship(p1);
+    assertEquals(board.tryAddShip(battle), "That placement is invalid: the ship goes off the bottom of the board.");
   }
 
   @Test

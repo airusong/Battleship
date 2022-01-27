@@ -65,7 +65,7 @@ public class BoardTextViewTest {
       "D  | |  D\n"+
       "E  | |  E\n"+
       expectedHeader;
-    boolean value=b3.tryAddShip(s);
+    b3.tryAddShip(s);
     assertEquals(expected, view.displayMyOwnBoard());
  }
 }

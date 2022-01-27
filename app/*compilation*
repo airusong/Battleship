@@ -1,0 +1,50 @@
+-*- mode: compilation; default-directory: "~/ece651-sp22-as1134-battleship/app/" -*-
+Compilation started at Wed Jan 26 17:32:31
+
+/usr/local/bin/gradle clean cloverGenerateReport
+> Task :app:clean
+> Task :app:compileJava
+> Task :app:processResources NO-SOURCE
+> Task :app:classes
+> Task :app:compileTestJava
+> Task :app:processTestResources
+> Task :app:testClasses
+> Task :app:cloverInstrumentCodeForTest
+
+> Task :app:test FAILED
+
+RectangleShipTest > test_coordinate() STANDARD_OUT
+    (1, 0)
+    (0, 0)
+
+TextPlayerTest > test_read_wrongplacement() FAILED
+    java.lang.IllegalArgumentException: input is wrong
+        at ece651.sp22.as1134.battleship.Placement.<init>(Unknown Source)
+        at ece651.sp22.as1134.battleship.TextPlayer.readPlacement(Unknown Source)
+        at ece651.sp22.as1134.battleship.TextPlayerTest.test_read_wrongplacement(Unknown Source)
+
+32 tests completed, 1 failed
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':app:test'.
+> There were failing tests. See the report at: file:///Users/songairu/ece651-sp22-as1134-battleship/app/build/reports/tests/test/index.html
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+
+* Get more help at https://help.gradle.org
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 8.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+See https://docs.gradle.org/7.3.3/userguide/command_line_interface.html#sec:command_line_warnings
+
+BUILD FAILED in 3s
+6 actionable tasks: 6 executed
+
+Compilation exited abnormally with code 1 at Wed Jan 26 17:32:35

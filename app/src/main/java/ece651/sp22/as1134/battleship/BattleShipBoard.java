@@ -41,15 +41,15 @@ public class BattleShipBoard<T> implements Board<T> {
     this(w, h, new NoCollisionRuleChecker<>(new InBoundsRuleChecker<T>(null)));
   }
 
-  public boolean tryAddShip(Ship<T> toAdd) {
-    if (placementChecker.checkPlacement(toAdd, this)) {
+  public String tryAddShip(Ship<T> toAdd) {
+    String placementProblem = placementChecker.checkPlacement(toAdd, this);
+    if (placementProblem==null) {
 
       this.myShips.add(toAdd);
-      return true;
+      return null;
     } else {
-      return false;
+      return placementProblem;
     }
-    // return true;
   }
 
   public T whatIsAt(Coordinate where) {

@@ -3,15 +3,15 @@ package ece651.sp22.as1134.battleship;
 public class NoCollisionRuleChecker<T> extends PlacementRuleChecker<T> {
 
   @Override
-  protected boolean checkMyRule(Ship<T> theShip, Board<T> theBoard) {
+  protected String checkMyRule(Ship<T> theShip, Board<T> theBoard) {
     // TODO Auto-generated method stub
     Iterable<Coordinate> set = theShip.getCoordinates();
     for (Coordinate c : set) {
       if (theBoard.whatIsAt(c) != null) {
-        return false;
+        return "That placement is invalid: the ship overlaps another ship.";
       }
     }
-    return true;
+    return null;
   }
 
   public NoCollisionRuleChecker(PlacementRuleChecker<T> next) {
