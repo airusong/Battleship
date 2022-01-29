@@ -7,7 +7,7 @@
 |     ece651.sp22.as1134.battleship.BattleShipBoard      |       100       |     33     |    33     |    12     |   12    |
 |  ece651.sp22.as1134.battleship.NoCollisionRuleChecker  |       100       |     6      |     6     |     2     |    2    |
 |        ece651.sp22.as1134.battleship.TextPlayer        |       100       |     43     |    43     |     4     |    4    |
-|      ece651.sp22.as1134.battleship.BoardTextView       |       100       |     36     |    36     |    10     |   10    |
+|      ece651.sp22.as1134.battleship.BoardTextView       |       100       |     37     |    37     |    10     |   10    |
 |   ece651.sp22.as1134.battleship.PlacementRuleChecker   |       100       |     6      |     6     |     4     |    4    |
 |     ece651.sp22.as1134.battleship.ShipDisplayInfo      |       100       |     0      |     0     |     0     |    0    |
 |   ece651.sp22.as1134.battleship.InBoundsRuleChecker    |       100       |     14     |    14     |     8     |    8    |
@@ -28,14 +28,14 @@
 |ece651.sp22.as1134.battleship.SimpleShipDisplayInfoTest |       100       |     3      |     3     |     0     |    0    |
 |      ece651.sp22.as1134.battleship.PlacementTest       |       100       |     29     |    29     |     0     |    0    |
 |   ece651.sp22.as1134.battleship.BattleShipBoardTest    |       100       |     54     |    54     |     4     |    4    |
-|    ece651.sp22.as1134.battleship.BoardTextViewTest     |       100       |     30     |    30     |     0     |    0    |
+|    ece651.sp22.as1134.battleship.BoardTextViewTest     |       100       |     45     |    45     |     0     |    0    |
 | ece651.sp22.as1134.battleship.InBoundsRuleCheckerTest  |       100       |     18     |    18     |     0     |    0    |
 |      ece651.sp22.as1134.battleship.CoordinateTest      |       100       |     37     |    37     |     0     |    0    |
 +--------------------------------------------------------+-----------------+------------+-----------+-----------+---------+
-|                         Totals                         |       100       |    552     |    552    |    76     |   76    |
+|                         Totals                         |       100       |    568     |    568    |    76     |   76    |
 +--------------------------------------------------------+-----------------+------------+-----------+-----------+---------+
 
 
 Remove Colors From All Buffers
 
-Fundamental finished at Fri Jan 28 22:01:42
+Fundamental finished at Fri Jan 28 22:26:50

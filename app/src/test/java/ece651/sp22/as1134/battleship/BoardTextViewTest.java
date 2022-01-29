@@ -96,4 +96,53 @@ public class BoardTextViewTest {
       "  0|1|2|3\n";
     assertEquals(enemyView,view.displayEnemyBoard());
   }
+  @Test
+  public void display_two_board(){
+    Board<Character>  myBoard= new BattleShipBoard<Character>(10,20,'X');
+    Board<Character>  enemyBoard= new BattleShipBoard<Character>(10,20,'X');
+    V1ShipFactory fac = new V1ShipFactory();
+    Placement p1=new Placement(new Coordinate(0,0), 'V');
+    Placement p2=new Placement(new Coordinate(0,2), 'V');
+    Ship<Character> sub1=fac.makeSubmarine(p1);
+    Ship<Character> sub2=fac.makeSubmarine(p2);
+    Placement p3=new Placement(new Coordinate(5,0), 'H');
+    Placement p4=new Placement(new Coordinate(3,3), 'V');
+    Ship<Character> battle1=fac.makeBattleship(p3);
+    Ship<Character> battle2=fac.makeBattleship(p4);
+    myBoard.tryAddShip(sub1);
+    myBoard.tryAddShip(sub2);
+    enemyBoard.tryAddShip(battle1);
+    enemyBoard.tryAddShip(battle2);
+    BoardTextView myview=new BoardTextView(myBoard);
+    BoardTextView enemyview=new BoardTextView(enemyBoard);
+    enemyBoard.fireAt(new Coordinate(5,0));
+    enemyBoard.fireAt(new Coordinate(0,0));
+    myBoard.fireAt(new Coordinate(0,0));
+    String res=myview.displayMyBoardWithEnemyNextToIt(enemyview, "Your ocean","Player B's ocean");
+    String expected=
+"     Your ocean                           Player B's ocean\n"+
+"  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9\n"+   
+"A *| |s| | | | | | |  A                A X| | | | | | | | |  A\n"+
+"B s| |s| | | | | | |  B                B  | | | | | | | | |  B\n"+
+"C  | | | | | | | | |  C                C  | | | | | | | | |  C\n"+
+"D  | | | | | | | | |  D                D  | | | | | | | | |  D\n"+
+"E  | | | | | | | | |  E                E  | | | | | | | | |  E\n"+
+"F  | | | | | | | | |  F                F b| | | | | | | | |  F\n"+
+"G  | | | | | | | | |  G                G  | | | | | | | | |  G\n"+
+"H  | | | | | | | | |  H                H  | | | | | | | | |  H\n"+
+"I  | | | | | | | | |  I                I  | | | | | | | | |  I\n"+
+"J  | | | | | | | | |  J                J  | | | | | | | | |  J\n"+
+"K  | | | | | | | | |  K                K  | | | | | | | | |  K\n"+
+"L  | | | | | | | | |  L                L  | | | | | | | | |  L\n"+
+"M  | | | | | | | | |  M                M  | | | | | | | | |  M\n"+
+"N  | | | | | | | | |  N                N  | | | | | | | | |  N\n"+
+"O  | | | | | | | | |  O                O  | | | | | | | | |  O\n"+
+"P  | | | | | | | | |  P                P  | | | | | | | | |  P\n"+
+"Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q\n"+
+"R  | | | | | | | | |  R                R  | | | | | | | | |  R\n"+
+"S  | | | | | | | | |  S                S  | | | | | | | | |  S\n"+
+"T  | | | | | | | | |  T                T  | | | | | | | | |  T\n"+
+"  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9\n";
+    assertEquals(expected,res);
+  }
 }

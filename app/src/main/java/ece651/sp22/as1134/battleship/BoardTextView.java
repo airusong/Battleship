@@ -79,4 +79,32 @@ public class BoardTextView {
     ans.append("\n");
     return ans.toString();
   }
+  /*
+   *method to connect two ocean
+   */
+  public String displayMyBoardWithEnemyNextToIt(BoardTextView enemyView, String myHeader, String enemyHeader) {
+    int width=toDisplay.getWidth();
+    int height=toDisplay.getHeight();
+    StringBuilder ans=new StringBuilder("     ");
+    String [] mylines = displayMyOwnBoard().split("\n");
+    String [] enemylines = enemyView.displayEnemyBoard().split("\n");
+    ans.append(myHeader);
+    int length=myHeader.length();
+    for(int i=0;i<2*width+17-length;i++){
+      ans.append(" ");
+    }
+    ans.append(enemyHeader);
+    ans.append("\n");
+    String space="                ";
+    for(int i=0;i<=height+1;i++){
+      ans.append(mylines[i]);
+      ans.append(space);
+      if(i==0||i==height+1){
+        ans.append("  ");
+      }
+      ans.append(enemylines[i]);
+      ans.append("\n");
+    }
+    return ans.toString();
+  }
 }
