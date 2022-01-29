@@ -7,7 +7,7 @@ public class NoCollisionRuleChecker<T> extends PlacementRuleChecker<T> {
     // TODO Auto-generated method stub
     Iterable<Coordinate> set = theShip.getCoordinates();
     for (Coordinate c : set) {
-      if (theBoard.whatIsAt(c) != null) {
+      if (theBoard.whatIsAtForSelf(c) != null) {
         return "That placement is invalid: the ship overlaps another ship.";
       }
     }

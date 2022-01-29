@@ -1,5 +1,7 @@
 package ece651.sp22.as1134.battleship;
 
+import java.util.function.Function;
+
 /**
  * This class handles textual display of a Board (i.e., converting it to a
  * string to show to the user). It supports two ways to display the Board: one
@@ -23,8 +25,17 @@ public class BoardTextView {
           "Board must be no larger than 10x26, but is " + toDisplay.getWidth() + "x" + toDisplay.getHeight());
     }
   }
+  /**
+   * method to construct the main body of the board,for self board and for enemy board
+   */  
+   public String displayMyOwnBoard() {
+    return displayAnyBoard((c)->toDisplay.whatIsAtForSelf(c));
+  }
 
-  public String displayMyOwnBoard() {
+   public String displayEnemyBoard() {
+     return displayAnyBoard((c)->toDisplay.whatIsAtForEnemy(c));
+   }
+  protected String displayAnyBoard(Function<Coordinate, Character> getSquareFn){
     StringBuilder ans = new StringBuilder("");
     ans.append(makeHeader());
     int value = 65;
@@ -38,10 +49,10 @@ public class BoardTextView {
       for (int j = 0; j < column; j++) {
         Coordinate c=new Coordinate(i,j);
         ans.append(sep);
-        if(toDisplay.whatIsAt(c)==null){
+        if(getSquareFn.apply(c)==null){
             ans.append(" ");
         }else{
-          ans.append(toDisplay.whatIsAt(c));
+          ans.append(getSquareFn.apply(c));
         }
         sep= "|";
       }
@@ -54,7 +65,9 @@ public class BoardTextView {
     return ans.toString();
     // this is a placeholder for the moment
   }
-
+  /* 
+   * method to construct the header for the board
+   */
   public String makeHeader() {
     StringBuilder ans = new StringBuilder("  "); // README shows two spaces at
     String sep = ""; // start with nothing to separate, then switch to | to separate

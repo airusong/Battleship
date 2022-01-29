@@ -7,17 +7,17 @@ import org.junit.jupiter.api.Test;
 public class BattleShipBoardTest {
   @Test
   public void test_width_and_height() {
-    Board<Character> b1 = new BattleShipBoard<Character>(10, 20);
+    Board<Character> b1 = new BattleShipBoard<Character>(10, 20,'X');
     assertEquals(10, b1.getWidth());
     assertEquals(20, b1.getHeight());
   }
 
   @Test
   public void test_invalid_dimensions() {
-    assertThrows(IllegalArgumentException.class, () -> new BattleShipBoard<Character>(10, 0));
-    assertThrows(IllegalArgumentException.class, () -> new BattleShipBoard<Character>(0, 20));
-    assertThrows(IllegalArgumentException.class, () -> new BattleShipBoard<Character>(10, -5));
-    assertThrows(IllegalArgumentException.class, () -> new BattleShipBoard<Character>(-5, 30));
+    assertThrows(IllegalArgumentException.class, () -> new BattleShipBoard<Character>(10, 0,'X'));
+    assertThrows(IllegalArgumentException.class, () -> new BattleShipBoard<Character>(0, 20,'X'));
+    assertThrows(IllegalArgumentException.class, () -> new BattleShipBoard<Character>(10, -5,'X'));
+    assertThrows(IllegalArgumentException.class, () -> new BattleShipBoard<Character>(-5, 30,'X'));
   }
 
   private <T> void checkWhatIsAtBoard(Board<T> b, T[][] expect) {
@@ -26,26 +26,26 @@ public class BattleShipBoardTest {
     for (int i = 0; i < w; i++) {
       for (int j = 0; j < h; j++) {
         Coordinate c = new Coordinate(i, j);
-        assertEquals(expect[i][j], b.whatIsAt(c));
+        assertEquals(expect[i][j], b.whatIsAtForSelf(c));
       }
     }
   }
 
   @Test
   public void test_empty_board() {
-    Board<Character> b = new BattleShipBoard<Character>(2, 3);
+    Board<Character> b = new BattleShipBoard<Character>(2, 3,'X');
     Character[][] expect = new Character[2][3];
     checkWhatIsAtBoard(b, expect);
   }
 
   @Test
   public void test_tryaddship() {
-    Board<Character> b = new BattleShipBoard<Character>(2, 3);
+    Board<Character> b = new BattleShipBoard<Character>(2, 3,'X');
     Coordinate c = new Coordinate(0, 0);
     RectangleShip<Character> s = new RectangleShip<Character>(c, 's', '*');
     assertEquals(b.tryAddShip(s), null);
     PlacementRuleChecker<Character> placementChecker = new InBoundsRuleChecker<Character>(null);
-    Board<Character> board = new BattleShipBoard<>(10, 20, placementChecker);
+    Board<Character> board = new BattleShipBoard<>(10, 20, placementChecker,'X');
     V1ShipFactory fac = new V1ShipFactory();
     Placement p1 = new Placement(new Coordinate(19, 0), 'V');
     Ship<Character> battle = fac.makeBattleship(p1);
@@ -54,15 +54,41 @@ public class BattleShipBoardTest {
 
   @Test
   public void test_right_coordinate() {
-    BattleShipBoard<Character> b = new BattleShipBoard<Character>(2, 3);
+    BattleShipBoard<Character> b = new BattleShipBoard<Character>(2, 3,'X');
     Coordinate c = new Coordinate(0, 0);
     RectangleShip<Character> s = new RectangleShip<Character>(c, 's', '*');
     b.tryAddShip(s);
-    assertEquals(b.whatIsAt(c),'s');
+    assertEquals(b.whatIsAtForSelf(c),'s');
     Coordinate c2 = new Coordinate(0, 1);
     RectangleShip<Character> s2 = new RectangleShip<Character>(c2, 's', '*');
     b.tryAddShip(s2); 
-    assertEquals(b.whatIsAt(c2),'s');
+    assertEquals(b.whatIsAtForSelf(c2),'s');
 
   }
+
+  @Test
+  public void test_fire_at(){
+    Board<Character> b = new BattleShipBoard<Character>(5, 5,'X');
+    V1ShipFactory fac = new V1ShipFactory();
+    Placement p1 = new Placement(new Coordinate(0, 0), 'V');
+    Ship<Character> sub = fac.makeSubmarine(p1);
+    b.tryAddShip(sub);
+    assertEquals(null,b.fireAt(new Coordinate(4,4)));
+    assertSame(sub,b.fireAt(new Coordinate(0, 0)));
+    assertSame(sub,b.fireAt(new Coordinate(1, 0)));
+    assertEquals(true,sub.isSunk());
+  }
+  @Test
+  public void test_whatisatforenemy(){
+    Board<Character> b = new BattleShipBoard<Character>(5, 5,'X');
+    V1ShipFactory fac = new V1ShipFactory();
+    Placement p1 = new Placement(new Coordinate(0, 0), 'V');
+    Ship<Character> sub = fac.makeSubmarine(p1);
+    b.tryAddShip(sub);
+    b.fireAt(new Coordinate(0,0));
+    assertEquals(b.whatIsAtForEnemy(new Coordinate(0,0)),'s');
+    b.fireAt(new Coordinate(2,2));
+    assertEquals(b.whatIsAtForEnemy(new Coordinate(2,2)),'X');
+    assertEquals(b.getmissInfo(),'X');
+  }  
 }

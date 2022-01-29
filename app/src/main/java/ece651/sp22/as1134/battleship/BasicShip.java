@@ -2,34 +2,35 @@ package ece651.sp22.as1134.battleship;
 
 import java.util.HashMap;
 
+/* @param myPieces to record the coordinate set of the ship and the status of hit or not
+ * @param myDisplayInfo to record myship
+ * @param enemyDisplayInfo to record enemyship
+ */
 abstract class BasicShip<T> implements Ship<T> {
   // private final Coordinate myLocation;
   protected HashMap<Coordinate, Boolean> myPieces;
   protected ShipDisplayInfo<T> myDisplayInfo;
-  /*
-   * public BasicShip(Coordinate myLocation){ this.myLocation=myLocation; }
-   */
-  /*
-  public BasicShip(Coordinate c) {
-    myPieces=new HashMap<Coordinate,Boolean>();
-    myPieces.put(c, false);
-  }
-  */
-  public BasicShip(Iterable<Coordinate> where,ShipDisplayInfo<T> myDisplayInfo) {
-    this.myDisplayInfo=myDisplayInfo;
-     myPieces=new HashMap<Coordinate,Boolean>();          
+  protected ShipDisplayInfo<T> enemyDisplayInfo;
+
+  public BasicShip(Iterable<Coordinate> where, ShipDisplayInfo<T> myDisplayInfo, ShipDisplayInfo<T> enemyDisplayInfo) {
+    this.myDisplayInfo = myDisplayInfo;
+    this.enemyDisplayInfo = enemyDisplayInfo;
+    myPieces = new HashMap<Coordinate, Boolean>();
     for (Coordinate c : where) {
       myPieces.put(c, false);
     }
   }
-  protected void checkCoordinateInThisShip(Coordinate c){
-    if(!myPieces.containsKey(c)){
-      throw new IllegalArgumentException(c.toString()+"is not inside the pieces");
+
+  protected void checkCoordinateInThisShip(Coordinate c) {
+    if (!myPieces.containsKey(c)) {
+      throw new IllegalArgumentException(c.toString() + "is not inside the pieces");
     }
   }
-  public Iterable<Coordinate> getCoordinates(){
+
+  public Iterable<Coordinate> getCoordinates() {
     return myPieces.keySet();
   }
+
   /*
    * @Override public boolean occupiesCoordinates(Coordinate where) { // TODO
    * Auto-generated method stub return where.equals(myLocation); }
@@ -43,8 +44,8 @@ abstract class BasicShip<T> implements Ship<T> {
   @Override
   public boolean isSunk() {
     // TODO Auto-generated method stub
-    for(Coordinate c:myPieces.keySet()){
-      if(myPieces.get(c)==false){
+    for (Coordinate c : myPieces.keySet()) {
+      if (myPieces.get(c) == false) {
         return false;
       }
     }
@@ -55,7 +56,7 @@ abstract class BasicShip<T> implements Ship<T> {
   public void recordHitAt(Coordinate where) {
     // TODO Auto-generated method stub
     checkCoordinateInThisShip(where);
-    myPieces.replace(where,false,true);
+    myPieces.replace(where, false, true);
   }
 
   @Override
@@ -66,11 +67,16 @@ abstract class BasicShip<T> implements Ship<T> {
   }
 
   @Override
-  public T getDisplayInfoAt(Coordinate where) {
-    //TODO this is not right.  We need to
-    //look up the hit status of this coordinate
-    checkCoordinateInThisShip(where);
-    return myDisplayInfo.getInfo(where, wasHitAt(where));
+  public T getDisplayInfoAt(Coordinate where, boolean myShip) {
+    // TODO this is not right. We need to
+    // look up the hit status of this coordinate
+    if (myShip) {
+      checkCoordinateInThisShip(where);
+      return myDisplayInfo.getInfo(where, wasHitAt(where));
+    } else {
+      checkCoordinateInThisShip(where);
+      return enemyDisplayInfo.getInfo(where,wasHitAt(where));
+    }
   }
 
 }

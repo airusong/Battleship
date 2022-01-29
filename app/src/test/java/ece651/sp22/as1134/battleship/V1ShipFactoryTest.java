@@ -10,7 +10,8 @@ public class V1ShipFactoryTest {
     assertEquals(testShip.getName(),expectedName);
     int length=expectedLocs.length;
     for(int i=0;i<length;i++){
-    assertEquals(testShip.getDisplayInfoAt(expectedLocs[i]),expectedLetter);
+      assertEquals(testShip.getDisplayInfoAt(expectedLocs[i],true),expectedLetter);
+      //      assertEquals(testShip.getDisplayInfoAt(expectedLocs[i],false),null);
     }    
 
   }

@@ -1,5 +1,5 @@
 -*- mode: compilation; default-directory: "~/ece651-sp22-as1134-battleship/app/" -*-
-Compilation started at Wed Jan 26 17:32:31
+Compilation started at Fri Jan 28 22:23:10
 
 /usr/local/bin/gradle clean cloverGenerateReport
 > Task :app:clean
@@ -13,17 +13,30 @@ Compilation started at Wed Jan 26 17:32:31
 
 > Task :app:test FAILED
 
+BoardTextViewTest > test_enemy_board() FAILED
+    org.opentest4j.AssertionFailedError: expected: <  0|1|2|3
+    A X| | |  A
+    B s| | |  B
+    C  | | |  C
+      0|1|2|3
+    > but was: <  0|1|2|3
+    A  | | |d A
+    B *|s| |d B
+    C  | | |d C
+      0|1|2|3
+    >
+        at app//org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
+        at app//org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
+        at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
+        at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
+        at app//org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1124)
+        at app//ece651.sp22.as1134.battleship.BoardTextViewTest.test_enemy_board(Unknown Source)
+
 RectangleShipTest > test_coordinate() STANDARD_OUT
     (1, 0)
     (0, 0)
 
-TextPlayerTest > test_read_wrongplacement() FAILED
-    java.lang.IllegalArgumentException: input is wrong
-        at ece651.sp22.as1134.battleship.Placement.<init>(Unknown Source)
-        at ece651.sp22.as1134.battleship.TextPlayer.readPlacement(Unknown Source)
-        at ece651.sp22.as1134.battleship.TextPlayerTest.test_read_wrongplacement(Unknown Source)
-
-32 tests completed, 1 failed
+37 tests completed, 1 failed
 
 FAILURE: Build failed with an exception.
 
@@ -47,4 +60,4 @@ See https://docs.gradle.org/7.3.3/userguide/command_line_interface.html#sec:comm
 BUILD FAILED in 3s
 6 actionable tasks: 6 executed
 
-Compilation exited abnormally with code 1 at Wed Jan 26 17:32:35
+Compilation exited abnormally with code 1 at Fri Jan 28 22:23:14

@@ -3,7 +3,9 @@ package ece651.sp22.as1134.battleship;
 import java.util.HashSet;
 
 public class InBoundsRuleChecker<T> extends PlacementRuleChecker<T> {
-
+  /*
+   * method to check the InBoundsRule and return the wrong message if the placement is illegal
+   */
   @Override
   protected String checkMyRule(Ship<T> theShip, Board<T> theBoard) {
     // TODO Auto-generated method stub

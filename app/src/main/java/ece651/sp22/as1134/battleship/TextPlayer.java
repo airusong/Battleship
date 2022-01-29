@@ -42,6 +42,9 @@ public class TextPlayer {
     setupShipCreationMap();
     setupShipCreationList();
    }
+  /*
+   * method to creat the hashmap which key is the ships and value is the function to create ships on board
+   */
  protected void setupShipCreationMap(){
      shipCreationFns.put("Submarine", (p) -> shipFactory.makeSubmarine(p));
      shipCreationFns.put("Destroyer", (p) -> shipFactory.makeDestroyer(p));
@@ -49,6 +52,9 @@ public class TextPlayer {
      shipCreationFns.put("Battleship", (p) -> shipFactory.makeBattleship(p));
 
   }
+  /*
+   * method to create the list of ships of one textplayer
+   */
   protected void setupShipCreationList(){
      shipsToPlace.addAll(Collections.nCopies(2, "Submarine"));
      shipsToPlace.addAll(Collections.nCopies(3, "Destroyer"));
@@ -60,6 +66,9 @@ public class TextPlayer {
   public String getName(){
       return playername;
   }
+  /*
+   * method to read the placement of the ship from user 
+   */
   public Placement readPlacement(String prompt) throws IOException {
      Placement p=null;
      out.println(prompt);    
@@ -76,6 +85,9 @@ public class TextPlayer {
        }
       return p;
   }
+  /*
+   * method to place the list of all ships of one textplayer
+   */
   public void doPlacementPhase() throws IOException{
     //       BoardTextView view = new BoardTextView(theBoard);
        out.println(view.displayMyOwnBoard());
@@ -88,6 +100,9 @@ public class TextPlayer {
          doOnePlacement(shiptype,shipCreationFns.get(shiptype));
        }
   }
+  /*
+   *method to place one ship
+   */
   public void doOnePlacement(String shipName, Function<Placement, Ship<Character>> createFn) throws IOException{
     String prompt="Player "+this.playername+" Where would you like to place a " + shipName + "?";
     while(true){
