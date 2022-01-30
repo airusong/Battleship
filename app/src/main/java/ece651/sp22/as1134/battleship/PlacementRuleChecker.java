@@ -7,6 +7,9 @@ public abstract class PlacementRuleChecker<T> {
     this.next = next;
   }
   protected abstract String checkMyRule(Ship<T> theShip, Board<T> theBoard);
+  /*
+   * method to go through all the placement rules
+   */ 
   public String checkPlacement (Ship<T> theShip, Board<T> theBoard) {
     //if we fail our own rule: stop the placement is not legal
     if (checkMyRule(theShip, theBoard)!=null) {

@@ -21,6 +21,7 @@ public class BattleShipBoard<T> implements Board<T> {
   final ArrayList<Ship<T>> myShips;
   HashSet<Coordinate> enemyMisses;
   private final T missInfo;
+
   public int getWidth() {
     return width;
   }
@@ -28,10 +29,12 @@ public class BattleShipBoard<T> implements Board<T> {
   public int getHeight() {
     return height;
   }
-  public T getmissInfo(){
+
+  public T getmissInfo() {
     return missInfo;
   }
-  public BattleShipBoard(int w, int h, PlacementRuleChecker<T> placementChecker,T missInfo) {
+
+  public BattleShipBoard(int w, int h, PlacementRuleChecker<T> placementChecker, T missInfo) {
     if (w <= 0) {
       throw new IllegalArgumentException("BattleShipBoard's width must be positive but is " + w);
     }
@@ -43,11 +46,11 @@ public class BattleShipBoard<T> implements Board<T> {
     this.myShips = new ArrayList<Ship<T>>();
     this.enemyMisses = new HashSet<>();
     this.placementChecker = placementChecker;
-    this.missInfo=missInfo;
+    this.missInfo = missInfo;
   }
 
-  public BattleShipBoard(int w, int h,T missInfo) {
-    this(w, h, new NoCollisionRuleChecker<>(new InBoundsRuleChecker<T>(null)),missInfo);
+  public BattleShipBoard(int w, int h, T missInfo) {
+    this(w, h, new NoCollisionRuleChecker<>(new InBoundsRuleChecker<T>(null)), missInfo);
   }
 
   /*
@@ -70,6 +73,7 @@ public class BattleShipBoard<T> implements Board<T> {
   public T whatIsAtForEnemy(Coordinate where) {
     return whatIsAt(where, false);
   }
+
   public T whatIsAtForSelf(Coordinate where) {
     return whatIsAt(where, true);
   }
@@ -77,10 +81,10 @@ public class BattleShipBoard<T> implements Board<T> {
   protected T whatIsAt(Coordinate where, boolean isSelf) {
     for (Ship<T> s : myShips) {
       if (s.occupiesCoordinates(where)) {
-        return s.getDisplayInfoAt(where,isSelf);
+        return s.getDisplayInfoAt(where, isSelf);
       }
     }
-    if(isSelf==false && enemyMisses.contains(where)==true){
+    if (isSelf == false && enemyMisses.contains(where) == true) {
       return missInfo;
     }
     return null;
@@ -91,6 +95,9 @@ public class BattleShipBoard<T> implements Board<T> {
    * method to fire at enemy ship
    */
   public Ship<T> fireAt(Coordinate c) {
+    if(c.getColumn()>=width||c.getRow()>=height){
+      throw new IllegalArgumentException("The coordinate is out of bound");
+    }
     for (Ship<T> ship : myShips) {
       if (ship.occupiesCoordinates(c)) {
         ship.recordHitAt(c);
@@ -99,6 +106,18 @@ public class BattleShipBoard<T> implements Board<T> {
     }
     enemyMisses.add(c);
     return null;
+
   }
 
+  /*
+   * method to check if all the ships on the board are sunk, and this player loses
+   */
+  public boolean checklose() {
+    for (Ship<T> ship : myShips) {
+      if (ship.isSunk() == false) {
+        return false;
+      }
+    }
+    return true;
+  }
 }

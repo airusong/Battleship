@@ -20,13 +20,17 @@ abstract class BasicShip<T> implements Ship<T> {
       myPieces.put(c, false);
     }
   }
-
+  /*
+   * method to check if a coordinate is inside of a ship coordinate sets
+   */
   protected void checkCoordinateInThisShip(Coordinate c) {
     if (!myPieces.containsKey(c)) {
       throw new IllegalArgumentException(c.toString() + "is not inside the pieces");
     }
   }
-
+  /*
+   *  method to return a ship's coordinate set
+   */
   public Iterable<Coordinate> getCoordinates() {
     return myPieces.keySet();
   }
@@ -40,7 +44,9 @@ abstract class BasicShip<T> implements Ship<T> {
     // TODO Auto-generated method stub
     return myPieces.containsKey(where);
   }
-
+  /* 
+   * method to check if a ship's pieces are all hitted
+   */
   @Override
   public boolean isSunk() {
     // TODO Auto-generated method stub
@@ -51,21 +57,27 @@ abstract class BasicShip<T> implements Ship<T> {
     }
     return true;
   }
-
+  /*
+   * method to record a coordinate inside of a ship is hitted
+   */
   @Override
   public void recordHitAt(Coordinate where) {
     // TODO Auto-generated method stub
     checkCoordinateInThisShip(where);
     myPieces.replace(where, false, true);
   }
-
+  /*
+   * method to get the coordinate inside of a ship is hit or not
+   */
   @Override
   public boolean wasHitAt(Coordinate where) {
     // TODO Auto-generated method stub
     checkCoordinateInThisShip(where);
     return myPieces.get(where);
   }
-
+  /*
+   * method to get the display information inside of a ship, which depends on if it is myShip or enemyShip 
+   */
   @Override
   public T getDisplayInfoAt(Coordinate where, boolean myShip) {
     // TODO this is not right. We need to

@@ -1,7 +1,9 @@
 package ece651.sp22.as1134.battleship;
 
 import java.util.HashSet;
-
+/*
+ * @param name: rectangleship name
+ */
 public class RectangleShip<T> extends BasicShip<T> {
   final String name;
   public String getName(){
@@ -27,7 +29,9 @@ public class RectangleShip<T> extends BasicShip<T> {
   public RectangleShip(Coordinate upperLeft, T data, T onHit) {
     this("testship",upperLeft, 1, 1, data, onHit);
   }
-
+  /*
+   *  method to store all the coordinate used by a rectangle ship into a set
+   */
   static HashSet<Coordinate> makeCoords(Coordinate upperLeft, int width, int height) {
     HashSet<Coordinate> rectangle = new HashSet<Coordinate>();
     int x = upperLeft.getColumn();

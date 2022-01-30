@@ -62,8 +62,7 @@ public class TextPlayer {
      shipsToPlace.addAll(Collections.nCopies(2, "Carrier"));
 
   }
-
-  public String getName(){
+public String getName(){
       return playername;
   }
   /*
@@ -73,17 +72,25 @@ public class TextPlayer {
      Placement p=null;
      out.println(prompt);    
         try{
-          //    out.println(prompt);
-         String s = inputReader.readLine();
-         //p=new Placement(s);
-         if(s==null){
-            throw new EOFException();
-         }
-         p=new Placement(s); 
+           String s = inputReader.readLine();
+           if(s==null){
+              throw new EOFException();
+            }
+            p=new Placement(s); 
         }catch(IllegalArgumentException error) {
-          throw new IllegalArgumentException("That placement is invalid: it does not have the correct format.");
+           throw new IllegalArgumentException("That placement is invalid: it does not have the correct format.");
        }
       return p;
+  }
+  /*
+   * method to read the attack position
+   */
+  public Coordinate readCoordinate(String prompt) throws IOException{
+    Coordinate c=null;
+    out.println(prompt);
+    String s = inputReader.readLine();
+    c=new Coordinate(s);
+    return c;
   }
   /*
    * method to place the list of all ships of one textplayer
@@ -105,21 +112,58 @@ public class TextPlayer {
    */
   public void doOnePlacement(String shipName, Function<Placement, Ship<Character>> createFn) throws IOException{
     String prompt="Player "+this.playername+" Where would you like to place a " + shipName + "?";
+     while(true){
+       try{
+         Placement p = readPlacement(prompt);
+         Ship<Character> s  = createFn.apply(p);
+         String message=theBoard.tryAddShip(s);
+         if(message==null){
+            out.println(view.displayMyOwnBoard());
+            break;
+           }else{
+           out.println(message);
+           }
+       }catch(IllegalArgumentException error){
+         out.println("That placement is invalid: it does not have the correct format.");
+       }
+   }
+  }
+   /*
+    * method to let player1 play a turn,then
+   * see if player 2 has lost. Then let player 2 play a turn and see if player 1 has lost.
+   * It should repeat this until one player has lost, then report the outcome.
+   *
+   */
+  // public void doAttackingPhase() throws IOException{
+    
+
+  // }
+  /*  
+   * method to do one turn of attacking 
+   */
+  public void playOneturn(Board<Character> enemyBoard,String myHeader, String enemyHeader) throws IOException{
+    String prompt = "Player "+this.playername+" Where would you like to fire at?";
     while(true){
       try{
-        Placement p = readPlacement(prompt);
-        Ship<Character> s  = createFn.apply(p);
-        String message=theBoard.tryAddShip(s);
-        if(message==null){
-           out.println(view.displayMyOwnBoard());
-           break;
-          }else{
-          out.println(message);
-          }
+        Coordinate c=readCoordinate(prompt);
+        enemyBoard.fireAt(c);
+        BoardTextView enemyView=new BoardTextView(enemyBoard);
+        out.println(view.displayMyBoardWithEnemyNextToIt(enemyView,myHeader,enemyHeader));
+        if(enemyBoard.whatIsAtForEnemy(c)=='X'){
+          out.println("you missed");
+        }else if(enemyBoard.whatIsAtForEnemy(c)=='s'){
+          out.println("you hit a submarine");
+        }else if(enemyBoard.whatIsAtForEnemy(c)=='d'){
+          out.println("you hit a destroyer");
+        }else if(enemyBoard.whatIsAtForEnemy(c)=='b'){
+          out.println("you hit a battleship");
+        }else{
+          out.println("you hit a carrier");
+        }
+        break;
       }catch(IllegalArgumentException error){
-        out.println("That placement is invalid: it does not have the correct format.");
+         out.println("The coordinate is out of bound"); 
       }
+    }
   }
- }
-
 }

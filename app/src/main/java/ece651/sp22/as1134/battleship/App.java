@@ -6,9 +6,11 @@ package ece651.sp22.as1134.battleship;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.PrintStream;
-import java.io.Reader;
-
+/*
+ * define two player
+ * @param player1
+ * @param player2
+ */
 public class App {
   // public String getGreeting() {
   // return "Hello World!";
@@ -21,21 +23,45 @@ public class App {
     this.player2 = player2;
 
   }
-
-  public void doPlacementPhase() throws IOException{
+  /*
+   * method to let player1 place all the ships on board, then player2
+   */
+  public void doPlacementPhase() throws IOException {
     player1.doPlacementPhase();
     player2.doPlacementPhase();
   }
+
+  /*
+   * let player1 play a turn, then see if player 2 has lost. Then let player 2
+   * play a turn and see if player 1 has lost. It should repeat this until one
+   * player has lost, then report the outcome.
+   */
+  public void doAttackingPhase() throws IOException {
+    while (true) {
+      player1.playOneturn(player2.theBoard, "Your ocean", "Player " + player2.getName() + "'s ocean");
+      if (player2.theBoard.checklose() == true && player1.theBoard.checklose() != true) {
+        System.out.println("Player " + player1.getName() + " wins");
+        break;
+      }
+      player2.playOneturn(player1.theBoard, "Your ocean", "Player " + player1.getName() + "'s ocean");
+      if (player1.theBoard.checklose() == true && player2.theBoard.checklose() != true) {
+        System.out.println("Player " + player2.getName() + " wins");
+        break;
+      }
+    }
+  }
+
   public static void main(String[] args) throws IOException {
 
-    Board<Character> b1 = new BattleShipBoard<Character>(10, 20,'X');
-    Board<Character> b2 = new BattleShipBoard<Character>(10, 20,'X');
+    Board<Character> b1 = new BattleShipBoard<Character>(10, 20, 'X');
+    Board<Character> b2 = new BattleShipBoard<Character>(10, 20, 'X');
     BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
     V1ShipFactory factory = new V1ShipFactory();
-    TextPlayer p1 = new TextPlayer( b1, input, System.out, factory,"A");
-    TextPlayer p2 = new TextPlayer( b2, input, System.out, factory,"B");
-    App app=new App(p1,p2);
+    TextPlayer p1 = new TextPlayer(b1, input, System.out, factory, "A");
+    TextPlayer p2 = new TextPlayer(b2, input, System.out, factory, "B");
+    App app = new App(p1, p2);
     app.doPlacementPhase();
+    app.doAttackingPhase();
   }
 
 }

@@ -38,6 +38,22 @@ public class TextPlayerTest {
       bytes.reset(); // clear out bytes for next time around
     }
   }
+  @Test
+  public void test_read_coordinate() throws IOException{
+    ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+    TextPlayer player = createTextPlayer(10, 20, "B2\nC8\na4\n", bytes);
+    String prompt = "Where would you like to fire at?";
+    Coordinate[] expected=new Coordinate[3];
+    expected[0] = new Coordinate(1, 2);
+    expected[1] = new Coordinate(2, 8);
+    expected[2] = new Coordinate(0, 4);
+    for (int i = 0; i < expected.length; i++) {
+      Coordinate c=player.readCoordinate(prompt);
+      assertEquals(c,expected[i]);
+      assertEquals(prompt + "\n", bytes.toString());
+      bytes.reset();
+    }
+  }
    /*  
   @Test
   public void test_do_phase_placement() throws IOException{
@@ -258,5 +274,95 @@ public class TextPlayerTest {
     V1ShipFactory shipFactory = new V1ShipFactory();
     assertThrows(EOFException.class, ()->player.readPlacement(" Where would you like to place a Destroyer?"));
 
+  }
+  @Test
+  public void test_play_one_turn() throws IOException{
+    ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+    TextPlayer player = createTextPlayer(10, 1, "A0\n", bytes);
+    Board<Character> enemyBoard=new BattleShipBoard<Character>(10, 1, 'X');
+    V1ShipFactory shipFactory = new V1ShipFactory();
+    Ship<Character> sub1=shipFactory.makeSubmarine(new Placement(new Coordinate(0,0),'H'));
+    enemyBoard.tryAddShip(sub1);
+    player.playOneturn(enemyBoard, "Your ocean", "Player B's ocean");
+    String expected="Player A Where would you like to fire at?"+"\n"+
+      "     Your ocean                           Player B's ocean"+"\n"+
+      "  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9\n"+
+      "A  | | | | | | | | |  A                A s| | | | | | | | |  A\n"+
+      "  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9\n\n"+
+      "you hit a submarine\n";
+    assertEquals(expected, bytes.toString());
+    bytes.reset();
+    
+  }
+  @Test
+  public void test_hit_carrier() throws IOException{
+    ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+    TextPlayer player = createTextPlayer(10, 1, "A0\n", bytes);
+    Board<Character> enemyBoard=new BattleShipBoard<Character>(10, 1, 'X');
+    V1ShipFactory shipFactory = new V1ShipFactory();
+    Ship<Character> sub1=shipFactory.makeCarrier(new Placement(new Coordinate(0,0),'H'));
+    enemyBoard.tryAddShip(sub1);
+    player.playOneturn(enemyBoard, "Your ocean", "Player B's ocean");
+    String expected="Player A Where would you like to fire at?"+"\n"+
+      "     Your ocean                           Player B's ocean"+"\n"+
+      "  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9\n"+
+      "A  | | | | | | | | |  A                A c| | | | | | | | |  A\n"+
+      "  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9\n\n"+
+      "you hit a carrier\n";
+    assertEquals(expected, bytes.toString());
+    bytes.reset();
+  }
+  @Test
+  public void test_hit_destroyer() throws IOException{
+    ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+    TextPlayer player = createTextPlayer(10, 1, "A2\n", bytes);
+    Board<Character> enemyBoard=new BattleShipBoard<Character>(10, 1, 'X');
+    V1ShipFactory shipFactory = new V1ShipFactory();
+    Ship<Character> sub1=shipFactory.makeDestroyer(new Placement(new Coordinate(0,0),'H'));
+    enemyBoard.tryAddShip(sub1);
+    player.playOneturn(enemyBoard, "Your ocean", "Player B's ocean");
+    String expected="Player A Where would you like to fire at?"+"\n"+
+      "     Your ocean                           Player B's ocean"+"\n"+
+      "  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9\n"+
+      "A  | | | | | | | | |  A                A  | |d| | | | | | |  A\n"+
+      "  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9\n\n"+
+      "you hit a destroyer\n";
+    assertEquals(expected, bytes.toString());
+    bytes.reset();
+  }
+  @Test
+  public void test_hit_battleship() throws IOException{
+    ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+    TextPlayer player = createTextPlayer(10, 1, "A2\n", bytes);
+    Board<Character> enemyBoard=new BattleShipBoard<Character>(10, 1, 'X');
+    V1ShipFactory shipFactory = new V1ShipFactory();
+    Ship<Character> sub1=shipFactory.makeBattleship(new Placement(new Coordinate(0,0),'H'));
+    enemyBoard.tryAddShip(sub1);
+    player.playOneturn(enemyBoard, "Your ocean", "Player B's ocean");
+    String expected="Player A Where would you like to fire at?"+"\n"+
+      "     Your ocean                           Player B's ocean"+"\n"+
+      "  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9\n"+
+      "A  | | | | | | | | |  A                A  | |b| | | | | | |  A\n"+
+      "  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9\n\n"+
+      "you hit a battleship\n";
+    assertEquals(expected, bytes.toString());
+    bytes.reset();
+  }
+  @Test
+  public void test_fireoutofbound() throws IOException{
+    ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+    TextPlayer player = createTextPlayer(10, 1, "B0\nA0\n", bytes);
+    Board<Character> enemyBoard=new BattleShipBoard<Character>(10, 1, 'X');
+    player.playOneturn(enemyBoard, "Your ocean", "Player B's ocean");
+    String expected="Player A Where would you like to fire at?"+"\n"+
+      "The coordinate is out of bound"+"\n"+
+      "Player A Where would you like to fire at?"+"\n"+
+      "     Your ocean                           Player B's ocean"+"\n"+
+      "  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9\n"+
+      "A  | | | | | | | | |  A                A X| | | | | | | | |  A\n"+
+      "  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9\n\n"+
+      "you missed\n";
+    assertEquals(expected,bytes.toString());
+    bytes.reset();
   }
 }

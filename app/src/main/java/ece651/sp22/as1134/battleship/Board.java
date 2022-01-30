@@ -10,8 +10,10 @@ public interface Board<T> {
   public T whatIsAtForSelf(Coordinate where);
 
   public T whatIsAtForEnemy(Coordinate where);
-  
+
   public String tryAddShip(Ship<T> toAdd);
 
   public Ship<T> fireAt(Coordinate c);
+
+  public boolean checklose();
 }

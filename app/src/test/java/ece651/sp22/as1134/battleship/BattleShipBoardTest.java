@@ -90,5 +90,22 @@ public class BattleShipBoardTest {
     b.fireAt(new Coordinate(2,2));
     assertEquals(b.whatIsAtForEnemy(new Coordinate(2,2)),'X');
     assertEquals(b.getmissInfo(),'X');
-  }  
+  }
+  @Test
+  public void test_allSunk(){
+    Board<Character> b = new BattleShipBoard<Character>(5, 5,'X');
+    V1ShipFactory fac = new V1ShipFactory();
+    Placement p1 = new Placement(new Coordinate(0, 0), 'V');
+    Placement p2 = new Placement(new Coordinate(0, 1), 'V');
+    Ship<Character> sub1 = fac.makeSubmarine(p1);
+    Ship<Character> sub2 = fac.makeSubmarine(p2);
+    b.tryAddShip(sub1);
+    b.tryAddShip(sub2);
+    b.fireAt(new Coordinate(0,0));
+    b.fireAt(new Coordinate(0,1));
+    assertEquals(false,b.checklose());
+    b.fireAt(new Coordinate(1,0));
+    b.fireAt(new Coordinate(1,1));
+    assertEquals(true,b.checklose());
+  }
 }

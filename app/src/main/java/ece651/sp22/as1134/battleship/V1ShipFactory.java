@@ -10,7 +10,9 @@ public class V1ShipFactory implements AbstractShipFactory<Character>{
     }
     return s;
   }
-
+  /* 
+   * method to construct Submarine, Battleship, Carrier and Destroyer
+   */
   @Override
   public Ship<Character> makeSubmarine(Placement where) {
     // TODO Auto-generated method stub
