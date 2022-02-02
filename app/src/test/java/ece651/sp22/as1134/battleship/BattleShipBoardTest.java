@@ -1,6 +1,10 @@
 package ece651.sp22.as1134.battleship;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertSame;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
+import java.util.HashSet;
 
 import org.junit.jupiter.api.Test;
 
@@ -108,4 +112,28 @@ public class BattleShipBoardTest {
     b.fireAt(new Coordinate(1,1));
     assertEquals(true,b.checklose());
   }
+    
+  @Test
+  public void test_moveship(){
+    BattleShipBoard<Character> b = new BattleShipBoard<Character>(5, 5,'X');
+    V2ShipFactory fac = new V2ShipFactory();
+    Ship<Character> d=fac.makeDestroyer(new Placement(new Coordinate(0,0),'V'));
+    Ship<Character> d2=fac.makeDestroyer(new Placement(new Coordinate(1,2),'V'));
+    b.tryAddShip(d);
+    b.fireAt(new Coordinate(0,0));
+    b.addmovehit(b.findship(new Coordinate(0,0)));
+    b.remainnewhitmarker(new Coordinate(0,0), new Coordinate(1,2), d);
+    assertEquals(b.movehit.containsKey(new Coordinate(0,0)),true);
+    assertEquals(b.movehit.get(new Coordinate(0,0)),'d');
+    assertEquals(b.movehit.containsKey(new Coordinate(0,2)),false);
+    assertEquals(b.hitmap.containsKey(new Coordinate(1,2)),true);
+    assertEquals(b.hitmap.get(new Coordinate(1,2)),null);
+    b.adddeleteship(d);
+    b.fireAt(new Coordinate(0,0));
+    assertEquals(b.movehit.containsKey(new Coordinate(0,0)),false);
+    b.tryAddShip(d2);
+    b.fireAt(new Coordinate(1,2));
+    assertEquals(b.hitmap.containsKey(new Coordinate(1,2)),false);
+  }
+     
 }

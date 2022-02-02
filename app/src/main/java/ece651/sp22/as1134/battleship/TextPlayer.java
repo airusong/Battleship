@@ -128,22 +128,15 @@ public String getName(){
        }
    }
   }
-   /*
-    * method to let player1 play a turn,then
-   * see if player 2 has lost. Then let player 2 play a turn and see if player 1 has lost.
-   * It should repeat this until one player has lost, then report the outcome.
-   *
-   */
-  // public void doAttackingPhase() throws IOException{
-    
-
-  // }
   /*  
    * method to do one turn of attacking 
    */
   public void playOneturn(Board<Character> enemyBoard,String myHeader, String enemyHeader) throws IOException{
-    String prompt = "Player "+this.playername+" Where would you like to fire at?";
-    while(true){
+    String choice=inputReader.readLine();
+    int movechioce=2;
+    if(choice=="F"){
+      String prompt = "Player "+this.playername+" Where would you like to fire at?";
+      while(true){
       try{
         Coordinate c=readCoordinate(prompt);
         enemyBoard.fireAt(c);
@@ -165,5 +158,56 @@ public String getName(){
          out.println("The coordinate is out of bound"); 
       }
     }
+    
+   }
+    if(choice=="M" && movechioce>0){
+      if(moveship()){
+        BoardTextView enemyView=new BoardTextView(enemyBoard);
+        out.println(view.displayMyBoardWithEnemyNextToIt(enemyView,myHeader,enemyHeader));
+        movechioce--;
+      }
+    }
+    
+  }
+  /*
+   *  method to move the ship to a new place
+   */
+  public boolean moveship() throws IOException{
+    Ship<Character> shipname=null;//the original ship to be move
+    Ship<Character> newmovedone=null;//the new ship after moved
+    String prompt="which ship do you want to move?";
+    //    out.println(prompt);
+    while(true){
+      Coordinate old=readCoordinate(prompt);
+      shipname=theBoard.findship(old);
+      if(shipname==null){
+        out.println("please renter a ship!");
+      }else{
+        break;
+      }
+    }
+    
+    try{
+      Function<Placement, Ship<Character>> createFn=shipCreationFns.get(shipname.getName());
+      Placement newplace=readPlacement("Please enter a new placement for you ship");//get the new placement for the ship
+      newmovedone=createFn.apply(newplace);        //constrcut the new ship after moved
+      String message=theBoard.tryAddShip(newmovedone);//try to add the new ship and check if it is correct
+      if(message!=null){
+        out.println("you collides with another ship");
+        //theBoard.adddeleteship(shipname);
+        return false;
+      }
+      Coordinate upperleft=theBoard.addmovehit(shipname);
+      //get the upperleft coordinate of the original ship, store originally hitted position
+      theBoard.remainnewhitmarker(upperleft, newplace.getWhere(), shipname);//store the hit postion of the new ship
+      theBoard.adddeleteship(shipname); //delete the original ship
+    }catch(IllegalArgumentException error){
+      out.println("your new placement is illegal");
+      //      theBoard.adddeleteship(shipname);      
+    }
+    return true;
   }
 }
+
+
+

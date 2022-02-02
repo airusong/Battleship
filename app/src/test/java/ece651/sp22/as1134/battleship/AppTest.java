@@ -18,7 +18,7 @@ import org.junit.jupiter.api.parallel.ResourceLock;
 import org.junit.jupiter.api.parallel.Resources;
 
 class AppTest {
-  //    @Disabled
+  //  @Disabled
   @Test
   @ResourceLock(value = Resources.SYSTEM_OUT, mode = ResourceAccessMode.READ_WRITE)
   void test_main() throws IOException {
@@ -42,7 +42,8 @@ class AppTest {
     String actual = bytes.toString();
     assertEquals(expected, actual);
   }
-   @Test
+  @Disabled 
+  @Test
   @ResourceLock(value = Resources.SYSTEM_OUT, mode = ResourceAccessMode.READ_WRITE)
   void test_main2() throws IOException {
     ByteArrayOutputStream bytes = new ByteArrayOutputStream();

@@ -40,7 +40,7 @@ public class Placement {
     }
     String coordinate=input.substring(0,2);
     char ori=input.charAt(2);
-    if(ori!='H'&&ori!='h'&&ori!='V'&&ori!='v'){
+    if(ori!='H'&&ori!='h'&&ori!='V'&&ori!='v'&&ori!='U'&&ori!='u'&&ori!='R'&&ori!='r'&&ori!='D'&&ori!='d'&&ori!='L'&&ori!='l'){
        throw new IllegalArgumentException("input is wrong");
     }
     Coordinate whe=new Coordinate(coordinate);
