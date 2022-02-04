@@ -2,13 +2,15 @@
 |                      Class Name                        | Total Coverage% | Cvrd Stmts | Ttl Stmts | Cvrdd Brs | Ttl Brs |
 +--------------------------------------------------------+-----------------+------------+-----------+-----------+---------+
 |         ece651.sp22.as1134.battleship.AppTest          |       50        |     17     |    34     |     0     |    0    |
-|           ece651.sp22.as1134.battleship.App            |       88        |     20     |    22     |     3     |    4    |
+|           ece651.sp22.as1134.battleship.App            |       79        |     32     |    37     |     7     |   12    |
+|        ece651.sp22.as1134.battleship.TextPlayer        |       79        |    135     |    159    |    22     |   38    |
+|      ece651.sp22.as1134.battleship.TextPlayerTest      |       84        |    157     |    187    |     4     |    4    |
 |        ece651.sp22.as1134.battleship.Carrierv2         |       100       |     41     |    41     |     8     |    8    |
 |        ece651.sp22.as1134.battleship.Placement         |       100       |     20     |    20     |     6     |    6    |
 |   ece651.sp22.as1134.battleship.AbstractShipFactory    |       100       |     0      |     0     |     0     |    0    |
 |     ece651.sp22.as1134.battleship.BattleShipBoard      |       100       |     73     |    73     |    32     |   32    |
 |  ece651.sp22.as1134.battleship.NoCollisionRuleChecker  |       100       |     6      |     6     |     2     |    2    |
-|        ece651.sp22.as1134.battleship.TextPlayer        |       100       |     88     |    88     |    16     |   16    |
+|          ece651.sp22.as1134.battleship.Player          |       100       |     0      |     0     |     0     |    0    |
 |      ece651.sp22.as1134.battleship.BoardTextView       |       100       |     57     |    57     |    16     |   16    |
 |   ece651.sp22.as1134.battleship.PlacementRuleChecker   |       100       |     6      |     6     |     4     |    4    |
 |     ece651.sp22.as1134.battleship.ShipDisplayInfo      |       100       |     0      |     0     |     0     |    0    |
@@ -21,6 +23,7 @@
 |       ece651.sp22.as1134.battleship.Battleshipv2       |       100       |     29     |    29     |     8     |    8    |
 |          ece651.sp22.as1134.battleship.Board           |       100       |     0      |     0     |     0     |    0    |
 |      ece651.sp22.as1134.battleship.V2ShipFactory       |       100       |     11     |    11     |     2     |    2    |
+|      ece651.sp22.as1134.battleship.ComputerPlayer      |       100       |     33     |    33     |     0     |    0    |
 |        ece651.sp22.as1134.battleship.BasicShip         |       100       |     22     |    22     |     6     |    6    |
 |      ece651.sp22.as1134.battleship.BasicshipTest       |       100       |     0      |     0     |     0     |    0    |
 |    ece651.sp22.as1134.battleship.RectangleShipTest     |       100       |     32     |    32     |     0     |    0    |
@@ -28,20 +31,20 @@
 |    ece651.sp22.as1134.battleship.V1ShipFactoryTest     |       100       |     20     |    20     |     2     |    2    |
 |ece651.sp22.as1134.battleship.NoCollisionRuleCheckerTest|       100       |     23     |    23     |     0     |    0    |
 | ece651.sp22.as1134.battleship.PlacementRuleCheckerTest |       100       |     0      |     0     |     0     |    0    |
-|      ece651.sp22.as1134.battleship.TextPlayerTest      |       100       |    146     |    146    |     4     |    4    |
 |    ece651.sp22.as1134.battleship.V2ShipFactoryTest     |       100       |     20     |    20     |     2     |    2    |
 |ece651.sp22.as1134.battleship.SimpleShipDisplayInfoTest |       100       |     3      |     3     |     0     |    0    |
 |      ece651.sp22.as1134.battleship.PlacementTest       |       100       |     29     |    29     |     0     |    0    |
 |      ece651.sp22.as1134.battleship.Carrierv2Test       |       100       |     50     |    50     |     0     |    0    |
 |   ece651.sp22.as1134.battleship.BattleShipBoardTest    |       100       |     87     |    87     |     4     |    4    |
 |    ece651.sp22.as1134.battleship.BoardTextViewTest     |       100       |     68     |    68     |     0     |    0    |
+|    ece651.sp22.as1134.battleship.ComputerPlayerTest    |       100       |     15     |    15     |     0     |    0    |
 | ece651.sp22.as1134.battleship.InBoundsRuleCheckerTest  |       100       |     18     |    18     |     0     |    0    |
 |      ece651.sp22.as1134.battleship.CoordinateTest      |       100       |     37     |    37     |     0     |    0    |
 +--------------------------------------------------------+-----------------+------------+-----------+-----------+---------+
-|                         Totals                         |       98        |    1027    |   1046    |    139    |   140   |
+|                         Totals                         |       93        |    1145    |   1221    |    149    |   170   |
 +--------------------------------------------------------+-----------------+------------+-----------+-----------+---------+
 
 
 Remove Colors From All Buffers
 
-Fundamental finished at Wed Feb  2 14:43:28
+Fundamental finished at Fri Feb  4 16:24:47

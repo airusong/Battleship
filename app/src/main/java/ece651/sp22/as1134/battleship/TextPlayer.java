@@ -8,6 +8,7 @@ import java.io.Reader;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.function.Function;
 /**
    * Constructs a TextPlayer
@@ -21,7 +22,7 @@ import java.util.function.Function;
    * @param shipCreationFns:Hashmap connect ship's name with 
    */
 
-public class TextPlayer {
+public class TextPlayer extends Player{
   final Board<Character> theBoard;
   final BoardTextView view;
   final BufferedReader inputReader;
@@ -30,6 +31,8 @@ public class TextPlayer {
   private final String playername;
   final ArrayList<String> shipsToPlace;
   final HashMap<String, Function<Placement, Ship<Character>>> shipCreationFns;
+  int movechoice;
+  int scanchoice;
   public TextPlayer(Board<Character> theBoard,Reader inputSource, PrintStream out,AbstractShipFactory<Character> shipFactory,String name) {
     this.theBoard = theBoard;
     this.view = new BoardTextView(theBoard);
@@ -41,6 +44,8 @@ public class TextPlayer {
     this.shipCreationFns=new HashMap<String, Function<Placement, Ship<Character>>>();
     setupShipCreationMap();
     setupShipCreationList();
+    movechoice=2;
+    scanchoice=1;
    }
   /*
    * method to creat the hashmap which key is the ships and value is the function to create ships on board
@@ -62,8 +67,11 @@ public class TextPlayer {
      shipsToPlace.addAll(Collections.nCopies(2, "Carrier"));
 
   }
-public String getName(){
+  public String getName(){
       return playername;
+  }
+  public Board<Character> getBoard(){
+    return theBoard;
   }
   /*
    * method to read the placement of the ship from user 
@@ -88,8 +96,15 @@ public String getName(){
   public Coordinate readCoordinate(String prompt) throws IOException{
     Coordinate c=null;
     out.println(prompt);
-    String s = inputReader.readLine();
-    c=new Coordinate(s);
+    try{
+      String s = inputReader.readLine();
+      c=new Coordinate(s);
+       if(s==null){
+          throw new EOFException();
+       }
+    }catch(IllegalArgumentException error) {
+       throw new IllegalArgumentException("The coordinate is invalid");
+        }
     return c;
   }
   /*
@@ -132,16 +147,34 @@ public String getName(){
    * method to do one turn of attacking 
    */
   public void playOneturn(Board<Character> enemyBoard,String myHeader, String enemyHeader) throws IOException{
+    BoardTextView enemyView=new BoardTextView(enemyBoard);
+    out.println(view.displayMyBoardWithEnemyNextToIt(enemyView,myHeader,enemyHeader));
+    out.println("F Fire at a square\n"+
+                "M Move a ship to another square ("+movechoice+" remaining)\n"+
+                "S Sonar scan ("+scanchoice+" remaining)\n"+
+                "Player "+this.playername+", what would you like to do?\n");
     String choice=inputReader.readLine();
-    int movechioce=2;
-    if(choice=="F"){
+     if(choice.equals("M") && movechoice>0){
+        boolean result=moveship();
+        //BoardTextView enemyView=new BoardTextView(enemyBoard);
+        out.println(view.displayMyBoardWithEnemyNextToIt(enemyView,myHeader,enemyHeader));
+        if(result==true){
+          movechoice--;
+        }
+     }
+     else if(choice.equals("S") && scanchoice>0){
+      sonarScan(enemyBoard);
+      scanchoice--;
+    }
+    //if the player want have run out the movechioce and scan choice,game will prompt to fire at a space 
+     else if(choice.equals("F")||movechoice==0||scanchoice==0){
       String prompt = "Player "+this.playername+" Where would you like to fire at?";
       while(true){
       try{
         Coordinate c=readCoordinate(prompt);
         enemyBoard.fireAt(c);
-        BoardTextView enemyView=new BoardTextView(enemyBoard);
-        out.println(view.displayMyBoardWithEnemyNextToIt(enemyView,myHeader,enemyHeader));
+        //        BoardTextView enemyView=new BoardTextView(enemyBoard);
+        //out.println(view.displayMyBoardWithEnemyNextToIt(enemyView,myHeader,enemyHeader));
         if(enemyBoard.whatIsAtForEnemy(c)=='X'){
           out.println("you missed");
         }else if(enemyBoard.whatIsAtForEnemy(c)=='s'){
@@ -153,21 +186,14 @@ public String getName(){
         }else{
           out.println("you hit a carrier");
         }
+        out.println(view.displayMyBoardWithEnemyNextToIt(enemyView,myHeader,enemyHeader));
         break;
       }catch(IllegalArgumentException error){
          out.println("The coordinate is out of bound"); 
       }
     }
-    
    }
-    if(choice=="M" && movechioce>0){
-      if(moveship()){
-        BoardTextView enemyView=new BoardTextView(enemyBoard);
-        out.println(view.displayMyBoardWithEnemyNextToIt(enemyView,myHeader,enemyHeader));
-        movechioce--;
-      }
-    }
-    
+   
   }
   /*
    *  method to move the ship to a new place
@@ -178,22 +204,25 @@ public String getName(){
     String prompt="which ship do you want to move?";
     //    out.println(prompt);
     while(true){
-      Coordinate old=readCoordinate(prompt);
-      shipname=theBoard.findship(old);
-      if(shipname==null){
+      try{
+        Coordinate old=readCoordinate(prompt);
+        shipname=theBoard.findship(old);
+        if(shipname==null){
+          out.println("please renter a ship!");
+        }else{
+          break;
+        }
+      }catch(IllegalArgumentException error){
         out.println("please renter a ship!");
-      }else{
-        break;
       }
     }
-    
     try{
       Function<Placement, Ship<Character>> createFn=shipCreationFns.get(shipname.getName());
       Placement newplace=readPlacement("Please enter a new placement for you ship");//get the new placement for the ship
       newmovedone=createFn.apply(newplace);        //constrcut the new ship after moved
       String message=theBoard.tryAddShip(newmovedone);//try to add the new ship and check if it is correct
       if(message!=null){
-        out.println("you collides with another ship");
+        out.println(message);
         //theBoard.adddeleteship(shipname);
         return false;
       }
@@ -203,11 +232,77 @@ public String getName(){
       theBoard.adddeleteship(shipname); //delete the original ship
     }catch(IllegalArgumentException error){
       out.println("your new placement is illegal");
-      //      theBoard.adddeleteship(shipname);      
+      return false;      //      theBoard.adddeleteship(shipname);      
     }
     return true;
   }
+  /*
+   * method to do a sonar scan
+   */
+  public void sonarScan(Board<Character> enemyBoard) throws IOException{
+    Coordinate c=readCoordinate("Please enter a coordinate to begin sonar scan");
+    HashSet<Coordinate> set=new HashSet<>();
+    int sub=0;
+    int des=0;
+    int car=0;
+    int bat=0;
+    int x=c.getRow();
+    int y=c.getColumn();
+    int width=theBoard.getWidth();
+    int height=theBoard.getHeight();
+    set.add(new Coordinate(x,y-3));
+    set.add(new Coordinate(x+1,y-2));
+    set.add(new Coordinate(x,y-2));
+    set.add(new Coordinate(x-1,y-2));
+    set.add(new Coordinate(x-2,y-1));
+    set.add(new Coordinate(x-1,y-1));
+    set.add(new Coordinate(x,y-1));
+    set.add(new Coordinate(x+1,y-1));
+    set.add(new Coordinate(x+2,y-1));
+    set.add(new Coordinate(x-3,y));
+    set.add(new Coordinate(x-2,y));
+    set.add(new Coordinate(x-1,y));
+    set.add(c);
+    set.add(new Coordinate(x+1,y));
+    set.add(new Coordinate(x+2,y));
+    set.add(new Coordinate(x+3,y));
+    set.add(new Coordinate(x-2,y+1));
+    set.add(new Coordinate(x-1,y+1));
+    set.add(new Coordinate(x,y+1));
+    set.add(new Coordinate(x+1,y+1));
+    set.add(new Coordinate(x+2,y+1));
+    set.add(new Coordinate(x-1,y+2));
+    set.add(new Coordinate(x,y+2));
+    set.add(new Coordinate(x+1,y+2));
+    set.add(new Coordinate(x,y+3));
+    for(Coordinate s:set){
+      if(s.getRow()>=0&&s.getRow()<height&&s.getColumn()>=0&&s.getColumn()<width){
+        Ship<Character> ship=theBoard.findship(s);
+        if(ship!=null){
+          if(ship.getName().equals("Submarine")){
+            sub++;
+          }
+          else if(ship.getName().equals("Destroyer")){
+            des++;
+          }
+          else if(ship.getName().equals("Carrier")){
+            car++;
+          }
+          else if(ship.getName().equals("BattleShip")){
+            bat++;
+          }
+        }else{
+          continue;
+        }
+      }
+    }
+    out.println("Submarines occupy "+sub+" squares\n"+
+                "Destroyers occupy "+des+" squares\n"+
+                "Battleships occupy "+bat+" squares\n"+
+                "Carriers occupy "+car+" square\n");
+  }
 }
+
 
 
 

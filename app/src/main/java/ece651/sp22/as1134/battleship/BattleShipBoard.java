@@ -91,18 +91,16 @@ public class BattleShipBoard<T> implements Board<T> {
   }
 
   protected T whatIsAt(Coordinate where, boolean isSelf) {
+    if (isSelf == false && enemyMisses.contains(where) == true) {
+      return missInfo;
+    }
     for (Ship<T> s : myShips) {
       if (s.occupiesCoordinates(where)) {
         return s.getDisplayInfoAt(where, isSelf);
       }
     }
-    if (isSelf == false && enemyMisses.contains(where) == true) {
-      return missInfo;
-    }
     return null;
-
   }
-
   /**
    * method to fire at enemy ship
    */
@@ -112,7 +110,7 @@ public class BattleShipBoard<T> implements Board<T> {
     }
     for (Ship<T> ship : myShips) {
       if (ship.occupiesCoordinates(c)) {
-        if(enemyMisses.contains(c)){//if the player misses a loaction before but hit a ship at that place again, remove the
+          if(enemyMisses.contains(c)){//if the player misses a loaction before but hit a ship at that place again, remove the
           enemyMisses.remove(c);    // coordinate from the enemyMisses set
         }
         if(hitmap.containsKey(c)){
@@ -173,7 +171,7 @@ public class BattleShipBoard<T> implements Board<T> {
         movehit.put(c, whatIsAtForEnemy(c));
       }
       x = Math.min(c.getRow(), x);
-      y = Math.min(c.getRow(), y);
+      y = Math.min(c.getColumn(), y);
     }
     return new Coordinate(x, y);
   }

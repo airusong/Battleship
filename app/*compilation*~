@@ -1,5 +1,5 @@
 -*- mode: compilation; default-directory: "~/ece651-sp22-as1134-battleship/app/" -*-
-Compilation started at Fri Jan 28 18:32:29
+Compilation started at Thu Feb  3 17:07:52
 
 /usr/local/bin/gradle clean cloverGenerateReport
 > Task :app:clean
@@ -17,16 +17,61 @@ RectangleShipTest > test_coordinate() STANDARD_OUT
     (1, 0)
     (0, 0)
 
-RectangleShipTest > test_get_display() FAILED
-    org.opentest4j.AssertionFailedError: expected: <*> but was: <s>
+TextPlayerTest > moveship3() FAILED
+    org.opentest4j.AssertionFailedError: expected: <which ship do you want to move?
+    Please enter a new placement for you ship
+    That placement is invalid: the ship overlaps another ship.
+    > but was: <which ship do you want to move?
+    Please enter a new placement for you ship
+    you collides with another ship
+    >
         at app//org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
         at app//org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
         at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
         at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
-        at app//org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1034)
-        at app//ece651.sp22.as1134.battleship.RectangleShipTest.test_get_display(Unknown Source)
+        at app//org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1124)
+        at app//ece651.sp22.as1134.battleship.TextPlayerTest.moveship3(Unknown Source)
 
-35 tests completed, 1 failed
+TextPlayerTest > test_play_one_turn2() FAILED
+    org.opentest4j.AssertionFailedError: expected: <F Fire at a square
+    M Move a ship to another square (2 remaining)
+    S Sonar scan (1 remaining)
+    Player A, what would you like to do?
+
+    which ship do you want to move?
+    Please enter a new placement for you ship
+         Your ocean                           Player B's ocean
+      0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+    A  | | | | | | |s|*|  A                A  | | | | | | | | |  A
+      0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+
+    > but was: <     Your ocean                           Player B's ocean
+      0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+    A s|*| | | | | | | |  A                A  | | | | | | | | |  A
+      0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+
+    F Fire at a square
+    M Move a ship to another square (2 remaining)
+    S Sonar scan (1 remaining)
+    Player A, what would you like to do?
+
+    which ship do you want to move?
+    Please enter a new placement for you ship
+    That placement is invalid: the ship goes off the right of the board.
+         Your ocean                           Player B's ocean
+      0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+    A s|*| | | | | | | |  A                A  | | | | | | | | |  A
+      0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+
+    >
+        at app//org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
+        at app//org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
+        at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
+        at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
+        at app//org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1124)
+        at app//ece651.sp22.as1134.battleship.TextPlayerTest.test_play_one_turn2(Unknown Source)
+
+51 tests completed, 2 failed, 2 skipped
 
 FAILURE: Build failed with an exception.
 
@@ -50,4 +95,4 @@ See https://docs.gradle.org/7.3.3/userguide/command_line_interface.html#sec:comm
 BUILD FAILED in 3s
 6 actionable tasks: 6 executed
 
-Compilation exited abnormally with code 1 at Fri Jan 28 18:32:33
+Compilation exited abnormally with code 1 at Thu Feb  3 17:07:56
