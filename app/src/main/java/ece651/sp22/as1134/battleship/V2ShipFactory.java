@@ -1,5 +1,8 @@
 package ece651.sp22.as1134.battleship;
-
+/*
+ * construct V2ShipFactory 
+ * methods to constrcut v2 ships
+ */
 public class V2ShipFactory implements AbstractShipFactory<Character> {
   protected Ship<Character> createShip(Placement where, int w, int h, char letter, String name){
     Ship<Character> s;
@@ -26,7 +29,7 @@ public class V2ShipFactory implements AbstractShipFactory<Character> {
 
   @Override
   public Ship<Character> makeBattleship(Placement where) {
-    Ship<Character> s = new Battleshipv2<>("BattleShip", where.getWhere(), where.getOrientation(), 'b', '*');
+    Ship<Character> s = new Battleshipv2<>("Battleship", where.getWhere(), where.getOrientation(), 'b', '*');
     return s;
   }
 

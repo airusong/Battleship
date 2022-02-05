@@ -118,8 +118,16 @@ public class TextPlayerTest {
     TextPlayer player = createTextPlayer(2, 4, "", bytes);
     V1ShipFactory shipFactory = new V1ShipFactory();
     assertThrows(EOFException.class, ()->player.readPlacement(" Where would you like to place a Destroyer?"));
-
   }
+  //@Disabled
+  @Test
+  public void test_eofException2() throws IOException{
+    ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+    TextPlayer player = createTextPlayer(2, 4, "", bytes);
+    V1ShipFactory shipFactory = new V1ShipFactory();
+    assertThrows(EOFException.class, ()->player.readCoordinate(" Where would you like to place a Destroyer?"));
+  }
+  
   // @Disabled
   @Test
   public void test_play_one_turn() throws IOException{
@@ -179,76 +187,46 @@ public class TextPlayerTest {
     assertEquals(expected, bytes.toString());
     bytes.reset();
   }
-  @Disabled
+  //@Disabled
   @Test
   public void test_hit_carrier() throws IOException{
     ByteArrayOutputStream bytes = new ByteArrayOutputStream();
-    TextPlayer player = createTextPlayer(10, 1, "F\nA0\n", bytes);
+    TextPlayer player = createTextPlayer(10, 1, "F\n00\nA0\n", bytes);
     Board<Character> enemyBoard=new BattleShipBoard<Character>(10, 1, 'X');
     V1ShipFactory shipFactory = new V1ShipFactory();
     Ship<Character> sub1=shipFactory.makeCarrier(new Placement(new Coordinate(0,0),'H'));
     enemyBoard.tryAddShip(sub1);
     player.playOneturn(enemyBoard, "Your ocean", "Player B's ocean");
-    String expected="F Fire at a square\n"+
+    String expected="     Your ocean                           Player B's ocean"+"\n"+
+                    "  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9\n"+
+                    "A  | | | | | | | | |  A                A  | | | | | | | | |  A\n"+
+                    "  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9\n\n"+
+                    "F Fire at a square\n"+
                     "M Move a ship to another square (2 remaining)\n"+
                     "S Sonar scan (1 remaining)\n"+
                     "Player A, what would you like to do?\n\n"+ 
                     "Player A Where would you like to fire at?"+"\n"+
+                    "The coordinate is wrong\n"+
+                    "Player A Where would you like to fire at?"+"\n"+
+      "you hit a carrier\n"+
       "     Your ocean                           Player B's ocean"+"\n"+
       "  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9\n"+
       "A  | | | | | | | | |  A                A c| | | | | | | | |  A\n"+
-      "  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9\n\n"+
-      "you hit a carrier\n";
+      "  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9\n\n";
     assertEquals(expected, bytes.toString());
     bytes.reset();
   }
-  @Disabled
   @Test
-  public void test_hit_destroyer() throws IOException{
+  public void play_sonar() throws IOException{
     ByteArrayOutputStream bytes = new ByteArrayOutputStream();
-    TextPlayer player = createTextPlayer(10, 1, "F\nA2\n", bytes);
+    TextPlayer player = createTextPlayer(10, 1, "S\nA0\n", bytes);
     Board<Character> enemyBoard=new BattleShipBoard<Character>(10, 1, 'X');
     V1ShipFactory shipFactory = new V1ShipFactory();
-    Ship<Character> sub1=shipFactory.makeDestroyer(new Placement(new Coordinate(0,0),'H'));
+    Ship<Character> sub1=shipFactory.makeCarrier(new Placement(new Coordinate(0,0),'H'));
     enemyBoard.tryAddShip(sub1);
     player.playOneturn(enemyBoard, "Your ocean", "Player B's ocean");
-    String expected="F Fire at a square\n"+
-                    "M Move a ship to another square (2 remaining)\n"+
-                    "S Sonar scan (1 remaining)\n"+
-                    "Player A, what would you like to do?\n\n"+ 
-      "Player A Where would you like to fire at?"+"\n"+
-      "     Your ocean                           Player B's ocean"+"\n"+
-      "  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9\n"+
-      "A  | | | | | | | | |  A                A  | |d| | | | | | |  A\n"+
-      "  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9\n\n"+
-      "you hit a destroyer\n";
-    assertEquals(expected, bytes.toString());
-    bytes.reset();
+    assertEquals(player.scanchoice,0);
   }
-  @Disabled  
-  @Test
-  public void test_hit_battleship() throws IOException{
-    ByteArrayOutputStream bytes = new ByteArrayOutputStream();
-    TextPlayer player = createTextPlayer(10, 1, "F\nA2\n", bytes);
-    Board<Character> enemyBoard=new BattleShipBoard<Character>(10, 1, 'X');
-    V1ShipFactory shipFactory = new V1ShipFactory();
-    Ship<Character> sub1=shipFactory.makeBattleship(new Placement(new Coordinate(0,0),'H'));
-    enemyBoard.tryAddShip(sub1);
-    player.playOneturn(enemyBoard, "Your ocean", "Player B's ocean");
-    String expected="F Fire at a square\n"+
-                    "M Move a ship to another square (2 remaining)\n"+
-                    "S Sonar scan (1 remaining)\n"+
-                    "Player A, what would you like to do?\n\n"+ 
-      "Player A Where would you like to fire at?"+"\n"+
-      "     Your ocean                           Player B's ocean"+"\n"+
-      "  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9\n"+
-      "A  | | | | | | | | |  A                A  | |b| | | | | | |  A\n"+
-      "  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9\n\n"+
-      "you hit a battleship\n";
-    assertEquals(expected, bytes.toString());
-    bytes.reset();
-  }
-  //  @Disabled
   @Test
   public void test_fireoutofbound() throws IOException{
     ByteArrayOutputStream bytes = new ByteArrayOutputStream();
@@ -273,7 +251,7 @@ public class TextPlayerTest {
                     "S Sonar scan (1 remaining)\n"+
                     "Player A, what would you like to do?\n\n"+ 
       "Player A Where would you like to fire at?"+"\n"+
-      "The coordinate is out of bound"+"\n"+
+      "The coordinate is wrong"+"\n"+
       "Player A Where would you like to fire at?"+"\n"+
       "you missed\n"+
       "     Your ocean                           Player B's ocean"+"\n"+
@@ -338,6 +316,33 @@ public class TextPlayerTest {
     assertEquals(bytes.toString(),"which ship do you want to move?\nPlease enter a new placement for you ship\nwhich ship do you want to move?\nPlease enter a new placement for you ship\n");
     
   }
+
+  @Test
+  public void moveship4() throws IOException{
+    ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+    BufferedReader input = new BufferedReader(new StringReader("AA\nA0\n68h\n"));
+    PrintStream output = new PrintStream(bytes, true);
+    Board<Character> board = new BattleShipBoard<Character>(10, 1,'X');
+    V2ShipFactory shipFactory = new V2ShipFactory();
+    TextPlayer player=new  TextPlayer(board, input, output, shipFactory,"A");
+    Ship<Character> sub=shipFactory.makeSubmarine(new Placement(new Coordinate(0,0),'H'));
+    board.tryAddShip(sub);
+    player.moveship(); 
+    assertEquals(bytes.toString(),"which ship do you want to move?\nplease renter a ship!\nwhich ship do you want to move?\nPlease enter a new placement for you ship\nyour new placement is illegal\n");
+  }
+    @Test
+  public void moveship5() throws IOException{
+    ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+    BufferedReader input = new BufferedReader(new StringReader("A5\nA0\n68h\n"));
+    PrintStream output = new PrintStream(bytes, true);
+    Board<Character> board = new BattleShipBoard<Character>(10, 1,'X');
+    V2ShipFactory shipFactory = new V2ShipFactory();
+    TextPlayer player=new  TextPlayer(board, input, output, shipFactory,"A");
+    Ship<Character> sub=shipFactory.makeSubmarine(new Placement(new Coordinate(0,0),'H'));
+    board.tryAddShip(sub);
+    player.moveship(); 
+    assertEquals(bytes.toString(),"which ship do you want to move?\nplease renter a ship!\nwhich ship do you want to move?\nPlease enter a new placement for you ship\nyour new placement is illegal\n");
+  }
   //  @Disabled
   @Test
   public void moveship2() throws IOException{
@@ -393,15 +398,19 @@ public class TextPlayerTest {
     V2ShipFactory shipFactory = new V2ShipFactory();
     TextPlayer player=new  TextPlayer(board, input, output, shipFactory,"A");
     Ship<Character> sub=shipFactory.makeSubmarine(new Placement(new Coordinate(0,0),'V'));
-    Ship<Character> sub2=shipFactory.makeSubmarine(new Placement(new Coordinate(0,2),'V'));
+    Ship<Character> des=shipFactory.makeDestroyer(new Placement(new Coordinate(0,2),'V'));
+    Ship<Character> bat=shipFactory.makeBattleship(new Placement(new Coordinate(2,0),'R'));
+    Ship<Character> car=shipFactory.makeCarrier(new Placement(new Coordinate(0,3),'U')); 
     board.tryAddShip(sub);
-    board.tryAddShip(sub2);
+    board.tryAddShip(des);
+    board.tryAddShip(bat);
+    board.tryAddShip(car);
     player.sonarScan(board);
     String expected="Please enter a coordinate to begin sonar scan\n"+
-                    "Submarines occupy 3 squares\n"+
-                    "Destroyers occupy 0 squares\n"+
-                    "Battleships occupy 0 squares\n"+
-                    "Carriers occupy 0 square\n\n";
+                    "Submarines occupy 1 squares\n"+
+                    "Destroyers occupy 3 squares\n"+
+                    "Battleships occupy 3 squares\n"+
+                    "Carriers occupy 6 square\n\n";
     assertEquals(bytes.toString(),expected);
   }
 }

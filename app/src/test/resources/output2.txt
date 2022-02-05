@@ -33,8 +33,6 @@ Player A: you are going to place the following ships (which are all rectangular)
 2 Carriers that are 1x6
 
 Player A Where would you like to place a Submarine?
-That placement is invalid: it does not have the correct format.
-Player A Where would you like to place a Submarine?
   0|1|2|3|4|5|6|7|8|9
 A s|s| | | | | | | |  A
 B  | | | | | | | | |  B
@@ -155,8 +153,6 @@ T  | | | | | | | | |  T
   0|1|2|3|4|5|6|7|8|9
 
 Player A Where would you like to place a Battleship?
-That placement is invalid: it does not have the correct format.
-Player A Where would you like to place a Battleship?
   0|1|2|3|4|5|6|7|8|9
 A s|s| | | | | | | |  A
 B s|s| | | | | | | |  B
@@ -204,8 +200,6 @@ S  | | | | | | | | |  S
 T  | | | | | | | | |  T
   0|1|2|3|4|5|6|7|8|9
 
-Player A Where would you like to place a Battleship?
-That placement is invalid: the ship overlaps another ship.
 Player A Where would you like to place a Battleship?
   0|1|2|3|4|5|6|7|8|9
 A s|s| | | | | | | |  A
@@ -449,7 +443,7 @@ A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
 B s|s| |c| | | | | |  B                B  | | | | | | | | |  B
 C d|d|d|c|c| | | | |  C                C  | | | | | | | | |  C
 D d|d|d|c|c| | | | |  D                D  | | | | | | | | |  D
-E d|d|d|c|c| | | | |  E                E  | | | | | | | | |  E
+E d|d|d|c|*| | | | |  E                E  | | | | | | | | |  E
 F b| | |c| | | | | |  F                F  | | | | | | | | |  F
 G b|b| |c|c| | | | |  G                G  | | | | | | | | |  G
 H b| | |c|c| | | | |  H                H  | | | | | | | | |  H
@@ -480,7 +474,7 @@ A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
 B s|s| |c| | | | | |  B                B s| | | | | | | | |  B
 C d|d|d|c|c| | | | |  C                C  | | | | | | | | |  C
 D d|d|d|c|c| | | | |  D                D  | | | | | | | | |  D
-E d|d|d|c|c| | | | |  E                E  | | | | | | | | |  E
+E d|d|d|c|*| | | | |  E                E  | | | | | | | | |  E
 F b| | |c| | | | | |  F                F  | | | | | | | | |  F
 G b|b| |c|c| | | | |  G                G  | | | | | | | | |  G
 H b| | |c|c| | | | |  H                H  | | | | | | | | |  H
@@ -504,9 +498,9 @@ A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
 B s|s| |c| | | | | |  B                B s| | | | | | | | |  B
 C d|d|d|c|c| | | | |  C                C  | | | | | | | | |  C
 D d|d|d|c|c| | | | |  D                D  | | | | | | | | |  D
-E d|d|d|c|c| | | | |  E                E  | | | | | | | | |  E
+E d|d|d|c|*| | | | |  E                E  | | | | | | | | |  E
 F b| | |c| | | | | |  F                F  | | | | | | | | |  F
-G b|b| |c|c| | | | |  G                G  | | | | | | | | |  G
+G b|b| |c|*| | | | |  G                G  | | | | | | | | |  G
 H b| | |c|c| | | | |  H                H  | | | | | | | | |  H
 I b| | | |c| | | | |  I                I  | | | | | | | | |  I
 J b|b| | | | | | | |  J                J  | | | | | | | | |  J
@@ -535,9 +529,9 @@ A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
 B s|s| |c| | | | | |  B                B s|s| | | | | | | |  B
 C d|d|d|c|c| | | | |  C                C  | | | | | | | | |  C
 D d|d|d|c|c| | | | |  D                D  | | | | | | | | |  D
-E d|d|d|c|c| | | | |  E                E  | | | | | | | | |  E
+E d|d|d|c|*| | | | |  E                E  | | | | | | | | |  E
 F b| | |c| | | | | |  F                F  | | | | | | | | |  F
-G b|b| |c|c| | | | |  G                G  | | | | | | | | |  G
+G b|b| |c|*| | | | |  G                G  | | | | | | | | |  G
 H b| | |c|c| | | | |  H                H  | | | | | | | | |  H
 I b| | | |c| | | | |  I                I  | | | | | | | | |  I
 J b|b| | | | | | | |  J                J  | | | | | | | | |  J
@@ -559,9 +553,9 @@ A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
 B s|s| |c| | | | | |  B                B s|s| | | | | | | |  B
 C d|d|d|c|c| | | | |  C                C  | | | | | | | | |  C
 D d|d|d|c|c| | | | |  D                D  | | | | | | | | |  D
-E d|d|d|c|c| | | | |  E                E  | | | | | | | | |  E
+E d|d|d|c|*| | | | |  E                E  | | | | | | | | |  E
 F b| | |c| | | | | |  F                F  | | | | | | | | |  F
-G b|b| |c|c| | | | |  G                G  | | | | | | | | |  G
+G b|b| |c|*| | | | |  G                G  | | | | | | | | |  G
 H b| | |c|c| | | | |  H                H  | | | | | | | | |  H
 I b| | | |c| | | | |  I                I  | | | | | | | | |  I
 J b|b| | | | | | | |  J                J  | | | | | | | | |  J
@@ -590,9 +584,9 @@ A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
 B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
 C d|d|d|c|c| | | | |  C                C  | | | | | | | | |  C
 D d|d|d|c|c| | | | |  D                D  | | | | | | | | |  D
-E d|d|d|c|c| | | | |  E                E  | | | | | | | | |  E
+E d|d|d|c|*| | | | |  E                E  | | | | | | | | |  E
 F b| | |c| | | | | |  F                F  | | | | | | | | |  F
-G b|b| |c|c| | | | |  G                G  | | | | | | | | |  G
+G b|b| |c|*| | | | |  G                G  | | | | | | | | |  G
 H b| | |c|c| | | | |  H                H  | | | | | | | | |  H
 I b| | | |c| | | | |  I                I  | | | | | | | | |  I
 J b|b| | | | | | | |  J                J  | | | | | | | | |  J
@@ -614,9 +608,9 @@ A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
 B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
 C d|d|d|c|c| | | | |  C                C  | | | | | | | | |  C
 D d|d|d|c|c| | | | |  D                D  | | | | | | | | |  D
-E d|d|d|c|c| | | | |  E                E  | | | | | | | | |  E
+E d|d|d|c|*| | | | |  E                E  | | | | | | | | |  E
 F b| | |c| | | | | |  F                F  | | | | | | | | |  F
-G b|b| |c|c| | | | |  G                G  | | | | | | | | |  G
+G b|b| |c|*| | | | |  G                G  | | | | | | | | |  G
 H b| | |c|c| | | | |  H                H  | | | | | | | | |  H
 I b| | | |c| | | | |  I                I  | | | | | | | | |  I
 J b|b| | | | | | | |  J                J  | | | | | | | | |  J
@@ -645,9 +639,9 @@ A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
 B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
 C d|d|d|c|c| | | | |  C                C d| | | | | | | | |  C
 D d|d|d|c|c| | | | |  D                D  | | | | | | | | |  D
-E d|d|d|c|c| | | | |  E                E  | | | | | | | | |  E
+E d|d|d|c|*| | | | |  E                E  | | | | | | | | |  E
 F b| | |c| | | | | |  F                F  | | | | | | | | |  F
-G b|b| |c|c| | | | |  G                G  | | | | | | | | |  G
+G b|b| |c|*| | | | |  G                G  | | | | | | | | |  G
 H b| | |c|c| | | | |  H                H  | | | | | | | | |  H
 I b| | | |c| | | | |  I                I  | | | | | | | | |  I
 J b|b| | | | | | | |  J                J  | | | | | | | | |  J
@@ -669,9 +663,9 @@ A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
 B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
 C d|d|d|c|c| | | | |  C                C d| | | | | | | | |  C
 D d|d|d|c|c| | | | |  D                D  | | | | | | | | |  D
-E d|d|d|c|c| | | | |  E                E  | | | | | | | | |  E
+E d|d|d|c|*| | | | |  E                E  | | | | | | | | |  E
 F b| | |c| | | | | |  F                F  | | | | | | | | |  F
-G b|b| |c|c| | | | |  G                G  | | | | | | | | |  G
+G b|b| |c|*| | | | |  G                G  | | | | | | | | |  G
 H b| | |c|c| | | | |  H                H  | | | | | | | | |  H
 I b| | | |c| | | | |  I                I  | | | | | | | | |  I
 J b|b| | | | | | | |  J                J  | | | | | | | | |  J
@@ -700,9 +694,9 @@ A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
 B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
 C d|d|d|c|c| | | | |  C                C d|d| | | | | | | |  C
 D d|d|d|c|c| | | | |  D                D  | | | | | | | | |  D
-E d|d|d|c|c| | | | |  E                E  | | | | | | | | |  E
+E d|d|d|c|*| | | | |  E                E  | | | | | | | | |  E
 F b| | |c| | | | | |  F                F  | | | | | | | | |  F
-G b|b| |c|c| | | | |  G                G  | | | | | | | | |  G
+G b|b| |c|*| | | | |  G                G  | | | | | | | | |  G
 H b| | |c|c| | | | |  H                H  | | | | | | | | |  H
 I b| | | |c| | | | |  I                I  | | | | | | | | |  I
 J b|b| | | | | | | |  J                J  | | | | | | | | |  J
@@ -724,64 +718,9 @@ A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
 B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
 C d|d|d|c|c| | | | |  C                C d|d| | | | | | | |  C
 D d|d|d|c|c| | | | |  D                D  | | | | | | | | |  D
-E d|d|d|c|c| | | | |  E                E  | | | | | | | | |  E
+E d|d|d|c|*| | | | |  E                E  | | | | | | | | |  E
 F b| | |c| | | | | |  F                F  | | | | | | | | |  F
-G b|b| |c|c| | | | |  G                G  | | | | | | | | |  G
-H b| | |c|c| | | | |  H                H  | | | | | | | | |  H
-I b| | | |c| | | | |  I                I  | | | | | | | | |  I
-J b|b| | | | | | | |  J                J  | | | | | | | | |  J
-K b| | | | | | | | |  K                K  | | | | | | | | |  K
-L b| | | | | | | | |  L                L  | | | | | | | | |  L
-M b|b| | | | | | | |  M                M  | | | | | | | | |  M
-N b| | | | | | | | |  N                N  | | | | | | | | |  N
-O  | | | | | | | | |  O                O  | | | | | | | | |  O
-P  | | | | | | | | |  P                P  | | | | | | | | |  P
-Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
-R  | | | | | | | | |  R                R  | | | | | | | | |  R
-S  | | | | | | | | |  S                S  | | | | | | | | |  S
-T  | | | | | | | | |  T                T  | | | | | | | | |  T
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-
-F Fire at a square
-M Move a ship to another square (2 remaining)
-S Sonar scan (1 remaining)
-Player A, what would you like to do?
-
-Player A Where would you like to fire at?
-you hit a destroyer
-     Your ocean                           Player computer's ocean
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
-B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
-C d|d|d|c|c| | | | |  C                C d|d|d| | | | | | |  C
-D d|d|d|c|c| | | | |  D                D  | | | | | | | | |  D
-E d|d|d|c|c| | | | |  E                E  | | | | | | | | |  E
-F b| | |c| | | | | |  F                F  | | | | | | | | |  F
-G b|b| |c|c| | | | |  G                G  | | | | | | | | |  G
-H b| | |c|c| | | | |  H                H  | | | | | | | | |  H
-I b| | | |c| | | | |  I                I  | | | | | | | | |  I
-J b|b| | | | | | | |  J                J  | | | | | | | | |  J
-K b| | | | | | | | |  K                K  | | | | | | | | |  K
-L b| | | | | | | | |  L                L  | | | | | | | | |  L
-M b|b| | | | | | | |  M                M  | | | | | | | | |  M
-N b| | | | | | | | |  N                N  | | | | | | | | |  N
-O  | | | | | | | | |  O                O  | | | | | | | | |  O
-P  | | | | | | | | |  P                P  | | | | | | | | |  P
-Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
-R  | | | | | | | | |  R                R  | | | | | | | | |  R
-S  | | | | | | | | |  S                S  | | | | | | | | |  S
-T  | | | | | | | | |  T                T  | | | | | | | | |  T
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-
-     Your ocean                           Player computer's ocean
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
-B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
-C d|d|d|c|c| | | | |  C                C d|d|d| | | | | | |  C
-D d|d|d|c|c| | | | |  D                D  | | | | | | | | |  D
-E d|d|d|c|c| | | | |  E                E  | | | | | | | | |  E
-F b| | |c| | | | | |  F                F  | | | | | | | | |  F
-G b|b| |c|c| | | | |  G                G  | | | | | | | | |  G
+G b|b| |c|*| | | | |  G                G  | | | | | | | | |  G
 H b| | |c|c| | | | |  H                H  | | | | | | | | |  H
 I b| | | |c| | | | |  I                I  | | | | | | | | |  I
 J b|b| | | | | | | |  J                J  | | | | | | | | |  J
@@ -808,11 +747,11 @@ you hit a carrier
   0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
 B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
-C d|d|d|c|c| | | | |  C                C d|d|d|c| | | | | |  C
+C d|d|d|c|c| | | | |  C                C d|d| |c| | | | | |  C
 D d|d|d|c|c| | | | |  D                D  | | | | | | | | |  D
-E d|d|d|c|c| | | | |  E                E  | | | | | | | | |  E
+E d|d|d|c|*| | | | |  E                E  | | | | | | | | |  E
 F b| | |c| | | | | |  F                F  | | | | | | | | |  F
-G b|b| |c|c| | | | |  G                G  | | | | | | | | |  G
+G b|b| |c|*| | | | |  G                G  | | | | | | | | |  G
 H b| | |c|c| | | | |  H                H  | | | | | | | | |  H
 I b| | | |c| | | | |  I                I  | | | | | | | | |  I
 J b|b| | | | | | | |  J                J  | | | | | | | | |  J
@@ -832,11 +771,11 @@ T  | | | | | | | | |  T                T  | | | | | | | | |  T
   0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
 B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
-C d|d|d|c|c| | | | |  C                C d|d|d|c| | | | | |  C
+C d|d|*|c|c| | | | |  C                C d|d| |c| | | | | |  C
 D d|d|d|c|c| | | | |  D                D  | | | | | | | | |  D
-E d|d|d|c|c| | | | |  E                E  | | | | | | | | |  E
+E d|d|d|c|*| | | | |  E                E  | | | | | | | | |  E
 F b| | |c| | | | | |  F                F  | | | | | | | | |  F
-G b|b| |c|c| | | | |  G                G  | | | | | | | | |  G
+G b|b| |c|*| | | | |  G                G  | | | | | | | | |  G
 H b| | |c|c| | | | |  H                H  | | | | | | | | |  H
 I b| | | |c| | | | |  I                I  | | | | | | | | |  I
 J b|b| | | | | | | |  J                J  | | | | | | | | |  J
@@ -858,16 +797,16 @@ S Sonar scan (1 remaining)
 Player A, what would you like to do?
 
 Player A Where would you like to fire at?
-you hit a carrier
+you hit a destroyer
      Your ocean                           Player computer's ocean
   0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
 B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
-C d|d|d|c|c| | | | |  C                C d|d|d|c|c| | | | |  C
+C d|d|*|c|c| | | | |  C                C d|d|d|c| | | | | |  C
 D d|d|d|c|c| | | | |  D                D  | | | | | | | | |  D
-E d|d|d|c|c| | | | |  E                E  | | | | | | | | |  E
+E d|d|d|c|*| | | | |  E                E  | | | | | | | | |  E
 F b| | |c| | | | | |  F                F  | | | | | | | | |  F
-G b|b| |c|c| | | | |  G                G  | | | | | | | | |  G
+G b|b| |c|*| | | | |  G                G  | | | | | | | | |  G
 H b| | |c|c| | | | |  H                H  | | | | | | | | |  H
 I b| | | |c| | | | |  I                I  | | | | | | | | |  I
 J b|b| | | | | | | |  J                J  | | | | | | | | |  J
@@ -887,176 +826,11 @@ T  | | | | | | | | |  T                T  | | | | | | | | |  T
   0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
 B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
-C d|d|d|c|c| | | | |  C                C d|d|d|c|c| | | | |  C
+C d|d|*|c|c| | | | |  C                C d|d|d|c| | | | | |  C
 D d|d|d|c|c| | | | |  D                D  | | | | | | | | |  D
-E d|d|d|c|c| | | | |  E                E  | | | | | | | | |  E
+E d|d|d|c|*| | | | |  E                E  | | | | | | | | |  E
 F b| | |c| | | | | |  F                F  | | | | | | | | |  F
-G b|b| |c|c| | | | |  G                G  | | | | | | | | |  G
-H b| | |c|c| | | | |  H                H  | | | | | | | | |  H
-I b| | | |c| | | | |  I                I  | | | | | | | | |  I
-J b|b| | | | | | | |  J                J  | | | | | | | | |  J
-K b| | | | | | | | |  K                K  | | | | | | | | |  K
-L b| | | | | | | | |  L                L  | | | | | | | | |  L
-M b|b| | | | | | | |  M                M  | | | | | | | | |  M
-N b| | | | | | | | |  N                N  | | | | | | | | |  N
-O  | | | | | | | | |  O                O  | | | | | | | | |  O
-P  | | | | | | | | |  P                P  | | | | | | | | |  P
-Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
-R  | | | | | | | | |  R                R  | | | | | | | | |  R
-S  | | | | | | | | |  S                S  | | | | | | | | |  S
-T  | | | | | | | | |  T                T  | | | | | | | | |  T
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-
-F Fire at a square
-M Move a ship to another square (2 remaining)
-S Sonar scan (1 remaining)
-Player A, what would you like to do?
-
-Player A Where would you like to fire at?
-you hit a destroyer
-     Your ocean                           Player computer's ocean
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
-B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
-C d|d|d|c|c| | | | |  C                C d|d|d|c|c| | | | |  C
-D d|d|d|c|c| | | | |  D                D d| | | | | | | | |  D
-E d|d|d|c|c| | | | |  E                E  | | | | | | | | |  E
-F b| | |c| | | | | |  F                F  | | | | | | | | |  F
-G b|b| |c|c| | | | |  G                G  | | | | | | | | |  G
-H b| | |c|c| | | | |  H                H  | | | | | | | | |  H
-I b| | | |c| | | | |  I                I  | | | | | | | | |  I
-J b|b| | | | | | | |  J                J  | | | | | | | | |  J
-K b| | | | | | | | |  K                K  | | | | | | | | |  K
-L b| | | | | | | | |  L                L  | | | | | | | | |  L
-M b|b| | | | | | | |  M                M  | | | | | | | | |  M
-N b| | | | | | | | |  N                N  | | | | | | | | |  N
-O  | | | | | | | | |  O                O  | | | | | | | | |  O
-P  | | | | | | | | |  P                P  | | | | | | | | |  P
-Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
-R  | | | | | | | | |  R                R  | | | | | | | | |  R
-S  | | | | | | | | |  S                S  | | | | | | | | |  S
-T  | | | | | | | | |  T                T  | | | | | | | | |  T
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-
-     Your ocean                           Player computer's ocean
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
-B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
-C d|d|d|c|c| | | | |  C                C d|d|d|c|c| | | | |  C
-D d|d|d|c|c| | | | |  D                D d| | | | | | | | |  D
-E d|d|d|c|c| | | | |  E                E  | | | | | | | | |  E
-F b| | |c| | | | | |  F                F  | | | | | | | | |  F
-G b|b| |c|c| | | | |  G                G  | | | | | | | | |  G
-H b| | |c|c| | | | |  H                H  | | | | | | | | |  H
-I b| | | |c| | | | |  I                I  | | | | | | | | |  I
-J b|b| | | | | | | |  J                J  | | | | | | | | |  J
-K b| | | | | | | | |  K                K  | | | | | | | | |  K
-L b| | | | | | | | |  L                L  | | | | | | | | |  L
-M b|b| | | | | | | |  M                M  | | | | | | | | |  M
-N b| | | | | | | | |  N                N  | | | | | | | | |  N
-O  | | | | | | | | |  O                O  | | | | | | | | |  O
-P  | | | | | | | | |  P                P  | | | | | | | | |  P
-Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
-R  | | | | | | | | |  R                R  | | | | | | | | |  R
-S  | | | | | | | | |  S                S  | | | | | | | | |  S
-T  | | | | | | | | |  T                T  | | | | | | | | |  T
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-
-F Fire at a square
-M Move a ship to another square (2 remaining)
-S Sonar scan (1 remaining)
-Player A, what would you like to do?
-
-Player A Where would you like to fire at?
-you hit a destroyer
-     Your ocean                           Player computer's ocean
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
-B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
-C d|d|d|c|c| | | | |  C                C d|d|d|c|c| | | | |  C
-D d|d|d|c|c| | | | |  D                D d|d| | | | | | | |  D
-E d|d|d|c|c| | | | |  E                E  | | | | | | | | |  E
-F b| | |c| | | | | |  F                F  | | | | | | | | |  F
-G b|b| |c|c| | | | |  G                G  | | | | | | | | |  G
-H b| | |c|c| | | | |  H                H  | | | | | | | | |  H
-I b| | | |c| | | | |  I                I  | | | | | | | | |  I
-J b|b| | | | | | | |  J                J  | | | | | | | | |  J
-K b| | | | | | | | |  K                K  | | | | | | | | |  K
-L b| | | | | | | | |  L                L  | | | | | | | | |  L
-M b|b| | | | | | | |  M                M  | | | | | | | | |  M
-N b| | | | | | | | |  N                N  | | | | | | | | |  N
-O  | | | | | | | | |  O                O  | | | | | | | | |  O
-P  | | | | | | | | |  P                P  | | | | | | | | |  P
-Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
-R  | | | | | | | | |  R                R  | | | | | | | | |  R
-S  | | | | | | | | |  S                S  | | | | | | | | |  S
-T  | | | | | | | | |  T                T  | | | | | | | | |  T
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-
-     Your ocean                           Player computer's ocean
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
-B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
-C d|d|d|*|c| | | | |  C                C d|d|d|c|c| | | | |  C
-D d|d|d|c|c| | | | |  D                D d|d| | | | | | | |  D
-E d|d|d|c|c| | | | |  E                E  | | | | | | | | |  E
-F b| | |c| | | | | |  F                F  | | | | | | | | |  F
-G b|b| |c|c| | | | |  G                G  | | | | | | | | |  G
-H b| | |c|c| | | | |  H                H  | | | | | | | | |  H
-I b| | | |c| | | | |  I                I  | | | | | | | | |  I
-J b|b| | | | | | | |  J                J  | | | | | | | | |  J
-K b| | | | | | | | |  K                K  | | | | | | | | |  K
-L b| | | | | | | | |  L                L  | | | | | | | | |  L
-M b|b| | | | | | | |  M                M  | | | | | | | | |  M
-N b| | | | | | | | |  N                N  | | | | | | | | |  N
-O  | | | | | | | | |  O                O  | | | | | | | | |  O
-P  | | | | | | | | |  P                P  | | | | | | | | |  P
-Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
-R  | | | | | | | | |  R                R  | | | | | | | | |  R
-S  | | | | | | | | |  S                S  | | | | | | | | |  S
-T  | | | | | | | | |  T                T  | | | | | | | | |  T
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-
-F Fire at a square
-M Move a ship to another square (2 remaining)
-S Sonar scan (1 remaining)
-Player A, what would you like to do?
-
-Player A Where would you like to fire at?
-you hit a destroyer
-     Your ocean                           Player computer's ocean
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
-B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
-C d|d|d|*|c| | | | |  C                C d|d|d|c|c| | | | |  C
-D d|d|d|c|c| | | | |  D                D d|d|d| | | | | | |  D
-E d|d|d|c|c| | | | |  E                E  | | | | | | | | |  E
-F b| | |c| | | | | |  F                F  | | | | | | | | |  F
-G b|b| |c|c| | | | |  G                G  | | | | | | | | |  G
-H b| | |c|c| | | | |  H                H  | | | | | | | | |  H
-I b| | | |c| | | | |  I                I  | | | | | | | | |  I
-J b|b| | | | | | | |  J                J  | | | | | | | | |  J
-K b| | | | | | | | |  K                K  | | | | | | | | |  K
-L b| | | | | | | | |  L                L  | | | | | | | | |  L
-M b|b| | | | | | | |  M                M  | | | | | | | | |  M
-N b| | | | | | | | |  N                N  | | | | | | | | |  N
-O  | | | | | | | | |  O                O  | | | | | | | | |  O
-P  | | | | | | | | |  P                P  | | | | | | | | |  P
-Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
-R  | | | | | | | | |  R                R  | | | | | | | | |  R
-S  | | | | | | | | |  S                S  | | | | | | | | |  S
-T  | | | | | | | | |  T                T  | | | | | | | | |  T
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-
-     Your ocean                           Player computer's ocean
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
-B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
-C d|d|d|*|c| | | | |  C                C d|d|d|c|c| | | | |  C
-D d|d|d|c|c| | | | |  D                D d|d|d| | | | | | |  D
-E d|d|d|c|c| | | | |  E                E  | | | | | | | | |  E
-F b| | |c| | | | | |  F                F  | | | | | | | | |  F
-G b|b| |c|c| | | | |  G                G  | | | | | | | | |  G
+G b|b| |c|*| | | | |  G                G  | | | | | | | | |  G
 H b| | |c|c| | | | |  H                H  | | | | | | | | |  H
 I b| | | |c| | | | |  I                I  | | | | | | | | |  I
 J b|b| | | | | | | |  J                J  | | | | | | | | |  J
@@ -1083,11 +857,11 @@ you hit a carrier
   0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
 B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
-C d|d|d|*|c| | | | |  C                C d|d|d|c|c| | | | |  C
-D d|d|d|c|c| | | | |  D                D d|d|d|c| | | | | |  D
-E d|d|d|c|c| | | | |  E                E  | | | | | | | | |  E
+C d|d|*|c|c| | | | |  C                C d|d|d|c|c| | | | |  C
+D d|d|d|c|c| | | | |  D                D  | | | | | | | | |  D
+E d|d|d|c|*| | | | |  E                E  | | | | | | | | |  E
 F b| | |c| | | | | |  F                F  | | | | | | | | |  F
-G b|b| |c|c| | | | |  G                G  | | | | | | | | |  G
+G b|b| |c|*| | | | |  G                G  | | | | | | | | |  G
 H b| | |c|c| | | | |  H                H  | | | | | | | | |  H
 I b| | | |c| | | | |  I                I  | | | | | | | | |  I
 J b|b| | | | | | | |  J                J  | | | | | | | | |  J
@@ -1107,457 +881,17 @@ T  | | | | | | | | |  T                T  | | | | | | | | |  T
   0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
 B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
-C d|d|d|*|c| | | | |  C                C d|d|d|c|c| | | | |  C
-D d|d|d|c|c| | | | |  D                D d|d|d|c| | | | | |  D
-E d|d|d|c|c| | | | |  E                E  | | | | | | | | |  E
+C d|d|*|c|c| | | | |  C                C d|d|d|c|c| | | | |  C
+D d|d|d|c|c| | | | |  D                D  | | | | | | | | |  D
+E d|d|d|c|*| | | | |  E                E  | | | | | | | | |  E
 F b| | |c| | | | | |  F                F  | | | | | | | | |  F
-G b|b| |c|c| | | | |  G                G  | | | | | | | | |  G
+G b|b| |c|*| | | | |  G                G  | | | | | | | | |  G
 H b| | |c|c| | | | |  H                H  | | | | | | | | |  H
 I b| | | |c| | | | |  I                I  | | | | | | | | |  I
 J b|b| | | | | | | |  J                J  | | | | | | | | |  J
 K b| | | | | | | | |  K                K  | | | | | | | | |  K
 L b| | | | | | | | |  L                L  | | | | | | | | |  L
 M b|b| | | | | | | |  M                M  | | | | | | | | |  M
-N b| | | | | | | | |  N                N  | | | | | | | | |  N
-O  | | | | | | | | |  O                O  | | | | | | | | |  O
-P  | | | | | | | | |  P                P  | | | | | | | | |  P
-Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
-R  | | | | | | | | |  R                R  | | | | | | | | |  R
-S  | | | | | | | | |  S                S  | | | | | | | | |  S
-T  | | | | | | | | |  T                T  | | | | | | | | |  T
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-
-F Fire at a square
-M Move a ship to another square (2 remaining)
-S Sonar scan (1 remaining)
-Player A, what would you like to do?
-
-Player A Where would you like to fire at?
-you hit a carrier
-     Your ocean                           Player computer's ocean
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
-B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
-C d|d|d|*|c| | | | |  C                C d|d|d|c|c| | | | |  C
-D d|d|d|c|c| | | | |  D                D d|d|d|c|c| | | | |  D
-E d|d|d|c|c| | | | |  E                E  | | | | | | | | |  E
-F b| | |c| | | | | |  F                F  | | | | | | | | |  F
-G b|b| |c|c| | | | |  G                G  | | | | | | | | |  G
-H b| | |c|c| | | | |  H                H  | | | | | | | | |  H
-I b| | | |c| | | | |  I                I  | | | | | | | | |  I
-J b|b| | | | | | | |  J                J  | | | | | | | | |  J
-K b| | | | | | | | |  K                K  | | | | | | | | |  K
-L b| | | | | | | | |  L                L  | | | | | | | | |  L
-M b|b| | | | | | | |  M                M  | | | | | | | | |  M
-N b| | | | | | | | |  N                N  | | | | | | | | |  N
-O  | | | | | | | | |  O                O  | | | | | | | | |  O
-P  | | | | | | | | |  P                P  | | | | | | | | |  P
-Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
-R  | | | | | | | | |  R                R  | | | | | | | | |  R
-S  | | | | | | | | |  S                S  | | | | | | | | |  S
-T  | | | | | | | | |  T                T  | | | | | | | | |  T
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-
-     Your ocean                           Player computer's ocean
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
-B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
-C d|d|d|*|c| | | | |  C                C d|d|d|c|c| | | | |  C
-D d|d|d|c|c| | | | |  D                D d|d|d|c|c| | | | |  D
-E d|d|d|c|c| | | | |  E                E  | | | | | | | | |  E
-F b| | |c| | | | | |  F                F  | | | | | | | | |  F
-G b|b| |c|c| | | | |  G                G  | | | | | | | | |  G
-H b| | |c|c| | | | |  H                H  | | | | | | | | |  H
-I b| | | |c| | | | |  I                I  | | | | | | | | |  I
-J b|b| | | | | | | |  J                J  | | | | | | | | |  J
-K b| | | | | | | | |  K                K  | | | | | | | | |  K
-L b| | | | | | | | |  L                L  | | | | | | | | |  L
-M b|b| | | | | | | |  M                M  | | | | | | | | |  M
-N b| | | | | | | | |  N                N  | | | | | | | | |  N
-O  | | | | | | | | |  O                O  | | | | | | | | |  O
-P  | | | | | | | | |  P                P  | | | | | | | | |  P
-Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
-R  | | | | | | | | |  R                R  | | | | | | | | |  R
-S  | | | | | | | | |  S                S  | | | | | | | | |  S
-T  | | | | | | | | |  T                T  | | | | | | | | |  T
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-
-F Fire at a square
-M Move a ship to another square (2 remaining)
-S Sonar scan (1 remaining)
-Player A, what would you like to do?
-
-Player A Where would you like to fire at?
-you hit a destroyer
-     Your ocean                           Player computer's ocean
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
-B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
-C d|d|d|*|c| | | | |  C                C d|d|d|c|c| | | | |  C
-D d|d|d|c|c| | | | |  D                D d|d|d|c|c| | | | |  D
-E d|d|d|c|c| | | | |  E                E d| | | | | | | | |  E
-F b| | |c| | | | | |  F                F  | | | | | | | | |  F
-G b|b| |c|c| | | | |  G                G  | | | | | | | | |  G
-H b| | |c|c| | | | |  H                H  | | | | | | | | |  H
-I b| | | |c| | | | |  I                I  | | | | | | | | |  I
-J b|b| | | | | | | |  J                J  | | | | | | | | |  J
-K b| | | | | | | | |  K                K  | | | | | | | | |  K
-L b| | | | | | | | |  L                L  | | | | | | | | |  L
-M b|b| | | | | | | |  M                M  | | | | | | | | |  M
-N b| | | | | | | | |  N                N  | | | | | | | | |  N
-O  | | | | | | | | |  O                O  | | | | | | | | |  O
-P  | | | | | | | | |  P                P  | | | | | | | | |  P
-Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
-R  | | | | | | | | |  R                R  | | | | | | | | |  R
-S  | | | | | | | | |  S                S  | | | | | | | | |  S
-T  | | | | | | | | |  T                T  | | | | | | | | |  T
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-
-     Your ocean                           Player computer's ocean
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
-B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
-C d|d|d|*|c| | | | |  C                C d|d|d|c|c| | | | |  C
-D d|d|d|c|c| | | | |  D                D d|d|d|c|c| | | | |  D
-E d|d|d|c|c| | | | |  E                E d| | | | | | | | |  E
-F b| | |c| | | | | |  F                F  | | | | | | | | |  F
-G b|b| |c|c| | | | |  G                G  | | | | | | | | |  G
-H b| | |c|c| | | | |  H                H  | | | | | | | | |  H
-I b| | | |c| | | | |  I                I  | | | | | | | | |  I
-J b|b| | | | | | | |  J                J  | | | | | | | | |  J
-K b| | | | | | | | |  K                K  | | | | | | | | |  K
-L b| | | | | | | | |  L                L  | | | | | | | | |  L
-M b|b| | | | | | | |  M                M  | | | | | | | | |  M
-N b| | | | | | | | |  N                N  | | | | | | | | |  N
-O  | | | | | | | | |  O                O  | | | | | | | | |  O
-P  | | | | | | | | |  P                P  | | | | | | | | |  P
-Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
-R  | | | | | | | | |  R                R  | | | | | | | | |  R
-S  | | | | | | | | |  S                S  | | | | | | | | |  S
-T  | | | | | | | | |  T                T  | | | | | | | | |  T
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-
-F Fire at a square
-M Move a ship to another square (2 remaining)
-S Sonar scan (1 remaining)
-Player A, what would you like to do?
-
-Player A Where would you like to fire at?
-you hit a destroyer
-     Your ocean                           Player computer's ocean
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
-B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
-C d|d|d|*|c| | | | |  C                C d|d|d|c|c| | | | |  C
-D d|d|d|c|c| | | | |  D                D d|d|d|c|c| | | | |  D
-E d|d|d|c|c| | | | |  E                E d|d| | | | | | | |  E
-F b| | |c| | | | | |  F                F  | | | | | | | | |  F
-G b|b| |c|c| | | | |  G                G  | | | | | | | | |  G
-H b| | |c|c| | | | |  H                H  | | | | | | | | |  H
-I b| | | |c| | | | |  I                I  | | | | | | | | |  I
-J b|b| | | | | | | |  J                J  | | | | | | | | |  J
-K b| | | | | | | | |  K                K  | | | | | | | | |  K
-L b| | | | | | | | |  L                L  | | | | | | | | |  L
-M b|b| | | | | | | |  M                M  | | | | | | | | |  M
-N b| | | | | | | | |  N                N  | | | | | | | | |  N
-O  | | | | | | | | |  O                O  | | | | | | | | |  O
-P  | | | | | | | | |  P                P  | | | | | | | | |  P
-Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
-R  | | | | | | | | |  R                R  | | | | | | | | |  R
-S  | | | | | | | | |  S                S  | | | | | | | | |  S
-T  | | | | | | | | |  T                T  | | | | | | | | |  T
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-
-     Your ocean                           Player computer's ocean
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
-B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
-C d|d|d|*|c| | | | |  C                C d|d|d|c|c| | | | |  C
-D d|d|d|c|c| | | | |  D                D d|d|d|c|c| | | | |  D
-E d|d|d|c|c| | | | |  E                E d|d| | | | | | | |  E
-F b| | |c| | | | | |  F                F  | | | | | | | | |  F
-G b|b| |c|c| | | | |  G                G  | | | | | | | | |  G
-H b| | |c|c| | | | |  H                H  | | | | | | | | |  H
-I b| | | |c| | | | |  I                I  | | | | | | | | |  I
-J b|b| | | | | | | |  J                J  | | | | | | | | |  J
-K b| | | | | | | | |  K                K  | | | | | | | | |  K
-L b| | | | | | | | |  L                L  | | | | | | | | |  L
-M b|b| | | | | | | |  M                M  | | | | | | | | |  M
-N b| | | | | | | | |  N                N  | | | | | | | | |  N
-O  | | | | | | | | |  O                O  | | | | | | | | |  O
-P  | | | | | | | | |  P                P  | | | | | | | | |  P
-Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
-R  | | | | | | | | |  R                R  | | | | | | | | |  R
-S  | | | | | | | | |  S                S  | | | | | | | | |  S
-T  | | | | | | | | |  T                T  | | | | | | | | |  T
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-
-F Fire at a square
-M Move a ship to another square (2 remaining)
-S Sonar scan (1 remaining)
-Player A, what would you like to do?
-
-Player A Where would you like to fire at?
-you hit a destroyer
-     Your ocean                           Player computer's ocean
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
-B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
-C d|d|d|*|c| | | | |  C                C d|d|d|c|c| | | | |  C
-D d|d|d|c|c| | | | |  D                D d|d|d|c|c| | | | |  D
-E d|d|d|c|c| | | | |  E                E d|d|d| | | | | | |  E
-F b| | |c| | | | | |  F                F  | | | | | | | | |  F
-G b|b| |c|c| | | | |  G                G  | | | | | | | | |  G
-H b| | |c|c| | | | |  H                H  | | | | | | | | |  H
-I b| | | |c| | | | |  I                I  | | | | | | | | |  I
-J b|b| | | | | | | |  J                J  | | | | | | | | |  J
-K b| | | | | | | | |  K                K  | | | | | | | | |  K
-L b| | | | | | | | |  L                L  | | | | | | | | |  L
-M b|b| | | | | | | |  M                M  | | | | | | | | |  M
-N b| | | | | | | | |  N                N  | | | | | | | | |  N
-O  | | | | | | | | |  O                O  | | | | | | | | |  O
-P  | | | | | | | | |  P                P  | | | | | | | | |  P
-Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
-R  | | | | | | | | |  R                R  | | | | | | | | |  R
-S  | | | | | | | | |  S                S  | | | | | | | | |  S
-T  | | | | | | | | |  T                T  | | | | | | | | |  T
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-
-     Your ocean                           Player computer's ocean
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
-B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
-C d|d|d|*|c| | | | |  C                C d|d|d|c|c| | | | |  C
-D d|d|d|c|c| | | | |  D                D d|d|d|c|c| | | | |  D
-E d|d|d|c|c| | | | |  E                E d|d|d| | | | | | |  E
-F b| | |c| | | | | |  F                F  | | | | | | | | |  F
-G b|b| |c|c| | | | |  G                G  | | | | | | | | |  G
-H b| | |c|c| | | | |  H                H  | | | | | | | | |  H
-I b| | | |c| | | | |  I                I  | | | | | | | | |  I
-J b|b| | | | | | | |  J                J  | | | | | | | | |  J
-K b| | | | | | | | |  K                K  | | | | | | | | |  K
-L b| | | | | | | | |  L                L  | | | | | | | | |  L
-M b|*| | | | | | | |  M                M  | | | | | | | | |  M
-N b| | | | | | | | |  N                N  | | | | | | | | |  N
-O  | | | | | | | | |  O                O  | | | | | | | | |  O
-P  | | | | | | | | |  P                P  | | | | | | | | |  P
-Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
-R  | | | | | | | | |  R                R  | | | | | | | | |  R
-S  | | | | | | | | |  S                S  | | | | | | | | |  S
-T  | | | | | | | | |  T                T  | | | | | | | | |  T
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-
-F Fire at a square
-M Move a ship to another square (2 remaining)
-S Sonar scan (1 remaining)
-Player A, what would you like to do?
-
-Player A Where would you like to fire at?
-you hit a carrier
-     Your ocean                           Player computer's ocean
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
-B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
-C d|d|d|*|c| | | | |  C                C d|d|d|c|c| | | | |  C
-D d|d|d|c|c| | | | |  D                D d|d|d|c|c| | | | |  D
-E d|d|d|c|c| | | | |  E                E d|d|d|c| | | | | |  E
-F b| | |c| | | | | |  F                F  | | | | | | | | |  F
-G b|b| |c|c| | | | |  G                G  | | | | | | | | |  G
-H b| | |c|c| | | | |  H                H  | | | | | | | | |  H
-I b| | | |c| | | | |  I                I  | | | | | | | | |  I
-J b|b| | | | | | | |  J                J  | | | | | | | | |  J
-K b| | | | | | | | |  K                K  | | | | | | | | |  K
-L b| | | | | | | | |  L                L  | | | | | | | | |  L
-M b|*| | | | | | | |  M                M  | | | | | | | | |  M
-N b| | | | | | | | |  N                N  | | | | | | | | |  N
-O  | | | | | | | | |  O                O  | | | | | | | | |  O
-P  | | | | | | | | |  P                P  | | | | | | | | |  P
-Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
-R  | | | | | | | | |  R                R  | | | | | | | | |  R
-S  | | | | | | | | |  S                S  | | | | | | | | |  S
-T  | | | | | | | | |  T                T  | | | | | | | | |  T
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-
-     Your ocean                           Player computer's ocean
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
-B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
-C d|d|d|*|c| | | | |  C                C d|d|d|c|c| | | | |  C
-D d|d|d|c|c| | | | |  D                D d|d|d|c|c| | | | |  D
-E d|d|d|c|c| | | | |  E                E d|d|d|c| | | | | |  E
-F b| | |c| | | | | |  F                F  | | | | | | | | |  F
-G b|b| |c|c| | | | |  G                G  | | | | | | | | |  G
-H b| | |c|c| | | | |  H                H  | | | | | | | | |  H
-I b| | | |c| | | | |  I                I  | | | | | | | | |  I
-J b|b| | | | | | | |  J                J  | | | | | | | | |  J
-K b| | | | | | | | |  K                K  | | | | | | | | |  K
-L b| | | | | | | | |  L                L  | | | | | | | | |  L
-M b|*| | | | | | | |  M                M  | | | | | | | | |  M
-N b| | | | | | | | |  N                N  | | | | | | | | |  N
-O  | | | | | | | | |  O                O  | | | | | | | | |  O
-P  | | | | | | | | |  P                P  | | | | | | | | |  P
-Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
-R  | | | | | | | | |  R                R  | | | | | | | | |  R
-S  | | | | | | | | |  S                S  | | | | | | | | |  S
-T  | | | | | | | | |  T                T  | | | | | | | | |  T
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-
-F Fire at a square
-M Move a ship to another square (2 remaining)
-S Sonar scan (1 remaining)
-Player A, what would you like to do?
-
-Player A Where would you like to fire at?
-you hit a carrier
-     Your ocean                           Player computer's ocean
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
-B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
-C d|d|d|*|c| | | | |  C                C d|d|d|c|c| | | | |  C
-D d|d|d|c|c| | | | |  D                D d|d|d|c|c| | | | |  D
-E d|d|d|c|c| | | | |  E                E d|d|d|c|c| | | | |  E
-F b| | |c| | | | | |  F                F  | | | | | | | | |  F
-G b|b| |c|c| | | | |  G                G  | | | | | | | | |  G
-H b| | |c|c| | | | |  H                H  | | | | | | | | |  H
-I b| | | |c| | | | |  I                I  | | | | | | | | |  I
-J b|b| | | | | | | |  J                J  | | | | | | | | |  J
-K b| | | | | | | | |  K                K  | | | | | | | | |  K
-L b| | | | | | | | |  L                L  | | | | | | | | |  L
-M b|*| | | | | | | |  M                M  | | | | | | | | |  M
-N b| | | | | | | | |  N                N  | | | | | | | | |  N
-O  | | | | | | | | |  O                O  | | | | | | | | |  O
-P  | | | | | | | | |  P                P  | | | | | | | | |  P
-Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
-R  | | | | | | | | |  R                R  | | | | | | | | |  R
-S  | | | | | | | | |  S                S  | | | | | | | | |  S
-T  | | | | | | | | |  T                T  | | | | | | | | |  T
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-
-     Your ocean                           Player computer's ocean
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
-B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
-C d|d|d|*|c| | | | |  C                C d|d|d|c|c| | | | |  C
-D d|d|d|c|c| | | | |  D                D d|d|d|c|c| | | | |  D
-E d|d|d|c|c| | | | |  E                E d|d|d|c|c| | | | |  E
-F b| | |c| | | | | |  F                F  | | | | | | | | |  F
-G b|b| |c|c| | | | |  G                G  | | | | | | | | |  G
-H b| | |c|c| | | | |  H                H  | | | | | | | | |  H
-I b| | | |c| | | | |  I                I  | | | | | | | | |  I
-J b|b| | | | | | | |  J                J  | | | | | | | | |  J
-K b| | | | | | | | |  K                K  | | | | | | | | |  K
-L b| | | | | | | | |  L                L  | | | | | | | | |  L
-M b|*| | | | | | | |  M                M  | | | | | | | | |  M
-N b| | | | | | | | |  N                N  | | | | | | | | |  N
-O  | | | | | | | | |  O                O  | | | | | | | | |  O
-P  | | | | | | | | |  P                P  | | | | | | | | |  P
-Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
-R  | | | | | | | | |  R                R  | | | | | | | | |  R
-S  | | | | | | | | |  S                S  | | | | | | | | |  S
-T  | | | | | | | | |  T                T  | | | | | | | | |  T
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-
-F Fire at a square
-M Move a ship to another square (2 remaining)
-S Sonar scan (1 remaining)
-Player A, what would you like to do?
-
-Player A Where would you like to fire at?
-you missed
-     Your ocean                           Player computer's ocean
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
-B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
-C d|d|d|*|c| | | | |  C                C d|d|d|c|c| | | | |  C
-D d|d|d|c|c| | | | |  D                D d|d|d|c|c| | | | |  D
-E d|d|d|c|c| | | | |  E                E d|d|d|c|c|X| | | |  E
-F b| | |c| | | | | |  F                F  | | | | | | | | |  F
-G b|b| |c|c| | | | |  G                G  | | | | | | | | |  G
-H b| | |c|c| | | | |  H                H  | | | | | | | | |  H
-I b| | | |c| | | | |  I                I  | | | | | | | | |  I
-J b|b| | | | | | | |  J                J  | | | | | | | | |  J
-K b| | | | | | | | |  K                K  | | | | | | | | |  K
-L b| | | | | | | | |  L                L  | | | | | | | | |  L
-M b|*| | | | | | | |  M                M  | | | | | | | | |  M
-N b| | | | | | | | |  N                N  | | | | | | | | |  N
-O  | | | | | | | | |  O                O  | | | | | | | | |  O
-P  | | | | | | | | |  P                P  | | | | | | | | |  P
-Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
-R  | | | | | | | | |  R                R  | | | | | | | | |  R
-S  | | | | | | | | |  S                S  | | | | | | | | |  S
-T  | | | | | | | | |  T                T  | | | | | | | | |  T
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-
-     Your ocean                           Player computer's ocean
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
-B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
-C d|d|d|*|*| | | | |  C                C d|d|d|c|c| | | | |  C
-D d|d|d|c|c| | | | |  D                D d|d|d|c|c| | | | |  D
-E d|d|d|c|c| | | | |  E                E d|d|d|c|c|X| | | |  E
-F b| | |c| | | | | |  F                F  | | | | | | | | |  F
-G b|b| |c|c| | | | |  G                G  | | | | | | | | |  G
-H b| | |c|c| | | | |  H                H  | | | | | | | | |  H
-I b| | | |c| | | | |  I                I  | | | | | | | | |  I
-J b|b| | | | | | | |  J                J  | | | | | | | | |  J
-K b| | | | | | | | |  K                K  | | | | | | | | |  K
-L b| | | | | | | | |  L                L  | | | | | | | | |  L
-M b|*| | | | | | | |  M                M  | | | | | | | | |  M
-N b| | | | | | | | |  N                N  | | | | | | | | |  N
-O  | | | | | | | | |  O                O  | | | | | | | | |  O
-P  | | | | | | | | |  P                P  | | | | | | | | |  P
-Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
-R  | | | | | | | | |  R                R  | | | | | | | | |  R
-S  | | | | | | | | |  S                S  | | | | | | | | |  S
-T  | | | | | | | | |  T                T  | | | | | | | | |  T
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-
-F Fire at a square
-M Move a ship to another square (2 remaining)
-S Sonar scan (1 remaining)
-Player A, what would you like to do?
-
-Player A Where would you like to fire at?
-you missed
-     Your ocean                           Player computer's ocean
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
-B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
-C d|d|d|*|*| | | | |  C                C d|d|d|c|c| | | | |  C
-D d|d|d|c|c| | | | |  D                D d|d|d|c|c| | | | |  D
-E d|d|d|c|c| | | | |  E                E d|d|d|c|c|X|X| | |  E
-F b| | |c| | | | | |  F                F  | | | | | | | | |  F
-G b|b| |c|c| | | | |  G                G  | | | | | | | | |  G
-H b| | |c|c| | | | |  H                H  | | | | | | | | |  H
-I b| | | |c| | | | |  I                I  | | | | | | | | |  I
-J b|b| | | | | | | |  J                J  | | | | | | | | |  J
-K b| | | | | | | | |  K                K  | | | | | | | | |  K
-L b| | | | | | | | |  L                L  | | | | | | | | |  L
-M b|*| | | | | | | |  M                M  | | | | | | | | |  M
-N b| | | | | | | | |  N                N  | | | | | | | | |  N
-O  | | | | | | | | |  O                O  | | | | | | | | |  O
-P  | | | | | | | | |  P                P  | | | | | | | | |  P
-Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
-R  | | | | | | | | |  R                R  | | | | | | | | |  R
-S  | | | | | | | | |  S                S  | | | | | | | | |  S
-T  | | | | | | | | |  T                T  | | | | | | | | |  T
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-
-     Your ocean                           Player computer's ocean
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
-B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
-C d|d|d|*|*| | | | |  C                C d|d|d|c|c| | | | |  C
-D d|d|d|c|c| | | | |  D                D d|d|d|c|c| | | | |  D
-E d|d|d|c|c| | | | |  E                E d|d|d|c|c|X|X| | |  E
-F b| | |c| | | | | |  F                F  | | | | | | | | |  F
-G b|b| |c|c| | | | |  G                G  | | | | | | | | |  G
-H b| | |c|c| | | | |  H                H  | | | | | | | | |  H
-I b| | | |c| | | | |  I                I  | | | | | | | | |  I
-J b|b| | | | | | | |  J                J  | | | | | | | | |  J
-K b| | | | | | | | |  K                K  | | | | | | | | |  K
-L b| | | | | | | | |  L                L  | | | | | | | | |  L
-M b|*| | | | | | | |  M                M  | | | | | | | | |  M
 N b| | | | | | | | |  N                N  | | | | | | | | |  N
 O  | | | | | | | | |  O                O  | | | | | | | | |  O
 P  | | | | | | | | |  P                P  | | | | | | | | |  P
@@ -1578,17 +912,17 @@ you hit a battleship
   0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
 B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
-C d|d|d|*|*| | | | |  C                C d|d|d|c|c| | | | |  C
-D d|d|d|c|c| | | | |  D                D d|d|d|c|c| | | | |  D
-E d|d|d|c|c| | | | |  E                E d|d|d|c|c|X|X| | |  E
+C d|d|*|c|c| | | | |  C                C d|d|d|c|c| | | | |  C
+D d|d|d|c|c| | | | |  D                D  | | | | | | | | |  D
+E d|d|d|c|*| | | | |  E                E  | | | | | | | | |  E
 F b| | |c| | | | | |  F                F b| | | | | | | | |  F
-G b|b| |c|c| | | | |  G                G  | | | | | | | | |  G
+G b|b| |c|*| | | | |  G                G  | | | | | | | | |  G
 H b| | |c|c| | | | |  H                H  | | | | | | | | |  H
 I b| | | |c| | | | |  I                I  | | | | | | | | |  I
 J b|b| | | | | | | |  J                J  | | | | | | | | |  J
 K b| | | | | | | | |  K                K  | | | | | | | | |  K
 L b| | | | | | | | |  L                L  | | | | | | | | |  L
-M b|*| | | | | | | |  M                M  | | | | | | | | |  M
+M b|b| | | | | | | |  M                M  | | | | | | | | |  M
 N b| | | | | | | | |  N                N  | | | | | | | | |  N
 O  | | | | | | | | |  O                O  | | | | | | | | |  O
 P  | | | | | | | | |  P                P  | | | | | | | | |  P
@@ -1602,17 +936,402 @@ T  | | | | | | | | |  T                T  | | | | | | | | |  T
   0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
 B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
-C d|d|d|*|*| | | | |  C                C d|d|d|c|c| | | | |  C
-D d|d|d|c|c| | | | |  D                D d|d|d|c|c| | | | |  D
-E d|d|d|c|c| | | | |  E                E d|d|d|c|c|X|X| | |  E
+C d|d|*|c|c| | | | |  C                C d|d|d|c|c| | | | |  C
+D d|d|d|c|c| | | | |  D                D  | | | | | | | | |  D
+E d|d|d|c|*| | | | |  E                E  | | | | | | | | |  E
 F b| | |c| | | | | |  F                F b| | | | | | | | |  F
-G b|b| |c|c| | | | |  G                G  | | | | | | | | |  G
+G b|b| |c|*| | | | |  G                G  | | | | | | | | |  G
 H b| | |c|c| | | | |  H                H  | | | | | | | | |  H
 I b| | | |c| | | | |  I                I  | | | | | | | | |  I
 J b|b| | | | | | | |  J                J  | | | | | | | | |  J
 K b| | | | | | | | |  K                K  | | | | | | | | |  K
 L b| | | | | | | | |  L                L  | | | | | | | | |  L
-M b|*| | | | | | | |  M                M  | | | | | | | | |  M
+M b|b| | | | | | | |  M                M  | | | | | | | | |  M
+N b| | | | | | | | |  N                N  | | | | | | | | |  N
+O  | | | | | | | | |  O                O  | | | | | | | | |  O
+P  | | | | | | | | |  P                P  | | | | | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+
+F Fire at a square
+M Move a ship to another square (2 remaining)
+S Sonar scan (1 remaining)
+Player A, what would you like to do?
+
+Player A Where would you like to fire at?
+you hit a battleship
+     Your ocean                           Player computer's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
+B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
+C d|d|*|c|c| | | | |  C                C d|d|d|c|c| | | | |  C
+D d|d|d|c|c| | | | |  D                D  | | | | | | | | |  D
+E d|d|d|c|*| | | | |  E                E  | | | | | | | | |  E
+F b| | |c| | | | | |  F                F b| | | | | | | | |  F
+G b|b| |c|*| | | | |  G                G b| | | | | | | | |  G
+H b| | |c|c| | | | |  H                H  | | | | | | | | |  H
+I b| | | |c| | | | |  I                I  | | | | | | | | |  I
+J b|b| | | | | | | |  J                J  | | | | | | | | |  J
+K b| | | | | | | | |  K                K  | | | | | | | | |  K
+L b| | | | | | | | |  L                L  | | | | | | | | |  L
+M b|b| | | | | | | |  M                M  | | | | | | | | |  M
+N b| | | | | | | | |  N                N  | | | | | | | | |  N
+O  | | | | | | | | |  O                O  | | | | | | | | |  O
+P  | | | | | | | | |  P                P  | | | | | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+
+     Your ocean                           Player computer's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
+B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
+C d|d|*|c|c| | | | |  C                C d|d|d|c|c| | | | |  C
+D d|d|d|c|c| | | | |  D                D  | | | | | | | | |  D
+E d|d|d|c|*| | | | |  E                E  | | | | | | | | |  E
+F b| | |c| | | | | |  F                F b| | | | | | | | |  F
+G b|b| |c|*| | | | |  G                G b| | | | | | | | |  G
+H b| | |c|c| | | | |  H                H  | | | | | | | | |  H
+I b| | | |c| | | | |  I                I  | | | | | | | | |  I
+J b|b| | | | | | | |  J                J  | | | | | | | | |  J
+K b| | | | | | | | |  K                K  | | | | | | | | |  K
+L b| | | | | | | | |  L                L  | | | | | | | | |  L
+M b|b| | | | | | | |  M                M  | | | | | | | | |  M
+N b| | | | | | | | |  N                N  | | | | | | | | |  N
+O  | | | | | | | | |  O                O  | | | | | | | | |  O
+P  | | | | | | | | |  P                P  | | | | | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+
+F Fire at a square
+M Move a ship to another square (2 remaining)
+S Sonar scan (1 remaining)
+Player A, what would you like to do?
+
+Player A Where would you like to fire at?
+you hit a carrier
+     Your ocean                           Player computer's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
+B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
+C d|d|*|c|c| | | | |  C                C d|d|d|c|c| | | | |  C
+D d|d|d|c|c| | | | |  D                D  | | | | | | | | |  D
+E d|d|d|c|*| | | | |  E                E  | | | | | | | | |  E
+F b| | |c| | | | | |  F                F b| | |c| | | | | |  F
+G b|b| |c|*| | | | |  G                G b| | | | | | | | |  G
+H b| | |c|c| | | | |  H                H  | | | | | | | | |  H
+I b| | | |c| | | | |  I                I  | | | | | | | | |  I
+J b|b| | | | | | | |  J                J  | | | | | | | | |  J
+K b| | | | | | | | |  K                K  | | | | | | | | |  K
+L b| | | | | | | | |  L                L  | | | | | | | | |  L
+M b|b| | | | | | | |  M                M  | | | | | | | | |  M
+N b| | | | | | | | |  N                N  | | | | | | | | |  N
+O  | | | | | | | | |  O                O  | | | | | | | | |  O
+P  | | | | | | | | |  P                P  | | | | | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+
+     Your ocean                           Player computer's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
+B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
+C d|d|*|c|c| | | | |  C                C d|d|d|c|c| | | | |  C
+D d|d|d|c|c| | | | |  D                D  | | | | | | | | |  D
+E d|d|d|c|*| | | | |  E                E  | | | | | | | | |  E
+F b| | |c| | | | | |  F                F b| | |c| | | | | |  F
+G b|b| |c|*| | | | |  G                G b| | | | | | | | |  G
+H b| | |c|c| | | | |  H                H  | | | | | | | | |  H
+I b| | | |c| | | | |  I                I  | | | | | | | | |  I
+J b|b| | | | | | | |  J                J  | | | | | | | | |  J
+K b| | | | | | | | |  K                K  | | | | | | | | |  K
+L b| | | | | | | | |  L                L  | | | | | | | | |  L
+M b|b| | | | | | | |  M                M  | | | | | | | | |  M
+N b| | | | | | | | |  N                N  | | | | | | | | |  N
+O  | | | | | | | | |  O                O  | | | | | | | | |  O
+P  | | | | | | | | |  P                P  | | | | | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+
+F Fire at a square
+M Move a ship to another square (2 remaining)
+S Sonar scan (1 remaining)
+Player A, what would you like to do?
+
+Player A Where would you like to fire at?
+you hit a destroyer
+     Your ocean                           Player computer's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
+B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
+C d|d|*|c|c| | | | |  C                C d|d|d|c|c| | | | |  C
+D d|d|d|c|c| | | | |  D                D d| | | | | | | | |  D
+E d|d|d|c|*| | | | |  E                E  | | | | | | | | |  E
+F b| | |c| | | | | |  F                F b| | |c| | | | | |  F
+G b|b| |c|*| | | | |  G                G b| | | | | | | | |  G
+H b| | |c|c| | | | |  H                H  | | | | | | | | |  H
+I b| | | |c| | | | |  I                I  | | | | | | | | |  I
+J b|b| | | | | | | |  J                J  | | | | | | | | |  J
+K b| | | | | | | | |  K                K  | | | | | | | | |  K
+L b| | | | | | | | |  L                L  | | | | | | | | |  L
+M b|b| | | | | | | |  M                M  | | | | | | | | |  M
+N b| | | | | | | | |  N                N  | | | | | | | | |  N
+O  | | | | | | | | |  O                O  | | | | | | | | |  O
+P  | | | | | | | | |  P                P  | | | | | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+
+     Your ocean                           Player computer's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
+B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
+C d|d|*|c|c| | | | |  C                C d|d|d|c|c| | | | |  C
+D d|d|d|c|c| | | | |  D                D d| | | | | | | | |  D
+E d|d|d|c|*| | | | |  E                E  | | | | | | | | |  E
+F b| | |c| | | | | |  F                F b| | |c| | | | | |  F
+G b|b| |c|*| | | | |  G                G b| | | | | | | | |  G
+H b| | |c|c| | | | |  H                H  | | | | | | | | |  H
+I b| | | |c| | | | |  I                I  | | | | | | | | |  I
+J b|b| | | | | | | |  J                J  | | | | | | | | |  J
+K b| | | | | | | | |  K                K  | | | | | | | | |  K
+L b| | | | | | | | |  L                L  | | | | | | | | |  L
+M b|b| | | | | | | |  M                M  | | | | | | | | |  M
+N b| | | | | | | | |  N                N  | | | | | | | | |  N
+O  | | | | | | | | |  O                O  | | | | | | | | |  O
+P  | | | | | | | | |  P                P  | | | | | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+
+F Fire at a square
+M Move a ship to another square (2 remaining)
+S Sonar scan (1 remaining)
+Player A, what would you like to do?
+
+Player A Where would you like to fire at?
+you hit a destroyer
+     Your ocean                           Player computer's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
+B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
+C d|d|*|c|c| | | | |  C                C d|d|d|c|c| | | | |  C
+D d|d|d|c|c| | | | |  D                D d|d| | | | | | | |  D
+E d|d|d|c|*| | | | |  E                E  | | | | | | | | |  E
+F b| | |c| | | | | |  F                F b| | |c| | | | | |  F
+G b|b| |c|*| | | | |  G                G b| | | | | | | | |  G
+H b| | |c|c| | | | |  H                H  | | | | | | | | |  H
+I b| | | |c| | | | |  I                I  | | | | | | | | |  I
+J b|b| | | | | | | |  J                J  | | | | | | | | |  J
+K b| | | | | | | | |  K                K  | | | | | | | | |  K
+L b| | | | | | | | |  L                L  | | | | | | | | |  L
+M b|b| | | | | | | |  M                M  | | | | | | | | |  M
+N b| | | | | | | | |  N                N  | | | | | | | | |  N
+O  | | | | | | | | |  O                O  | | | | | | | | |  O
+P  | | | | | | | | |  P                P  | | | | | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+
+     Your ocean                           Player computer's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
+B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
+C d|d|*|c|c| | | | |  C                C d|d|d|c|c| | | | |  C
+D d|d|d|c|c| | | | |  D                D d|d| | | | | | | |  D
+E d|d|d|c|*| | | | |  E                E  | | | | | | | | |  E
+F b| | |c| | | | | |  F                F b| | |c| | | | | |  F
+G b|b| |c|*| | | | |  G                G b| | | | | | | | |  G
+H b| | |c|c| | | | |  H                H  | | | | | | | | |  H
+I b| | | |c| | | | |  I                I  | | | | | | | | |  I
+J b|b| | | | | | | |  J                J  | | | | | | | | |  J
+K b| | | | | | | | |  K                K  | | | | | | | | |  K
+L b| | | | | | | | |  L                L  | | | | | | | | |  L
+M b|b| | | | | | | |  M                M  | | | | | | | | |  M
+N b| | | | | | | | |  N                N  | | | | | | | | |  N
+O  | | | | | | | | |  O                O  | | | | | | | | |  O
+P  | | | | | | | | |  P                P  | | | | | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+
+F Fire at a square
+M Move a ship to another square (2 remaining)
+S Sonar scan (1 remaining)
+Player A, what would you like to do?
+
+Player A Where would you like to fire at?
+you hit a destroyer
+     Your ocean                           Player computer's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
+B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
+C d|d|*|c|c| | | | |  C                C d|d|d|c|c| | | | |  C
+D d|d|d|c|c| | | | |  D                D d|d|d| | | | | | |  D
+E d|d|d|c|*| | | | |  E                E  | | | | | | | | |  E
+F b| | |c| | | | | |  F                F b| | |c| | | | | |  F
+G b|b| |c|*| | | | |  G                G b| | | | | | | | |  G
+H b| | |c|c| | | | |  H                H  | | | | | | | | |  H
+I b| | | |c| | | | |  I                I  | | | | | | | | |  I
+J b|b| | | | | | | |  J                J  | | | | | | | | |  J
+K b| | | | | | | | |  K                K  | | | | | | | | |  K
+L b| | | | | | | | |  L                L  | | | | | | | | |  L
+M b|b| | | | | | | |  M                M  | | | | | | | | |  M
+N b| | | | | | | | |  N                N  | | | | | | | | |  N
+O  | | | | | | | | |  O                O  | | | | | | | | |  O
+P  | | | | | | | | |  P                P  | | | | | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+
+     Your ocean                           Player computer's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
+B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
+C d|d|*|c|c| | | | |  C                C d|d|d|c|c| | | | |  C
+D d|d|d|c|c| | | | |  D                D d|d|d| | | | | | |  D
+E d|d|d|c|*| | | | |  E                E  | | | | | | | | |  E
+F b| | |c| | | | | |  F                F b| | |c| | | | | |  F
+G *|b| |c|*| | | | |  G                G b| | | | | | | | |  G
+H b| | |c|c| | | | |  H                H  | | | | | | | | |  H
+I b| | | |c| | | | |  I                I  | | | | | | | | |  I
+J b|b| | | | | | | |  J                J  | | | | | | | | |  J
+K b| | | | | | | | |  K                K  | | | | | | | | |  K
+L b| | | | | | | | |  L                L  | | | | | | | | |  L
+M b|b| | | | | | | |  M                M  | | | | | | | | |  M
+N b| | | | | | | | |  N                N  | | | | | | | | |  N
+O  | | | | | | | | |  O                O  | | | | | | | | |  O
+P  | | | | | | | | |  P                P  | | | | | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+
+F Fire at a square
+M Move a ship to another square (2 remaining)
+S Sonar scan (1 remaining)
+Player A, what would you like to do?
+
+Player A Where would you like to fire at?
+you hit a carrier
+     Your ocean                           Player computer's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
+B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
+C d|d|*|c|c| | | | |  C                C d|d|d|c|c| | | | |  C
+D d|d|d|c|c| | | | |  D                D d|d|d|c| | | | | |  D
+E d|d|d|c|*| | | | |  E                E  | | | | | | | | |  E
+F b| | |c| | | | | |  F                F b| | |c| | | | | |  F
+G *|b| |c|*| | | | |  G                G b| | | | | | | | |  G
+H b| | |c|c| | | | |  H                H  | | | | | | | | |  H
+I b| | | |c| | | | |  I                I  | | | | | | | | |  I
+J b|b| | | | | | | |  J                J  | | | | | | | | |  J
+K b| | | | | | | | |  K                K  | | | | | | | | |  K
+L b| | | | | | | | |  L                L  | | | | | | | | |  L
+M b|b| | | | | | | |  M                M  | | | | | | | | |  M
+N b| | | | | | | | |  N                N  | | | | | | | | |  N
+O  | | | | | | | | |  O                O  | | | | | | | | |  O
+P  | | | | | | | | |  P                P  | | | | | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+
+     Your ocean                           Player computer's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
+B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
+C d|d|*|c|c| | | | |  C                C d|d|d|c|c| | | | |  C
+D d|d|d|c|c| | | | |  D                D d|d|d|c| | | | | |  D
+E d|d|d|c|*| | | | |  E                E  | | | | | | | | |  E
+F b| | |c| | | | | |  F                F b| | |c| | | | | |  F
+G *|b| |c|*| | | | |  G                G b| | | | | | | | |  G
+H b| | |c|c| | | | |  H                H  | | | | | | | | |  H
+I b| | | |c| | | | |  I                I  | | | | | | | | |  I
+J b|b| | | | | | | |  J                J  | | | | | | | | |  J
+K b| | | | | | | | |  K                K  | | | | | | | | |  K
+L b| | | | | | | | |  L                L  | | | | | | | | |  L
+M b|b| | | | | | | |  M                M  | | | | | | | | |  M
+N b| | | | | | | | |  N                N  | | | | | | | | |  N
+O  | | | | | | | | |  O                O  | | | | | | | | |  O
+P  | | | | | | | | |  P                P  | | | | | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+
+F Fire at a square
+M Move a ship to another square (2 remaining)
+S Sonar scan (1 remaining)
+Player A, what would you like to do?
+
+Player A Where would you like to fire at?
+you hit a carrier
+     Your ocean                           Player computer's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
+B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
+C d|d|*|c|c| | | | |  C                C d|d|d|c|c| | | | |  C
+D d|d|d|c|c| | | | |  D                D d|d|d|c|c| | | | |  D
+E d|d|d|c|*| | | | |  E                E  | | | | | | | | |  E
+F b| | |c| | | | | |  F                F b| | |c| | | | | |  F
+G *|b| |c|*| | | | |  G                G b| | | | | | | | |  G
+H b| | |c|c| | | | |  H                H  | | | | | | | | |  H
+I b| | | |c| | | | |  I                I  | | | | | | | | |  I
+J b|b| | | | | | | |  J                J  | | | | | | | | |  J
+K b| | | | | | | | |  K                K  | | | | | | | | |  K
+L b| | | | | | | | |  L                L  | | | | | | | | |  L
+M b|b| | | | | | | |  M                M  | | | | | | | | |  M
+N b| | | | | | | | |  N                N  | | | | | | | | |  N
+O  | | | | | | | | |  O                O  | | | | | | | | |  O
+P  | | | | | | | | |  P                P  | | | | | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+
+     Your ocean                           Player computer's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
+B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
+C d|d|*|c|c| | | | |  C                C d|d|d|c|c| | | | |  C
+D d|d|d|c|c| | | | |  D                D d|d|d|c|c| | | | |  D
+E d|d|d|c|*| | | | |  E                E  | | | | | | | | |  E
+F b| | |c| | | | | |  F                F b| | |c| | | | | |  F
+G *|b| |c|*| | | | |  G                G b| | | | | | | | |  G
+H b| | |c|c| | | | |  H                H  | | | | | | | | |  H
+I b| | | |c| | | | |  I                I  | | | | | | | | |  I
+J b|b| | | | | | | |  J                J  | | | | | | | | |  J
+K b| | | | | | | | |  K                K  | | | | | | | | |  K
+L b| | | | | | | | |  L                L  | | | | | | | | |  L
+M b|b| | | | | | | |  M                M  | | | | | | | | |  M
 N b| | | | | | | | |  N                N  | | | | | | | | |  N
 O  | | | | | | | | |  O                O  | | | | | | | | |  O
 P  | | | | | | | | |  P                P  | | | | | | | | |  P
@@ -1633,17 +1352,17 @@ you missed
   0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
 B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
-C d|d|d|*|*| | | | |  C                C d|d|d|c|c| | | | |  C
-D d|d|d|c|c| | | | |  D                D d|d|d|c|c| | | | |  D
-E d|d|d|c|c| | | | |  E                E d|d|d|c|c|X|X| | |  E
-F b| | |c| | | | | |  F                F b|X| | | | | | | |  F
-G b|b| |c|c| | | | |  G                G  | | | | | | | | |  G
+C d|d|*|c|c| | | | |  C                C d|d|d|c|c| | | | |  C
+D d|d|d|c|c| | | | |  D                D d|d|d|c|c|X| | | |  D
+E d|d|d|c|*| | | | |  E                E  | | | | | | | | |  E
+F b| | |c| | | | | |  F                F b| | |c| | | | | |  F
+G *|b| |c|*| | | | |  G                G b| | | | | | | | |  G
 H b| | |c|c| | | | |  H                H  | | | | | | | | |  H
 I b| | | |c| | | | |  I                I  | | | | | | | | |  I
 J b|b| | | | | | | |  J                J  | | | | | | | | |  J
 K b| | | | | | | | |  K                K  | | | | | | | | |  K
 L b| | | | | | | | |  L                L  | | | | | | | | |  L
-M b|*| | | | | | | |  M                M  | | | | | | | | |  M
+M b|b| | | | | | | |  M                M  | | | | | | | | |  M
 N b| | | | | | | | |  N                N  | | | | | | | | |  N
 O  | | | | | | | | |  O                O  | | | | | | | | |  O
 P  | | | | | | | | |  P                P  | | | | | | | | |  P
@@ -1657,17 +1376,17 @@ T  | | | | | | | | |  T                T  | | | | | | | | |  T
   0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
 B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
-C d|d|d|*|*| | | | |  C                C d|d|d|c|c| | | | |  C
-D d|d|d|c|c| | | | |  D                D d|d|d|c|c| | | | |  D
-E d|d|d|c|c| | | | |  E                E d|d|d|c|c|X|X| | |  E
-F b| | |c| | | | | |  F                F b|X| | | | | | | |  F
-G b|b| |c|c| | | | |  G                G  | | | | | | | | |  G
+C d|d|*|c|c| | | | |  C                C d|d|d|c|c| | | | |  C
+D d|d|d|c|c| | | | |  D                D d|d|d|c|c|X| | | |  D
+E d|d|d|c|*| | | | |  E                E  | | | | | | | | |  E
+F b| | |c| | | | | |  F                F b| | |c| | | | | |  F
+G *|b| |c|*| | | | |  G                G b| | | | | | | | |  G
 H b| | |c|c| | | | |  H                H  | | | | | | | | |  H
 I b| | | |c| | | | |  I                I  | | | | | | | | |  I
 J b|b| | | | | | | |  J                J  | | | | | | | | |  J
 K b| | | | | | | | |  K                K  | | | | | | | | |  K
 L b| | | | | | | | |  L                L  | | | | | | | | |  L
-M b|*| | | | | | | |  M                M  | | | | | | | | |  M
+M b|b| | | | | | | |  M                M  | | | | | | | | |  M
 N b| | | | | | | | |  N                N  | | | | | | | | |  N
 O  | | | | | | | | |  O                O  | | | | | | | | |  O
 P  | | | | | | | | |  P                P  | | | | | | | | |  P
@@ -1688,17 +1407,17 @@ you missed
   0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
 B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
-C d|d|d|*|*| | | | |  C                C d|d|d|c|c| | | | |  C
-D d|d|d|c|c| | | | |  D                D d|d|d|c|c| | | | |  D
-E d|d|d|c|c| | | | |  E                E d|d|d|c|c|X|X| | |  E
-F b| | |c| | | | | |  F                F b|X|X| | | | | | |  F
-G b|b| |c|c| | | | |  G                G  | | | | | | | | |  G
+C d|d|*|c|c| | | | |  C                C d|d|d|c|c| | | | |  C
+D d|d|d|c|c| | | | |  D                D d|d|d|c|c|X|X| | |  D
+E d|d|d|c|*| | | | |  E                E  | | | | | | | | |  E
+F b| | |c| | | | | |  F                F b| | |c| | | | | |  F
+G *|b| |c|*| | | | |  G                G b| | | | | | | | |  G
 H b| | |c|c| | | | |  H                H  | | | | | | | | |  H
 I b| | | |c| | | | |  I                I  | | | | | | | | |  I
 J b|b| | | | | | | |  J                J  | | | | | | | | |  J
 K b| | | | | | | | |  K                K  | | | | | | | | |  K
 L b| | | | | | | | |  L                L  | | | | | | | | |  L
-M b|*| | | | | | | |  M                M  | | | | | | | | |  M
+M b|b| | | | | | | |  M                M  | | | | | | | | |  M
 N b| | | | | | | | |  N                N  | | | | | | | | |  N
 O  | | | | | | | | |  O                O  | | | | | | | | |  O
 P  | | | | | | | | |  P                P  | | | | | | | | |  P
@@ -1712,17 +1431,182 @@ T  | | | | | | | | |  T                T  | | | | | | | | |  T
   0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
 B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
-C d|d|d|*|*| | | | |  C                C d|d|d|c|c| | | | |  C
-D d|d|d|c|c| | | | |  D                D d|d|d|c|c| | | | |  D
-E d|d|d|c|c| | | | |  E                E d|d|d|c|c|X|X| | |  E
-F b| | |c| | | | | |  F                F b|X|X| | | | | | |  F
-G b|b| |c|c| | | | |  G                G  | | | | | | | | |  G
+C d|d|*|c|c| | | | |  C                C d|d|d|c|c| | | | |  C
+D d|d|d|c|c| | | | |  D                D d|d|d|c|c|X|X| | |  D
+E d|d|d|c|*| | | | |  E                E  | | | | | | | | |  E
+F b| | |c| | | | | |  F                F b| | |c| | | | | |  F
+G *|b| |c|*| | | | |  G                G b| | | | | | | | |  G
 H b| | |c|c| | | | |  H                H  | | | | | | | | |  H
 I b| | | |c| | | | |  I                I  | | | | | | | | |  I
 J b|b| | | | | | | |  J                J  | | | | | | | | |  J
 K b| | | | | | | | |  K                K  | | | | | | | | |  K
 L b| | | | | | | | |  L                L  | | | | | | | | |  L
-M b|*| | | | | | | |  M                M  | | | | | | | | |  M
+M b|b| | | | | | | |  M                M  | | | | | | | | |  M
+N b| | | | | | | | |  N                N  | | | | | | | | |  N
+O  | | | | | | | | |  O                O  | | | | | | | | |  O
+P  | | | | | | | | |  P                P  | | | | | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+
+F Fire at a square
+M Move a ship to another square (2 remaining)
+S Sonar scan (1 remaining)
+Player A, what would you like to do?
+
+Player A Where would you like to fire at?
+you hit a destroyer
+     Your ocean                           Player computer's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
+B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
+C d|d|*|c|c| | | | |  C                C d|d|d|c|c| | | | |  C
+D d|d|d|c|c| | | | |  D                D d|d|d|c|c|X|X| | |  D
+E d|d|d|c|*| | | | |  E                E d| | | | | | | | |  E
+F b| | |c| | | | | |  F                F b| | |c| | | | | |  F
+G *|b| |c|*| | | | |  G                G b| | | | | | | | |  G
+H b| | |c|c| | | | |  H                H  | | | | | | | | |  H
+I b| | | |c| | | | |  I                I  | | | | | | | | |  I
+J b|b| | | | | | | |  J                J  | | | | | | | | |  J
+K b| | | | | | | | |  K                K  | | | | | | | | |  K
+L b| | | | | | | | |  L                L  | | | | | | | | |  L
+M b|b| | | | | | | |  M                M  | | | | | | | | |  M
+N b| | | | | | | | |  N                N  | | | | | | | | |  N
+O  | | | | | | | | |  O                O  | | | | | | | | |  O
+P  | | | | | | | | |  P                P  | | | | | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+
+     Your ocean                           Player computer's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
+B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
+C d|d|*|c|c| | | | |  C                C d|d|d|c|c| | | | |  C
+D d|d|d|c|c| | | | |  D                D d|d|d|c|c|X|X| | |  D
+E d|d|d|c|*| | | | |  E                E d| | | | | | | | |  E
+F b| | |c| | | | | |  F                F b| | |c| | | | | |  F
+G *|b| |c|*| | | | |  G                G b| | | | | | | | |  G
+H b| | |c|c| | | | |  H                H  | | | | | | | | |  H
+I b| | | |c| | | | |  I                I  | | | | | | | | |  I
+J b|b| | | | | | | |  J                J  | | | | | | | | |  J
+K b| | | | | | | | |  K                K  | | | | | | | | |  K
+L b| | | | | | | | |  L                L  | | | | | | | | |  L
+M b|b| | | | | | | |  M                M  | | | | | | | | |  M
+N b| | | | | | | | |  N                N  | | | | | | | | |  N
+O  | | | | | | | | |  O                O  | | | | | | | | |  O
+P  | | | | | | | | |  P                P  | | | | | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+
+F Fire at a square
+M Move a ship to another square (2 remaining)
+S Sonar scan (1 remaining)
+Player A, what would you like to do?
+
+Player A Where would you like to fire at?
+you hit a destroyer
+     Your ocean                           Player computer's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
+B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
+C d|d|*|c|c| | | | |  C                C d|d|d|c|c| | | | |  C
+D d|d|d|c|c| | | | |  D                D d|d|d|c|c|X|X| | |  D
+E d|d|d|c|*| | | | |  E                E d|d| | | | | | | |  E
+F b| | |c| | | | | |  F                F b| | |c| | | | | |  F
+G *|b| |c|*| | | | |  G                G b| | | | | | | | |  G
+H b| | |c|c| | | | |  H                H  | | | | | | | | |  H
+I b| | | |c| | | | |  I                I  | | | | | | | | |  I
+J b|b| | | | | | | |  J                J  | | | | | | | | |  J
+K b| | | | | | | | |  K                K  | | | | | | | | |  K
+L b| | | | | | | | |  L                L  | | | | | | | | |  L
+M b|b| | | | | | | |  M                M  | | | | | | | | |  M
+N b| | | | | | | | |  N                N  | | | | | | | | |  N
+O  | | | | | | | | |  O                O  | | | | | | | | |  O
+P  | | | | | | | | |  P                P  | | | | | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+
+     Your ocean                           Player computer's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
+B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
+C d|d|*|c|c| | | | |  C                C d|d|d|c|c| | | | |  C
+D d|d|d|c|c| | | | |  D                D d|d|d|c|c|X|X| | |  D
+E d|d|d|c|*| | | | |  E                E d|d| | | | | | | |  E
+F b| | |c| | | | | |  F                F b| | |c| | | | | |  F
+G *|b| |c|*| | | | |  G                G b| | | | | | | | |  G
+H b| | |c|c| | | | |  H                H  | | | | | | | | |  H
+I b| | | |c| | | | |  I                I  | | | | | | | | |  I
+J b|b| | | | | | | |  J                J  | | | | | | | | |  J
+K b| | | | | | | | |  K                K  | | | | | | | | |  K
+L b| | | | | | | | |  L                L  | | | | | | | | |  L
+M b|b| | | | | | | |  M                M  | | | | | | | | |  M
+N b| | | | | | | | |  N                N  | | | | | | | | |  N
+O  | | | | | | | | |  O                O  | | | | | | | | |  O
+P  | | | | | | | | |  P                P  | | | | | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+
+F Fire at a square
+M Move a ship to another square (2 remaining)
+S Sonar scan (1 remaining)
+Player A, what would you like to do?
+
+Player A Where would you like to fire at?
+you hit a destroyer
+     Your ocean                           Player computer's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
+B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
+C d|d|*|c|c| | | | |  C                C d|d|d|c|c| | | | |  C
+D d|d|d|c|c| | | | |  D                D d|d|d|c|c|X|X| | |  D
+E d|d|d|c|*| | | | |  E                E d|d|d| | | | | | |  E
+F b| | |c| | | | | |  F                F b| | |c| | | | | |  F
+G *|b| |c|*| | | | |  G                G b| | | | | | | | |  G
+H b| | |c|c| | | | |  H                H  | | | | | | | | |  H
+I b| | | |c| | | | |  I                I  | | | | | | | | |  I
+J b|b| | | | | | | |  J                J  | | | | | | | | |  J
+K b| | | | | | | | |  K                K  | | | | | | | | |  K
+L b| | | | | | | | |  L                L  | | | | | | | | |  L
+M b|b| | | | | | | |  M                M  | | | | | | | | |  M
+N b| | | | | | | | |  N                N  | | | | | | | | |  N
+O  | | | | | | | | |  O                O  | | | | | | | | |  O
+P  | | | | | | | | |  P                P  | | | | | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+
+     Your ocean                           Player computer's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
+B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
+C d|d|*|c|c| | | | |  C                C d|d|d|c|c| | | | |  C
+D d|d|d|c|c| | | | |  D                D d|d|d|c|c|X|X| | |  D
+E d|d|d|c|*| | | | |  E                E d|d|d| | | | | | |  E
+F b| | |c| | | | | |  F                F b| | |c| | | | | |  F
+G *|b| |c|*| | | | |  G                G b| | | | | | | | |  G
+H b| | |c|c| | | | |  H                H  | | | | | | | | |  H
+I *| | | |c| | | | |  I                I  | | | | | | | | |  I
+J b|b| | | | | | | |  J                J  | | | | | | | | |  J
+K b| | | | | | | | |  K                K  | | | | | | | | |  K
+L b| | | | | | | | |  L                L  | | | | | | | | |  L
+M b|b| | | | | | | |  M                M  | | | | | | | | |  M
 N b| | | | | | | | |  N                N  | | | | | | | | |  N
 O  | | | | | | | | |  O                O  | | | | | | | | |  O
 P  | | | | | | | | |  P                P  | | | | | | | | |  P
@@ -1743,17 +1627,17 @@ you hit a carrier
   0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
 B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
-C d|d|d|*|*| | | | |  C                C d|d|d|c|c| | | | |  C
-D d|d|d|c|c| | | | |  D                D d|d|d|c|c| | | | |  D
-E d|d|d|c|c| | | | |  E                E d|d|d|c|c|X|X| | |  E
-F b| | |c| | | | | |  F                F b|X|X|c| | | | | |  F
-G b|b| |c|c| | | | |  G                G  | | | | | | | | |  G
+C d|d|*|c|c| | | | |  C                C d|d|d|c|c| | | | |  C
+D d|d|d|c|c| | | | |  D                D d|d|d|c|c|X|X| | |  D
+E d|d|d|c|*| | | | |  E                E d|d|d|c| | | | | |  E
+F b| | |c| | | | | |  F                F b| | |c| | | | | |  F
+G *|b| |c|*| | | | |  G                G b| | | | | | | | |  G
 H b| | |c|c| | | | |  H                H  | | | | | | | | |  H
-I b| | | |c| | | | |  I                I  | | | | | | | | |  I
+I *| | | |c| | | | |  I                I  | | | | | | | | |  I
 J b|b| | | | | | | |  J                J  | | | | | | | | |  J
 K b| | | | | | | | |  K                K  | | | | | | | | |  K
 L b| | | | | | | | |  L                L  | | | | | | | | |  L
-M b|*| | | | | | | |  M                M  | | | | | | | | |  M
+M b|b| | | | | | | |  M                M  | | | | | | | | |  M
 N b| | | | | | | | |  N                N  | | | | | | | | |  N
 O  | | | | | | | | |  O                O  | | | | | | | | |  O
 P  | | | | | | | | |  P                P  | | | | | | | | |  P
@@ -1767,17 +1651,74 @@ T  | | | | | | | | |  T                T  | | | | | | | | |  T
   0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
 B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
-C d|d|d|*|*| | | | |  C                C d|d|d|c|c| | | | |  C
-D d|d|d|c|c| | | | |  D                D d|d|d|c|c| | | | |  D
-E d|d|d|c|c| | | | |  E                E d|d|d|c|c|X|X| | |  E
-F b| | |c| | | | | |  F                F b|X|X|c| | | | | |  F
-G b|b| |c|c| | | | |  G                G  | | | | | | | | |  G
+C d|d|*|c|c| | | | |  C                C d|d|d|c|c| | | | |  C
+D d|d|d|c|c| | | | |  D                D d|d|d|c|c|X|X| | |  D
+E d|d|d|c|*| | | | |  E                E d|d|d|c| | | | | |  E
+F b| | |c| | | | | |  F                F b| | |c| | | | | |  F
+G *|b| |c|*| | | | |  G                G b| | | | | | | | |  G
 H b| | |c|c| | | | |  H                H  | | | | | | | | |  H
-I b| | | |c| | | | |  I                I  | | | | | | | | |  I
+I *| | | |c| | | | |  I                I  | | | | | | | | |  I
 J b|b| | | | | | | |  J                J  | | | | | | | | |  J
 K b| | | | | | | | |  K                K  | | | | | | | | |  K
 L b| | | | | | | | |  L                L  | | | | | | | | |  L
-M b|*| | | | | | | |  M                M  | | | | | | | | |  M
+M b|b| | | | | | | |  M                M  | | | | | | | | |  M
+N b| | | | | | | | |  N                N  | | | | | | | | |  N
+O  | | | | | | | | |  O                O  | | | | | | | | |  O
+P  | | | | | | | | |  P                P  | | | | | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+
+F Fire at a square
+M Move a ship to another square (2 remaining)
+S Sonar scan (1 remaining)
+Player A, what would you like to do?
+
+Player A Where would you like to fire at?
+The coordinate is wrong
+Player A Where would you like to fire at?
+you hit a carrier
+     Your ocean                           Player computer's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
+B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
+C d|d|*|c|c| | | | |  C                C d|d|d|c|c| | | | |  C
+D d|d|d|c|c| | | | |  D                D d|d|d|c|c|X|X| | |  D
+E d|d|d|c|*| | | | |  E                E d|d|d|c|c| | | | |  E
+F b| | |c| | | | | |  F                F b| | |c| | | | | |  F
+G *|b| |c|*| | | | |  G                G b| | | | | | | | |  G
+H b| | |c|c| | | | |  H                H  | | | | | | | | |  H
+I *| | | |c| | | | |  I                I  | | | | | | | | |  I
+J b|b| | | | | | | |  J                J  | | | | | | | | |  J
+K b| | | | | | | | |  K                K  | | | | | | | | |  K
+L b| | | | | | | | |  L                L  | | | | | | | | |  L
+M b|b| | | | | | | |  M                M  | | | | | | | | |  M
+N b| | | | | | | | |  N                N  | | | | | | | | |  N
+O  | | | | | | | | |  O                O  | | | | | | | | |  O
+P  | | | | | | | | |  P                P  | | | | | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+
+     Your ocean                           Player computer's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
+B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
+C d|d|*|c|c| | | | |  C                C d|d|d|c|c| | | | |  C
+D d|d|d|c|c| | | | |  D                D d|d|d|c|c|X|X| | |  D
+E d|d|d|c|*| | | | |  E                E d|d|d|c|c| | | | |  E
+F b| | |c| | | | | |  F                F b| | |c| | | | | |  F
+G *|b| |c|*| | | | |  G                G b| | | | | | | | |  G
+H b| | |c|c| | | | |  H                H  | | | | | | | | |  H
+I *| | | |c| | | | |  I                I  | | | | | | | | |  I
+J b|b| | | | | | | |  J                J  | | | | | | | | |  J
+K b| | | | | | | | |  K                K  | | | | | | | | |  K
+L b| | | | | | | | |  L                L  | | | | | | | | |  L
+M b|b| | | | | | | |  M                M  | | | | | | | | |  M
 N b| | | | | | | | |  N                N  | | | | | | | | |  N
 O  | | | | | | | | |  O                O  | | | | | | | | |  O
 P  | | | | | | | | |  P                P  | | | | | | | | |  P
@@ -1798,17 +1739,17 @@ you hit a battleship
   0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
 B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
-C d|d|d|*|*| | | | |  C                C d|d|d|c|c| | | | |  C
-D d|d|d|c|c| | | | |  D                D d|d|d|c|c| | | | |  D
-E d|d|d|c|c| | | | |  E                E d|d|d|c|c|X|X| | |  E
-F b| | |c| | | | | |  F                F b|X|X|c| | | | | |  F
-G b|b| |c|c| | | | |  G                G b| | | | | | | | |  G
+C d|d|*|c|c| | | | |  C                C d|d|d|c|c| | | | |  C
+D d|d|d|c|c| | | | |  D                D d|d|d|c|c|X|X| | |  D
+E d|d|d|c|*| | | | |  E                E d|d|d|c|c| | | | |  E
+F b| | |c| | | | | |  F                F b| | |c| | | | | |  F
+G *|b| |c|*| | | | |  G                G b|b| | | | | | | |  G
 H b| | |c|c| | | | |  H                H  | | | | | | | | |  H
-I b| | | |c| | | | |  I                I  | | | | | | | | |  I
+I *| | | |c| | | | |  I                I  | | | | | | | | |  I
 J b|b| | | | | | | |  J                J  | | | | | | | | |  J
 K b| | | | | | | | |  K                K  | | | | | | | | |  K
 L b| | | | | | | | |  L                L  | | | | | | | | |  L
-M b|*| | | | | | | |  M                M  | | | | | | | | |  M
+M b|b| | | | | | | |  M                M  | | | | | | | | |  M
 N b| | | | | | | | |  N                N  | | | | | | | | |  N
 O  | | | | | | | | |  O                O  | | | | | | | | |  O
 P  | | | | | | | | |  P                P  | | | | | | | | |  P
@@ -1822,72 +1763,17 @@ T  | | | | | | | | |  T                T  | | | | | | | | |  T
   0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
 B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
-C d|d|d|*|*| | | | |  C                C d|d|d|c|c| | | | |  C
-D d|d|d|c|c| | | | |  D                D d|d|d|c|c| | | | |  D
-E d|d|d|c|c| | | | |  E                E d|d|d|c|c|X|X| | |  E
-F b| | |c| | | | | |  F                F b|X|X|c| | | | | |  F
-G b|b| |c|c| | | | |  G                G b| | | | | | | | |  G
+C d|d|*|c|c| | | | |  C                C d|d|d|c|c| | | | |  C
+D d|d|d|c|c| | | | |  D                D d|d|d|c|c|X|X| | |  D
+E d|d|d|c|*| | | | |  E                E d|d|d|c|c| | | | |  E
+F b| | |c| | | | | |  F                F b| | |c| | | | | |  F
+G *|b| |c|*| | | | |  G                G b|b| | | | | | | |  G
 H b| | |c|c| | | | |  H                H  | | | | | | | | |  H
-I b| | | |c| | | | |  I                I  | | | | | | | | |  I
+I *| | | |c| | | | |  I                I  | | | | | | | | |  I
 J b|b| | | | | | | |  J                J  | | | | | | | | |  J
 K b| | | | | | | | |  K                K  | | | | | | | | |  K
 L b| | | | | | | | |  L                L  | | | | | | | | |  L
-M b|*| | | | | | | |  M                M  | | | | | | | | |  M
-N b| | | | | | | | |  N                N  | | | | | | | | |  N
-O  | | | | | | | | |  O                O  | | | | | | | | |  O
-P  | | | | | | | | |  P                P  | | | | | | | | |  P
-Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
-R  | | | | | | | | |  R                R  | | | | | | | | |  R
-S  | | | | | | | | |  S                S  | | | | | | | | |  S
-T  | | | | | | | | |  T                T  | | | | | | | | |  T
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-
-F Fire at a square
-M Move a ship to another square (2 remaining)
-S Sonar scan (1 remaining)
-Player A, what would you like to do?
-
-Player A Where would you like to fire at?
-you hit a battleship
-     Your ocean                           Player computer's ocean
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
-B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
-C d|d|d|*|*| | | | |  C                C d|d|d|c|c| | | | |  C
-D d|d|d|c|c| | | | |  D                D d|d|d|c|c| | | | |  D
-E d|d|d|c|c| | | | |  E                E d|d|d|c|c|X|X| | |  E
-F b| | |c| | | | | |  F                F b|X|X|c| | | | | |  F
-G b|b| |c|c| | | | |  G                G b|b| | | | | | | |  G
-H b| | |c|c| | | | |  H                H  | | | | | | | | |  H
-I b| | | |c| | | | |  I                I  | | | | | | | | |  I
-J b|b| | | | | | | |  J                J  | | | | | | | | |  J
-K b| | | | | | | | |  K                K  | | | | | | | | |  K
-L b| | | | | | | | |  L                L  | | | | | | | | |  L
-M b|*| | | | | | | |  M                M  | | | | | | | | |  M
-N b| | | | | | | | |  N                N  | | | | | | | | |  N
-O  | | | | | | | | |  O                O  | | | | | | | | |  O
-P  | | | | | | | | |  P                P  | | | | | | | | |  P
-Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
-R  | | | | | | | | |  R                R  | | | | | | | | |  R
-S  | | | | | | | | |  S                S  | | | | | | | | |  S
-T  | | | | | | | | |  T                T  | | | | | | | | |  T
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-
-     Your ocean                           Player computer's ocean
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
-B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
-C d|d|d|*|*| | | | |  C                C d|d|d|c|c| | | | |  C
-D d|d|d|c|c| | | | |  D                D d|d|d|c|c| | | | |  D
-E d|d|d|c|c| | | | |  E                E d|d|d|c|c|X|X| | |  E
-F b| | |c| | | | | |  F                F b|X|X|c| | | | | |  F
-G b|b| |c|c| | | | |  G                G b|b| | | | | | | |  G
-H b| | |c|c| | | | |  H                H  | | | | | | | | |  H
-I b| | | |c| | | | |  I                I  | | | | | | | | |  I
-J b|b| | | | | | | |  J                J  | | | | | | | | |  J
-K b| | | | | | | | |  K                K  | | | | | | | | |  K
-L b| | | | | | | | |  L                L  | | | | | | | | |  L
-M b|*| | | | | | | |  M                M  | | | | | | | | |  M
+M b|b| | | | | | | |  M                M  | | | | | | | | |  M
 N b| | | | | | | | |  N                N  | | | | | | | | |  N
 O  | | | | | | | | |  O                O  | | | | | | | | |  O
 P  | | | | | | | | |  P                P  | | | | | | | | |  P
@@ -1908,17 +1794,17 @@ you hit a carrier
   0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
 B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
-C d|d|d|*|*| | | | |  C                C d|d|d|c|c| | | | |  C
-D d|d|d|c|c| | | | |  D                D d|d|d|c|c| | | | |  D
-E d|d|d|c|c| | | | |  E                E d|d|d|c|c|X|X| | |  E
-F b| | |c| | | | | |  F                F b|X|X|c| | | | | |  F
-G b|b| |c|c| | | | |  G                G b|b| |c| | | | | |  G
+C d|d|*|c|c| | | | |  C                C d|d|d|c|c| | | | |  C
+D d|d|d|c|c| | | | |  D                D d|d|d|c|c|X|X| | |  D
+E d|d|d|c|*| | | | |  E                E d|d|d|c|c| | | | |  E
+F b| | |c| | | | | |  F                F b| | |c| | | | | |  F
+G *|b| |c|*| | | | |  G                G b|b| |c| | | | | |  G
 H b| | |c|c| | | | |  H                H  | | | | | | | | |  H
-I b| | | |c| | | | |  I                I  | | | | | | | | |  I
+I *| | | |c| | | | |  I                I  | | | | | | | | |  I
 J b|b| | | | | | | |  J                J  | | | | | | | | |  J
 K b| | | | | | | | |  K                K  | | | | | | | | |  K
 L b| | | | | | | | |  L                L  | | | | | | | | |  L
-M b|*| | | | | | | |  M                M  | | | | | | | | |  M
+M b|b| | | | | | | |  M                M  | | | | | | | | |  M
 N b| | | | | | | | |  N                N  | | | | | | | | |  N
 O  | | | | | | | | |  O                O  | | | | | | | | |  O
 P  | | | | | | | | |  P                P  | | | | | | | | |  P
@@ -1932,17 +1818,17 @@ T  | | | | | | | | |  T                T  | | | | | | | | |  T
   0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
 B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
-C d|d|d|*|*| | | | |  C                C d|d|d|c|c| | | | |  C
-D d|d|d|c|c| | | | |  D                D d|d|d|c|c| | | | |  D
-E d|d|d|*|c| | | | |  E                E d|d|d|c|c|X|X| | |  E
-F b| | |c| | | | | |  F                F b|X|X|c| | | | | |  F
-G b|b| |c|c| | | | |  G                G b|b| |c| | | | | |  G
+C d|d|*|c|c| | | | |  C                C d|d|d|c|c| | | | |  C
+D d|d|d|c|c| | | | |  D                D d|d|d|c|c|X|X| | |  D
+E d|d|d|c|*| | | | |  E                E d|d|d|c|c| | | | |  E
+F b| | |c| | | | | |  F                F b| | |c| | | | | |  F
+G *|b| |c|*| | | | |  G                G b|b| |c| | | | | |  G
 H b| | |c|c| | | | |  H                H  | | | | | | | | |  H
-I b| | | |c| | | | |  I                I  | | | | | | | | |  I
+I *| | | |c| | | | |  I                I  | | | | | | | | |  I
 J b|b| | | | | | | |  J                J  | | | | | | | | |  J
 K b| | | | | | | | |  K                K  | | | | | | | | |  K
 L b| | | | | | | | |  L                L  | | | | | | | | |  L
-M b|*| | | | | | | |  M                M  | | | | | | | | |  M
+M b|b| | | | | | | |  M                M  | | | | | | | | |  M
 N b| | | | | | | | |  N                N  | | | | | | | | |  N
 O  | | | | | | | | |  O                O  | | | | | | | | |  O
 P  | | | | | | | | |  P                P  | | | | | | | | |  P
@@ -1963,17 +1849,17 @@ you hit a carrier
   0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
 B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
-C d|d|d|*|*| | | | |  C                C d|d|d|c|c| | | | |  C
-D d|d|d|c|c| | | | |  D                D d|d|d|c|c| | | | |  D
-E d|d|d|*|c| | | | |  E                E d|d|d|c|c|X|X| | |  E
-F b| | |c| | | | | |  F                F b|X|X|c| | | | | |  F
-G b|b| |c|c| | | | |  G                G b|b| |c|c| | | | |  G
+C d|d|*|c|c| | | | |  C                C d|d|d|c|c| | | | |  C
+D d|d|d|c|c| | | | |  D                D d|d|d|c|c|X|X| | |  D
+E d|d|d|c|*| | | | |  E                E d|d|d|c|c| | | | |  E
+F b| | |c| | | | | |  F                F b| | |c| | | | | |  F
+G *|b| |c|*| | | | |  G                G b|b| |c|c| | | | |  G
 H b| | |c|c| | | | |  H                H  | | | | | | | | |  H
-I b| | | |c| | | | |  I                I  | | | | | | | | |  I
+I *| | | |c| | | | |  I                I  | | | | | | | | |  I
 J b|b| | | | | | | |  J                J  | | | | | | | | |  J
 K b| | | | | | | | |  K                K  | | | | | | | | |  K
 L b| | | | | | | | |  L                L  | | | | | | | | |  L
-M b|*| | | | | | | |  M                M  | | | | | | | | |  M
+M b|b| | | | | | | |  M                M  | | | | | | | | |  M
 N b| | | | | | | | |  N                N  | | | | | | | | |  N
 O  | | | | | | | | |  O                O  | | | | | | | | |  O
 P  | | | | | | | | |  P                P  | | | | | | | | |  P
@@ -1987,17 +1873,17 @@ T  | | | | | | | | |  T                T  | | | | | | | | |  T
   0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
 B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
-C d|d|d|*|*| | | | |  C                C d|d|d|c|c| | | | |  C
-D d|d|d|c|c| | | | |  D                D d|d|d|c|c| | | | |  D
-E d|d|d|*|c| | | | |  E                E d|d|d|c|c|X|X| | |  E
-F b| | |c| | | | | |  F                F b|X|X|c| | | | | |  F
-G b|b| |c|c| | | | |  G                G b|b| |c|c| | | | |  G
+C d|d|*|c|c| | | | |  C                C d|d|d|c|c| | | | |  C
+D d|d|d|c|c| | | | |  D                D d|d|d|c|c|X|X| | |  D
+E d|d|d|c|*| | | | |  E                E d|d|d|c|c| | | | |  E
+F b| | |c| | | | | |  F                F b| | |c| | | | | |  F
+G *|b| |c|*| | | | |  G                G b|b| |c|c| | | | |  G
 H b| | |c|c| | | | |  H                H  | | | | | | | | |  H
-I b| | | |c| | | | |  I                I  | | | | | | | | |  I
+I *| | | |c| | | | |  I                I  | | | | | | | | |  I
 J b|b| | | | | | | |  J                J  | | | | | | | | |  J
 K b| | | | | | | | |  K                K  | | | | | | | | |  K
 L b| | | | | | | | |  L                L  | | | | | | | | |  L
-M b|*| | | | | | | |  M                M  | | | | | | | | |  M
+M b|b| | | | | | | |  M                M  | | | | | | | | |  M
 N b| | | | | | | | |  N                N  | | | | | | | | |  N
 O  | | | | | | | | |  O                O  | | | | | | | | |  O
 P  | | | | | | | | |  P                P  | | | | | | | | |  P
@@ -2018,17 +1904,17 @@ you hit a battleship
   0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
 B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
-C d|d|d|*|*| | | | |  C                C d|d|d|c|c| | | | |  C
-D d|d|d|c|c| | | | |  D                D d|d|d|c|c| | | | |  D
-E d|d|d|*|c| | | | |  E                E d|d|d|c|c|X|X| | |  E
-F b| | |c| | | | | |  F                F b|X|X|c| | | | | |  F
-G b|b| |c|c| | | | |  G                G b|b| |c|c| | | | |  G
+C d|d|*|c|c| | | | |  C                C d|d|d|c|c| | | | |  C
+D d|d|d|c|c| | | | |  D                D d|d|d|c|c|X|X| | |  D
+E d|d|d|c|*| | | | |  E                E d|d|d|c|c| | | | |  E
+F b| | |c| | | | | |  F                F b| | |c| | | | | |  F
+G *|b| |c|*| | | | |  G                G b|b| |c|c| | | | |  G
 H b| | |c|c| | | | |  H                H b| | | | | | | | |  H
-I b| | | |c| | | | |  I                I  | | | | | | | | |  I
+I *| | | |c| | | | |  I                I  | | | | | | | | |  I
 J b|b| | | | | | | |  J                J  | | | | | | | | |  J
 K b| | | | | | | | |  K                K  | | | | | | | | |  K
 L b| | | | | | | | |  L                L  | | | | | | | | |  L
-M b|*| | | | | | | |  M                M  | | | | | | | | |  M
+M b|b| | | | | | | |  M                M  | | | | | | | | |  M
 N b| | | | | | | | |  N                N  | | | | | | | | |  N
 O  | | | | | | | | |  O                O  | | | | | | | | |  O
 P  | | | | | | | | |  P                P  | | | | | | | | |  P
@@ -2042,18 +1928,568 @@ T  | | | | | | | | |  T                T  | | | | | | | | |  T
   0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
 B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
-C d|d|d|*|*| | | | |  C                C d|d|d|c|c| | | | |  C
-D d|d|d|c|c| | | | |  D                D d|d|d|c|c| | | | |  D
-E d|d|d|*|c| | | | |  E                E d|d|d|c|c|X|X| | |  E
-F b| | |c| | | | | |  F                F b|X|X|c| | | | | |  F
-G b|b| |c|c| | | | |  G                G b|b| |c|c| | | | |  G
+C d|d|*|c|c| | | | |  C                C d|d|d|c|c| | | | |  C
+D d|d|d|c|c| | | | |  D                D d|d|d|c|c|X|X| | |  D
+E d|d|d|c|*| | | | |  E                E d|d|d|c|c| | | | |  E
+F b| | |c| | | | | |  F                F b| | |c| | | | | |  F
+G *|b| |c|*| | | | |  G                G b|b| |c|c| | | | |  G
 H b| | |c|c| | | | |  H                H b| | | | | | | | |  H
-I b| | | |c| | | | |  I                I  | | | | | | | | |  I
+I *| | | |c| | | | |  I                I  | | | | | | | | |  I
 J b|b| | | | | | | |  J                J  | | | | | | | | |  J
 K b| | | | | | | | |  K                K  | | | | | | | | |  K
 L b| | | | | | | | |  L                L  | | | | | | | | |  L
-M b|*| | | | | | | |  M                M  | | | | | | | | |  M
+M b|b| | | | | | | |  M                M  | | | | | | | | |  M
 N b| | | | | | | | |  N                N  | | | | | | | | |  N
+O  | | | | | | | | |  O                O  | | | | | | | | |  O
+P  | | | | | | | | |  P                P  | | | | | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+
+F Fire at a square
+M Move a ship to another square (2 remaining)
+S Sonar scan (1 remaining)
+Player A, what would you like to do?
+
+Player A Where would you like to fire at?
+you hit a battleship
+     Your ocean                           Player computer's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
+B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
+C d|d|*|c|c| | | | |  C                C d|d|d|c|c| | | | |  C
+D d|d|d|c|c| | | | |  D                D d|d|d|c|c|X|X| | |  D
+E d|d|d|c|*| | | | |  E                E d|d|d|c|c| | | | |  E
+F b| | |c| | | | | |  F                F b| | |c| | | | | |  F
+G *|b| |c|*| | | | |  G                G b|b| |c|c| | | | |  G
+H b| | |c|c| | | | |  H                H b| | | | | | | | |  H
+I *| | | |c| | | | |  I                I b| | | | | | | | |  I
+J b|b| | | | | | | |  J                J  | | | | | | | | |  J
+K b| | | | | | | | |  K                K  | | | | | | | | |  K
+L b| | | | | | | | |  L                L  | | | | | | | | |  L
+M b|b| | | | | | | |  M                M  | | | | | | | | |  M
+N b| | | | | | | | |  N                N  | | | | | | | | |  N
+O  | | | | | | | | |  O                O  | | | | | | | | |  O
+P  | | | | | | | | |  P                P  | | | | | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+
+     Your ocean                           Player computer's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
+B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
+C d|d|*|c|c| | | | |  C                C d|d|d|c|c| | | | |  C
+D d|d|d|c|c| | | | |  D                D d|d|d|c|c|X|X| | |  D
+E d|d|d|c|*| | | | |  E                E d|d|d|c|c| | | | |  E
+F b| | |c| | | | | |  F                F b| | |c| | | | | |  F
+G *|b| |c|*| | | | |  G                G b|b| |c|c| | | | |  G
+H b| | |c|c| | | | |  H                H b| | | | | | | | |  H
+I *| | | |c| | | | |  I                I b| | | | | | | | |  I
+J b|b| | | | | | | |  J                J  | | | | | | | | |  J
+K b| | | | | | | | |  K                K  | | | | | | | | |  K
+L *| | | | | | | | |  L                L  | | | | | | | | |  L
+M b|b| | | | | | | |  M                M  | | | | | | | | |  M
+N b| | | | | | | | |  N                N  | | | | | | | | |  N
+O  | | | | | | | | |  O                O  | | | | | | | | |  O
+P  | | | | | | | | |  P                P  | | | | | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+
+F Fire at a square
+M Move a ship to another square (2 remaining)
+S Sonar scan (1 remaining)
+Player A, what would you like to do?
+
+Player A Where would you like to fire at?
+you hit a battleship
+     Your ocean                           Player computer's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
+B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
+C d|d|*|c|c| | | | |  C                C d|d|d|c|c| | | | |  C
+D d|d|d|c|c| | | | |  D                D d|d|d|c|c|X|X| | |  D
+E d|d|d|c|*| | | | |  E                E d|d|d|c|c| | | | |  E
+F b| | |c| | | | | |  F                F b| | |c| | | | | |  F
+G *|b| |c|*| | | | |  G                G b|b| |c|c| | | | |  G
+H b| | |c|c| | | | |  H                H b| | | | | | | | |  H
+I *| | | |c| | | | |  I                I b| | | | | | | | |  I
+J b|b| | | | | | | |  J                J b| | | | | | | | |  J
+K b| | | | | | | | |  K                K  | | | | | | | | |  K
+L *| | | | | | | | |  L                L  | | | | | | | | |  L
+M b|b| | | | | | | |  M                M  | | | | | | | | |  M
+N b| | | | | | | | |  N                N  | | | | | | | | |  N
+O  | | | | | | | | |  O                O  | | | | | | | | |  O
+P  | | | | | | | | |  P                P  | | | | | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+
+     Your ocean                           Player computer's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
+B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
+C d|d|*|c|c| | | | |  C                C d|d|d|c|c| | | | |  C
+D d|d|d|c|c| | | | |  D                D d|d|d|c|c|X|X| | |  D
+E d|d|d|c|*| | | | |  E                E d|d|d|c|c| | | | |  E
+F b| | |c| | | | | |  F                F b| | |c| | | | | |  F
+G *|b| |c|*| | | | |  G                G b|b| |c|c| | | | |  G
+H b| | |c|c| | | | |  H                H b| | | | | | | | |  H
+I *| | | |c| | | | |  I                I b| | | | | | | | |  I
+J b|b| | | | | | | |  J                J b| | | | | | | | |  J
+K b| | | | | | | | |  K                K  | | | | | | | | |  K
+L *| | | | | | | | |  L                L  | | | | | | | | |  L
+M b|b| | | | | | | |  M                M  | | | | | | | | |  M
+N b| | | | | | | | |  N                N  | | | | | | | | |  N
+O  | | | | | | | | |  O                O  | | | | | | | | |  O
+P  | | | | | | | | |  P                P  | | | | | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+
+F Fire at a square
+M Move a ship to another square (2 remaining)
+S Sonar scan (1 remaining)
+Player A, what would you like to do?
+
+Player A Where would you like to fire at?
+you hit a battleship
+     Your ocean                           Player computer's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
+B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
+C d|d|*|c|c| | | | |  C                C d|d|d|c|c| | | | |  C
+D d|d|d|c|c| | | | |  D                D d|d|d|c|c|X|X| | |  D
+E d|d|d|c|*| | | | |  E                E d|d|d|c|c| | | | |  E
+F b| | |c| | | | | |  F                F b| | |c| | | | | |  F
+G *|b| |c|*| | | | |  G                G b|b| |c|c| | | | |  G
+H b| | |c|c| | | | |  H                H b| | | | | | | | |  H
+I *| | | |c| | | | |  I                I b| | | | | | | | |  I
+J b|b| | | | | | | |  J                J b| | | | | | | | |  J
+K b| | | | | | | | |  K                K  | | | | | | | | |  K
+L *| | | | | | | | |  L                L  | | | | | | | | |  L
+M b|b| | | | | | | |  M                M  | | | | | | | | |  M
+N b| | | | | | | | |  N                N  | | | | | | | | |  N
+O  | | | | | | | | |  O                O  | | | | | | | | |  O
+P  | | | | | | | | |  P                P  | | | | | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+
+     Your ocean                           Player computer's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
+B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
+C d|d|*|c|c| | | | |  C                C d|d|d|c|c| | | | |  C
+D d|d|d|c|c| | | | |  D                D d|d|d|c|c|X|X| | |  D
+E d|d|d|c|*| | | | |  E                E d|d|d|c|c| | | | |  E
+F b| | |c| | | | | |  F                F b| | |c| | | | | |  F
+G *|b| |c|*| | | | |  G                G b|b| |c|c| | | | |  G
+H b| | |c|c| | | | |  H                H b| | | | | | | | |  H
+I *| | | |c| | | | |  I                I b| | | | | | | | |  I
+J b|b| | | | | | | |  J                J b| | | | | | | | |  J
+K b| | | | | | | | |  K                K  | | | | | | | | |  K
+L *| | | | | | | | |  L                L  | | | | | | | | |  L
+M b|b| | | | | | | |  M                M  | | | | | | | | |  M
+N b| | | | | | | | |  N                N  | | | | | | | | |  N
+O  | | | | | | | | |  O                O  | | | | | | | | |  O
+P  | | | | | | | | |  P                P  | | | | | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+
+F Fire at a square
+M Move a ship to another square (2 remaining)
+S Sonar scan (1 remaining)
+Player A, what would you like to do?
+
+Player A Where would you like to fire at?
+you hit a battleship
+     Your ocean                           Player computer's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
+B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
+C d|d|*|c|c| | | | |  C                C d|d|d|c|c| | | | |  C
+D d|d|d|c|c| | | | |  D                D d|d|d|c|c|X|X| | |  D
+E d|d|d|c|*| | | | |  E                E d|d|d|c|c| | | | |  E
+F b| | |c| | | | | |  F                F b| | |c| | | | | |  F
+G *|b| |c|*| | | | |  G                G b|b| |c|c| | | | |  G
+H b| | |c|c| | | | |  H                H b| | | | | | | | |  H
+I *| | | |c| | | | |  I                I b| | | | | | | | |  I
+J b|b| | | | | | | |  J                J b| | | | | | | | |  J
+K b| | | | | | | | |  K                K b| | | | | | | | |  K
+L *| | | | | | | | |  L                L  | | | | | | | | |  L
+M b|b| | | | | | | |  M                M  | | | | | | | | |  M
+N b| | | | | | | | |  N                N  | | | | | | | | |  N
+O  | | | | | | | | |  O                O  | | | | | | | | |  O
+P  | | | | | | | | |  P                P  | | | | | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+
+     Your ocean                           Player computer's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
+B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
+C d|d|*|c|c| | | | |  C                C d|d|d|c|c| | | | |  C
+D d|d|d|c|c| | | | |  D                D d|d|d|c|c|X|X| | |  D
+E d|d|d|c|*| | | | |  E                E d|d|d|c|c| | | | |  E
+F b| | |c| | | | | |  F                F b| | |c| | | | | |  F
+G *|b| |c|*| | | | |  G                G b|b| |c|c| | | | |  G
+H b| | |c|c| | | | |  H                H b| | | | | | | | |  H
+I *| | | |c| | | | |  I                I b| | | | | | | | |  I
+J b|b| | | | | | | |  J                J b| | | | | | | | |  J
+K b| | | | | | | | |  K                K b| | | | | | | | |  K
+L *| | | | | | | | |  L                L  | | | | | | | | |  L
+M b|b| | | | | | | |  M                M  | | | | | | | | |  M
+N b| | | | | | | | |  N                N  | | | | | | | | |  N
+O  | | | | | | | | |  O                O  | | | | | | | | |  O
+P  | | | | | | | | |  P                P  | | | | | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+
+F Fire at a square
+M Move a ship to another square (2 remaining)
+S Sonar scan (1 remaining)
+Player A, what would you like to do?
+
+Player A Where would you like to fire at?
+you hit a battleship
+     Your ocean                           Player computer's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
+B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
+C d|d|*|c|c| | | | |  C                C d|d|d|c|c| | | | |  C
+D d|d|d|c|c| | | | |  D                D d|d|d|c|c|X|X| | |  D
+E d|d|d|c|*| | | | |  E                E d|d|d|c|c| | | | |  E
+F b| | |c| | | | | |  F                F b| | |c| | | | | |  F
+G *|b| |c|*| | | | |  G                G b|b| |c|c| | | | |  G
+H b| | |c|c| | | | |  H                H b| | | | | | | | |  H
+I *| | | |c| | | | |  I                I b| | | | | | | | |  I
+J b|b| | | | | | | |  J                J b| | | | | | | | |  J
+K b| | | | | | | | |  K                K b| | | | | | | | |  K
+L *| | | | | | | | |  L                L b| | | | | | | | |  L
+M b|b| | | | | | | |  M                M  | | | | | | | | |  M
+N b| | | | | | | | |  N                N  | | | | | | | | |  N
+O  | | | | | | | | |  O                O  | | | | | | | | |  O
+P  | | | | | | | | |  P                P  | | | | | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+
+     Your ocean                           Player computer's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
+B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
+C d|d|*|c|c| | | | |  C                C d|d|d|c|c| | | | |  C
+D d|d|d|c|c| | | | |  D                D d|d|d|c|c|X|X| | |  D
+E d|d|d|c|*| | | | |  E                E d|d|d|c|c| | | | |  E
+F b| | |c| | | | | |  F                F b| | |c| | | | | |  F
+G *|b| |c|*| | | | |  G                G b|b| |c|c| | | | |  G
+H b| | |c|c| | | | |  H                H b| | | | | | | | |  H
+I *| | | |c| | | | |  I                I b| | | | | | | | |  I
+J b|b| | | | | | | |  J                J b| | | | | | | | |  J
+K b| | | | | | | | |  K                K b| | | | | | | | |  K
+L *| | | | | | | | |  L                L b| | | | | | | | |  L
+M b|b| | | | | | | |  M                M  | | | | | | | | |  M
+N b| | | | | | | | |  N                N  | | | | | | | | |  N
+O  | | | | | | | | |  O                O  | | | | | | | | |  O
+P  | | | | | | | | |  P                P  | | | | | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+
+F Fire at a square
+M Move a ship to another square (2 remaining)
+S Sonar scan (1 remaining)
+Player A, what would you like to do?
+
+Player A Where would you like to fire at?
+you hit a battleship
+     Your ocean                           Player computer's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
+B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
+C d|d|*|c|c| | | | |  C                C d|d|d|c|c| | | | |  C
+D d|d|d|c|c| | | | |  D                D d|d|d|c|c|X|X| | |  D
+E d|d|d|c|*| | | | |  E                E d|d|d|c|c| | | | |  E
+F b| | |c| | | | | |  F                F b| | |c| | | | | |  F
+G *|b| |c|*| | | | |  G                G b|b| |c|c| | | | |  G
+H b| | |c|c| | | | |  H                H b| | | | | | | | |  H
+I *| | | |c| | | | |  I                I b| | | | | | | | |  I
+J b|b| | | | | | | |  J                J b|b| | | | | | | |  J
+K b| | | | | | | | |  K                K b| | | | | | | | |  K
+L *| | | | | | | | |  L                L b| | | | | | | | |  L
+M b|b| | | | | | | |  M                M  | | | | | | | | |  M
+N b| | | | | | | | |  N                N  | | | | | | | | |  N
+O  | | | | | | | | |  O                O  | | | | | | | | |  O
+P  | | | | | | | | |  P                P  | | | | | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+
+     Your ocean                           Player computer's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
+B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
+C d|d|*|c|c| | | | |  C                C d|d|d|c|c| | | | |  C
+D d|d|d|c|c| | | | |  D                D d|d|d|c|c|X|X| | |  D
+E d|d|d|c|*| | | | |  E                E d|d|d|c|c| | | | |  E
+F b| | |c| | | | | |  F                F b| | |c| | | | | |  F
+G *|b| |c|*| | | | |  G                G b|b| |c|c| | | | |  G
+H b| | |c|c| | | | |  H                H b| | | | | | | | |  H
+I *| | | |c| | | | |  I                I b| | | | | | | | |  I
+J b|b| | | | | | | |  J                J b|b| | | | | | | |  J
+K b| | | | | | | | |  K                K b| | | | | | | | |  K
+L *| | | | | | | | |  L                L b| | | | | | | | |  L
+M b|b| | | | | | | |  M                M  | | | | | | | | |  M
+N b| | | | | | | | |  N                N  | | | | | | | | |  N
+O  | | | | | | | | |  O                O  | | | | | | | | |  O
+P  | | | | | | | | |  P                P  | | | | | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+
+F Fire at a square
+M Move a ship to another square (2 remaining)
+S Sonar scan (1 remaining)
+Player A, what would you like to do?
+
+Player A Where would you like to fire at?
+you hit a battleship
+     Your ocean                           Player computer's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
+B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
+C d|d|*|c|c| | | | |  C                C d|d|d|c|c| | | | |  C
+D d|d|d|c|c| | | | |  D                D d|d|d|c|c|X|X| | |  D
+E d|d|d|c|*| | | | |  E                E d|d|d|c|c| | | | |  E
+F b| | |c| | | | | |  F                F b| | |c| | | | | |  F
+G *|b| |c|*| | | | |  G                G b|b| |c|c| | | | |  G
+H b| | |c|c| | | | |  H                H b| | | | | | | | |  H
+I *| | | |c| | | | |  I                I b| | | | | | | | |  I
+J b|b| | | | | | | |  J                J b|b| | | | | | | |  J
+K b| | | | | | | | |  K                K b| | | | | | | | |  K
+L *| | | | | | | | |  L                L b| | | | | | | | |  L
+M b|b| | | | | | | |  M                M b| | | | | | | | |  M
+N b| | | | | | | | |  N                N  | | | | | | | | |  N
+O  | | | | | | | | |  O                O  | | | | | | | | |  O
+P  | | | | | | | | |  P                P  | | | | | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+
+     Your ocean                           Player computer's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
+B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
+C d|d|*|c|c| | | | |  C                C d|d|d|c|c| | | | |  C
+D d|d|d|c|c| | | | |  D                D d|d|d|c|c|X|X| | |  D
+E d|d|d|c|*| | | | |  E                E d|d|d|c|c| | | | |  E
+F b| | |c| | | | | |  F                F b| | |c| | | | | |  F
+G *|b| |c|*| | | | |  G                G b|b| |c|c| | | | |  G
+H b| | |c|c| | | | |  H                H b| | | | | | | | |  H
+I *| | | |c| | | | |  I                I b| | | | | | | | |  I
+J b|b| | | | | | | |  J                J b|b| | | | | | | |  J
+K b| | | | | | | | |  K                K b| | | | | | | | |  K
+L *| | | | | | | | |  L                L b| | | | | | | | |  L
+M b|b| | | | | | | |  M                M b| | | | | | | | |  M
+N b| | | | | | | | |  N                N  | | | | | | | | |  N
+O  | | | | | | | | |  O                O  | | | | | | | | |  O
+P  | | | | | | | | |  P                P  | | | | | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+
+F Fire at a square
+M Move a ship to another square (2 remaining)
+S Sonar scan (1 remaining)
+Player A, what would you like to do?
+
+Player A Where would you like to fire at?
+you hit a battleship
+     Your ocean                           Player computer's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
+B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
+C d|d|*|c|c| | | | |  C                C d|d|d|c|c| | | | |  C
+D d|d|d|c|c| | | | |  D                D d|d|d|c|c|X|X| | |  D
+E d|d|d|c|*| | | | |  E                E d|d|d|c|c| | | | |  E
+F b| | |c| | | | | |  F                F b| | |c| | | | | |  F
+G *|b| |c|*| | | | |  G                G b|b| |c|c| | | | |  G
+H b| | |c|c| | | | |  H                H b| | | | | | | | |  H
+I *| | | |c| | | | |  I                I b| | | | | | | | |  I
+J b|b| | | | | | | |  J                J b|b| | | | | | | |  J
+K b| | | | | | | | |  K                K b| | | | | | | | |  K
+L *| | | | | | | | |  L                L b| | | | | | | | |  L
+M b|b| | | | | | | |  M                M b|b| | | | | | | |  M
+N b| | | | | | | | |  N                N  | | | | | | | | |  N
+O  | | | | | | | | |  O                O  | | | | | | | | |  O
+P  | | | | | | | | |  P                P  | | | | | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+
+     Your ocean                           Player computer's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
+B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
+C d|d|*|c|c| | | | |  C                C d|d|d|c|c| | | | |  C
+D d|d|d|c|c| | | | |  D                D d|d|d|c|c|X|X| | |  D
+E d|d|d|c|*| | | | |  E                E d|d|d|c|c| | | | |  E
+F b| | |c| | | | | |  F                F b| | |c| | | | | |  F
+G *|b| |c|*| | | | |  G                G b|b| |c|c| | | | |  G
+H b| | |c|c| | | | |  H                H b| | | | | | | | |  H
+I *| | | |c| | | | |  I                I b| | | | | | | | |  I
+J b|b| | | | | | | |  J                J b|b| | | | | | | |  J
+K b| | | | | | | | |  K                K b| | | | | | | | |  K
+L *| | | | | | | | |  L                L b| | | | | | | | |  L
+M b|b| | | | | | | |  M                M b|b| | | | | | | |  M
+N b| | | | | | | | |  N                N  | | | | | | | | |  N
+O  | | | | | | | | |  O                O  | | | | | | | | |  O
+P  | | | | | | | | |  P                P  | | | | | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+
+F Fire at a square
+M Move a ship to another square (2 remaining)
+S Sonar scan (1 remaining)
+Player A, what would you like to do?
+
+Player A Where would you like to fire at?
+you missed
+     Your ocean                           Player computer's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
+B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
+C d|d|*|c|c| | | | |  C                C d|d|d|c|c| | | | |  C
+D d|d|d|c|c| | | | |  D                D d|d|d|c|c|X|X| | |  D
+E d|d|d|c|*| | | | |  E                E d|d|d|c|c| | | | |  E
+F b| | |c| | | | | |  F                F b| | |c| | | | | |  F
+G *|b| |c|*| | | | |  G                G b|b| |c|c| | | | |  G
+H b| | |c|c| | | | |  H                H b| | | | | | | | |  H
+I *| | | |c| | | | |  I                I b| | | | | | | | |  I
+J b|b| | | | | | | |  J                J b|b| | | | | | | |  J
+K b| | | | | | | | |  K                K b| | | | | | | | |  K
+L *| | | | | | | | |  L                L b| | | | | | | | |  L
+M b|b| | | | | | | |  M                M b|b| | | | | | | |  M
+N b| | | | | | | | |  N                N  |X| | | | | | | |  N
+O  | | | | | | | | |  O                O  | | | | | | | | |  O
+P  | | | | | | | | |  P                P  | | | | | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+
+     Your ocean                           Player computer's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
+B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
+C d|d|*|c|c| | | | |  C                C d|d|d|c|c| | | | |  C
+D d|d|d|c|c| | | | |  D                D d|d|d|c|c|X|X| | |  D
+E d|d|d|c|*| | | | |  E                E d|d|d|c|c| | | | |  E
+F b| | |c| | | | | |  F                F b| | |c| | | | | |  F
+G *|b| |c|*| | | | |  G                G b|b| |c|c| | | | |  G
+H b| | |c|c| | | | |  H                H b| | | | | | | | |  H
+I *| | | |c| | | | |  I                I b| | | | | | | | |  I
+J b|b| | | | | | | |  J                J b|b| | | | | | | |  J
+K b| | | | | | | | |  K                K b| | | | | | | | |  K
+L *| | | | | | | | |  L                L b| | | | | | | | |  L
+M b|b| | | | | | | |  M                M b|b| | | | | | | |  M
+N b| | | | | | | | |  N                N  |X| | | | | | | |  N
+O  | | | | | | | | |  O                O  | | | | | | | | |  O
+P  | | | | | | | | |  P                P  | | | | | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+
+F Fire at a square
+M Move a ship to another square (2 remaining)
+S Sonar scan (1 remaining)
+Player A, what would you like to do?
+
+Player A Where would you like to fire at?
+you hit a battleship
+     Your ocean                           Player computer's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
+B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
+C d|d|*|c|c| | | | |  C                C d|d|d|c|c| | | | |  C
+D d|d|d|c|c| | | | |  D                D d|d|d|c|c|X|X| | |  D
+E d|d|d|c|*| | | | |  E                E d|d|d|c|c| | | | |  E
+F b| | |c| | | | | |  F                F b| | |c| | | | | |  F
+G *|b| |c|*| | | | |  G                G b|b| |c|c| | | | |  G
+H b| | |c|c| | | | |  H                H b| | | | | | | | |  H
+I *| | | |c| | | | |  I                I b| | | | | | | | |  I
+J b|b| | | | | | | |  J                J b|b| | | | | | | |  J
+K b| | | | | | | | |  K                K b| | | | | | | | |  K
+L *| | | | | | | | |  L                L b| | | | | | | | |  L
+M b|b| | | | | | | |  M                M b|b| | | | | | | |  M
+N b| | | | | | | | |  N                N b|X| | | | | | | |  N
+O  | | | | | | | | |  O                O  | | | | | | | | |  O
+P  | | | | | | | | |  P                P  | | | | | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+
+     Your ocean                           Player computer's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
+B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
+C d|d|*|c|c| | | | |  C                C d|d|d|c|c| | | | |  C
+D d|d|d|c|c| | | | |  D                D d|d|d|c|c|X|X| | |  D
+E d|d|d|c|*| | | | |  E                E d|d|d|c|c| | | | |  E
+F b| | |c| | | | | |  F                F b| | |c| | | | | |  F
+G *|b| |c|*| | | | |  G                G b|b| |c|c| | | | |  G
+H b| | |c|c| | | | |  H                H b| | | | | | | | |  H
+I *| | | |c| | | | |  I                I b| | | | | | | | |  I
+J b|b| | | | | | | |  J                J b|b| | | | | | | |  J
+K b| | | | | | | | |  K                K b| | | | | | | | |  K
+L *| | | | | | | | |  L                L b| | | | | | | | |  L
+M b|b| | | | | | | |  M                M b|b| | | | | | | |  M
+N b| | | | | | | | |  N                N b|X| | | | | | | |  N
 O  | | | | | | | | |  O                O  | | | | | | | | |  O
 P  | | | | | | | | |  P                P  | | | | | | | | |  P
 Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
@@ -2073,18 +2509,18 @@ you hit a carrier
   0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
 B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
-C d|d|d|*|*| | | | |  C                C d|d|d|c|c| | | | |  C
-D d|d|d|c|c| | | | |  D                D d|d|d|c|c| | | | |  D
-E d|d|d|*|c| | | | |  E                E d|d|d|c|c|X|X| | |  E
-F b| | |c| | | | | |  F                F b|X|X|c| | | | | |  F
-G b|b| |c|c| | | | |  G                G b|b| |c|c| | | | |  G
+C d|d|*|c|c| | | | |  C                C d|d|d|c|c| | | | |  C
+D d|d|d|c|c| | | | |  D                D d|d|d|c|c|X|X| | |  D
+E d|d|d|c|*| | | | |  E                E d|d|d|c|c| | | | |  E
+F b| | |c| | | | | |  F                F b| | |c| | | | | |  F
+G *|b| |c|*| | | | |  G                G b|b| |c|c| | | | |  G
 H b| | |c|c| | | | |  H                H b| | |c| | | | | |  H
-I b| | | |c| | | | |  I                I  | | | | | | | | |  I
-J b|b| | | | | | | |  J                J  | | | | | | | | |  J
-K b| | | | | | | | |  K                K  | | | | | | | | |  K
-L b| | | | | | | | |  L                L  | | | | | | | | |  L
-M b|*| | | | | | | |  M                M  | | | | | | | | |  M
-N b| | | | | | | | |  N                N  | | | | | | | | |  N
+I *| | | |c| | | | |  I                I b| | | | | | | | |  I
+J b|b| | | | | | | |  J                J b|b| | | | | | | |  J
+K b| | | | | | | | |  K                K b| | | | | | | | |  K
+L *| | | | | | | | |  L                L b| | | | | | | | |  L
+M b|b| | | | | | | |  M                M b|b| | | | | | | |  M
+N b| | | | | | | | |  N                N b|X| | | | | | | |  N
 O  | | | | | | | | |  O                O  | | | | | | | | |  O
 P  | | | | | | | | |  P                P  | | | | | | | | |  P
 Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
@@ -2097,18 +2533,18 @@ T  | | | | | | | | |  T                T  | | | | | | | | |  T
   0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
 B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
-C d|d|d|*|*| | | | |  C                C d|d|d|c|c| | | | |  C
-D *|d|d|c|c| | | | |  D                D d|d|d|c|c| | | | |  D
-E d|d|d|*|c| | | | |  E                E d|d|d|c|c|X|X| | |  E
-F b| | |c| | | | | |  F                F b|X|X|c| | | | | |  F
-G b|b| |c|c| | | | |  G                G b|b| |c|c| | | | |  G
+C d|d|*|c|c| | | | |  C                C d|d|d|c|c| | | | |  C
+D d|d|d|c|c| | | | |  D                D d|d|d|c|c|X|X| | |  D
+E d|d|d|c|*| | | | |  E                E d|d|d|c|c| | | | |  E
+F b| | |c| | | | | |  F                F b| | |c| | | | | |  F
+G *|b| |c|*| | | | |  G                G b|b| |c|c| | | | |  G
 H b| | |c|c| | | | |  H                H b| | |c| | | | | |  H
-I b| | | |c| | | | |  I                I  | | | | | | | | |  I
-J b|b| | | | | | | |  J                J  | | | | | | | | |  J
-K b| | | | | | | | |  K                K  | | | | | | | | |  K
-L b| | | | | | | | |  L                L  | | | | | | | | |  L
-M b|*| | | | | | | |  M                M  | | | | | | | | |  M
-N b| | | | | | | | |  N                N  | | | | | | | | |  N
+I *| | | |c| | | | |  I                I b| | | | | | | | |  I
+J b|b| | | | | | | |  J                J b|b| | | | | | | |  J
+K b| | | | | | | | |  K                K b| | | | | | | | |  K
+L *| | | | | | | | |  L                L b| | | | | | | | |  L
+M b|b| | | | | | | |  M                M b|b| | | | | | | |  M
+N b| | | | | | | | |  N                N b|X| | | | | | | |  N
 O  | | | | | | | | |  O                O  | | | | | | | | |  O
 P  | | | | | | | | |  P                P  | | | | | | | | |  P
 Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
@@ -2128,18 +2564,18 @@ you hit a carrier
   0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
 B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
-C d|d|d|*|*| | | | |  C                C d|d|d|c|c| | | | |  C
-D *|d|d|c|c| | | | |  D                D d|d|d|c|c| | | | |  D
-E d|d|d|*|c| | | | |  E                E d|d|d|c|c|X|X| | |  E
-F b| | |c| | | | | |  F                F b|X|X|c| | | | | |  F
-G b|b| |c|c| | | | |  G                G b|b| |c|c| | | | |  G
+C d|d|*|c|c| | | | |  C                C d|d|d|c|c| | | | |  C
+D d|d|d|c|c| | | | |  D                D d|d|d|c|c|X|X| | |  D
+E d|d|d|c|*| | | | |  E                E d|d|d|c|c| | | | |  E
+F b| | |c| | | | | |  F                F b| | |c| | | | | |  F
+G *|b| |c|*| | | | |  G                G b|b| |c|c| | | | |  G
 H b| | |c|c| | | | |  H                H b| | |c|c| | | | |  H
-I b| | | |c| | | | |  I                I  | | | | | | | | |  I
-J b|b| | | | | | | |  J                J  | | | | | | | | |  J
-K b| | | | | | | | |  K                K  | | | | | | | | |  K
-L b| | | | | | | | |  L                L  | | | | | | | | |  L
-M b|*| | | | | | | |  M                M  | | | | | | | | |  M
-N b| | | | | | | | |  N                N  | | | | | | | | |  N
+I *| | | |c| | | | |  I                I b| | | | | | | | |  I
+J b|b| | | | | | | |  J                J b|b| | | | | | | |  J
+K b| | | | | | | | |  K                K b| | | | | | | | |  K
+L *| | | | | | | | |  L                L b| | | | | | | | |  L
+M b|b| | | | | | | |  M                M b|b| | | | | | | |  M
+N b| | | | | | | | |  N                N b|X| | | | | | | |  N
 O  | | | | | | | | |  O                O  | | | | | | | | |  O
 P  | | | | | | | | |  P                P  | | | | | | | | |  P
 Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
@@ -2152,73 +2588,18 @@ T  | | | | | | | | |  T                T  | | | | | | | | |  T
   0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
 B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
-C d|d|d|*|*| | | | |  C                C d|d|d|c|c| | | | |  C
-D *|d|d|c|c| | | | |  D                D d|d|d|c|c| | | | |  D
-E d|d|d|*|c| | | | |  E                E d|d|d|c|c|X|X| | |  E
-F b| | |c| | | | | |  F                F b|X|X|c| | | | | |  F
-G b|b| |c|c| | | | |  G                G b|b| |c|c| | | | |  G
-H b| | |*|c| | | | |  H                H b| | |c|c| | | | |  H
-I b| | | |c| | | | |  I                I  | | | | | | | | |  I
-J b|b| | | | | | | |  J                J  | | | | | | | | |  J
-K b| | | | | | | | |  K                K  | | | | | | | | |  K
-L b| | | | | | | | |  L                L  | | | | | | | | |  L
-M b|*| | | | | | | |  M                M  | | | | | | | | |  M
-N b| | | | | | | | |  N                N  | | | | | | | | |  N
-O  | | | | | | | | |  O                O  | | | | | | | | |  O
-P  | | | | | | | | |  P                P  | | | | | | | | |  P
-Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
-R  | | | | | | | | |  R                R  | | | | | | | | |  R
-S  | | | | | | | | |  S                S  | | | | | | | | |  S
-T  | | | | | | | | |  T                T  | | | | | | | | |  T
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-
-F Fire at a square
-M Move a ship to another square (2 remaining)
-S Sonar scan (1 remaining)
-Player A, what would you like to do?
-
-Player A Where would you like to fire at?
-you hit a battleship
-     Your ocean                           Player computer's ocean
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
-B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
-C d|d|d|*|*| | | | |  C                C d|d|d|c|c| | | | |  C
-D *|d|d|c|c| | | | |  D                D d|d|d|c|c| | | | |  D
-E d|d|d|*|c| | | | |  E                E d|d|d|c|c|X|X| | |  E
-F b| | |c| | | | | |  F                F b|X|X|c| | | | | |  F
-G b|b| |c|c| | | | |  G                G b|b| |c|c| | | | |  G
-H b| | |*|c| | | | |  H                H b| | |c|c| | | | |  H
-I b| | | |c| | | | |  I                I b| | | | | | | | |  I
-J b|b| | | | | | | |  J                J  | | | | | | | | |  J
-K b| | | | | | | | |  K                K  | | | | | | | | |  K
-L b| | | | | | | | |  L                L  | | | | | | | | |  L
-M b|*| | | | | | | |  M                M  | | | | | | | | |  M
-N b| | | | | | | | |  N                N  | | | | | | | | |  N
-O  | | | | | | | | |  O                O  | | | | | | | | |  O
-P  | | | | | | | | |  P                P  | | | | | | | | |  P
-Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
-R  | | | | | | | | |  R                R  | | | | | | | | |  R
-S  | | | | | | | | |  S                S  | | | | | | | | |  S
-T  | | | | | | | | |  T                T  | | | | | | | | |  T
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-
-     Your ocean                           Player computer's ocean
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
-B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
-C d|d|d|*|*| | | | |  C                C d|d|d|c|c| | | | |  C
-D *|d|d|c|c| | | | |  D                D d|d|d|c|c| | | | |  D
-E d|d|d|*|c| | | | |  E                E d|d|d|c|c|X|X| | |  E
-F b| | |c| | | | | |  F                F b|X|X|c| | | | | |  F
-G b|b| |c|c| | | | |  G                G b|b| |c|c| | | | |  G
-H b| | |*|c| | | | |  H                H b| | |c|c| | | | |  H
-I b| | | |c| | | | |  I                I b| | | | | | | | |  I
-J b|b| | | | | | | |  J                J  | | | | | | | | |  J
-K b| | | | | | | | |  K                K  | | | | | | | | |  K
-L b| | | | | | | | |  L                L  | | | | | | | | |  L
-M b|*| | | | | | | |  M                M  | | | | | | | | |  M
-N b| | | | | | | | |  N                N  | | | | | | | | |  N
+C d|d|*|c|c| | | | |  C                C d|d|d|c|c| | | | |  C
+D d|d|d|c|c| | | | |  D                D d|d|d|c|c|X|X| | |  D
+E d|d|d|c|*| | | | |  E                E d|d|d|c|c| | | | |  E
+F b| | |c| | | | | |  F                F b| | |c| | | | | |  F
+G *|b| |c|*| | | | |  G                G b|b| |c|c| | | | |  G
+H b| | |c|c| | | | |  H                H b| | |c|c| | | | |  H
+I *| | | |c| | | | |  I                I b| | | | | | | | |  I
+J b|b| | | | | | | |  J                J b|b| | | | | | | |  J
+K b| | | | | | | | |  K                K b| | | | | | | | |  K
+L *| | | | | | | | |  L                L b| | | | | | | | |  L
+M b|b| | | | | | | |  M                M b|b| | | | | | | |  M
+N b| | | | | | | | |  N                N b|X| | | | | | | |  N
 O  | | | | | | | | |  O                O  | | | | | | | | |  O
 P  | | | | | | | | |  P                P  | | | | | | | | |  P
 Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
@@ -2238,458 +2619,18 @@ you hit a carrier
   0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
 B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
-C d|d|d|*|*| | | | |  C                C d|d|d|c|c| | | | |  C
-D *|d|d|c|c| | | | |  D                D d|d|d|c|c| | | | |  D
-E d|d|d|*|c| | | | |  E                E d|d|d|c|c|X|X| | |  E
-F b| | |c| | | | | |  F                F b|X|X|c| | | | | |  F
-G b|b| |c|c| | | | |  G                G b|b| |c|c| | | | |  G
-H b| | |*|c| | | | |  H                H b| | |c|c| | | | |  H
-I b| | | |c| | | | |  I                I b| | | |c| | | | |  I
-J b|b| | | | | | | |  J                J  | | | | | | | | |  J
-K b| | | | | | | | |  K                K  | | | | | | | | |  K
-L b| | | | | | | | |  L                L  | | | | | | | | |  L
-M b|*| | | | | | | |  M                M  | | | | | | | | |  M
-N b| | | | | | | | |  N                N  | | | | | | | | |  N
-O  | | | | | | | | |  O                O  | | | | | | | | |  O
-P  | | | | | | | | |  P                P  | | | | | | | | |  P
-Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
-R  | | | | | | | | |  R                R  | | | | | | | | |  R
-S  | | | | | | | | |  S                S  | | | | | | | | |  S
-T  | | | | | | | | |  T                T  | | | | | | | | |  T
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-
-     Your ocean                           Player computer's ocean
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
-B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
-C d|d|d|*|*| | | | |  C                C d|d|d|c|c| | | | |  C
-D *|d|d|c|c| | | | |  D                D d|d|d|c|c| | | | |  D
-E d|d|d|*|c| | | | |  E                E d|d|d|c|c|X|X| | |  E
-F b| | |c| | | | | |  F                F b|X|X|c| | | | | |  F
-G b|b| |c|c| | | | |  G                G b|b| |c|c| | | | |  G
-H b| | |*|c| | | | |  H                H b| | |c|c| | | | |  H
-I b| | | |c| | | | |  I                I b| | | |c| | | | |  I
-J b|b| | | | | | | |  J                J  | | | | | | | | |  J
-K b| | | | | | | | |  K                K  | | | | | | | | |  K
-L b| | | | | | | | |  L                L  | | | | | | | | |  L
-M b|*| | | | | | | |  M                M  | | | | | | | | |  M
-N b| | | | | | | | |  N                N  | | | | | | | | |  N
-O  | | | | | | | | |  O                O  | | | | | | | | |  O
-P  | | | | | | | | |  P                P  | | | | | | | | |  P
-Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
-R  | | | | | | | | |  R                R  | | | | | | | | |  R
-S  | | | | | | | | |  S                S  | | | | | | | | |  S
-T  | | | | | | | | |  T                T  | | | | | | | | |  T
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-
-F Fire at a square
-M Move a ship to another square (2 remaining)
-S Sonar scan (1 remaining)
-Player A, what would you like to do?
-
-Player A Where would you like to fire at?
-you hit a battleship
-     Your ocean                           Player computer's ocean
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
-B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
-C d|d|d|*|*| | | | |  C                C d|d|d|c|c| | | | |  C
-D *|d|d|c|c| | | | |  D                D d|d|d|c|c| | | | |  D
-E d|d|d|*|c| | | | |  E                E d|d|d|c|c|X|X| | |  E
-F b| | |c| | | | | |  F                F b|X|X|c| | | | | |  F
-G b|b| |c|c| | | | |  G                G b|b| |c|c| | | | |  G
-H b| | |*|c| | | | |  H                H b| | |c|c| | | | |  H
-I b| | | |c| | | | |  I                I b| | | |c| | | | |  I
-J b|b| | | | | | | |  J                J b| | | | | | | | |  J
-K b| | | | | | | | |  K                K  | | | | | | | | |  K
-L b| | | | | | | | |  L                L  | | | | | | | | |  L
-M b|*| | | | | | | |  M                M  | | | | | | | | |  M
-N b| | | | | | | | |  N                N  | | | | | | | | |  N
-O  | | | | | | | | |  O                O  | | | | | | | | |  O
-P  | | | | | | | | |  P                P  | | | | | | | | |  P
-Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
-R  | | | | | | | | |  R                R  | | | | | | | | |  R
-S  | | | | | | | | |  S                S  | | | | | | | | |  S
-T  | | | | | | | | |  T                T  | | | | | | | | |  T
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-
-     Your ocean                           Player computer's ocean
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
-B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
-C d|d|d|*|*| | | | |  C                C d|d|d|c|c| | | | |  C
-D *|d|d|c|c| | | | |  D                D d|d|d|c|c| | | | |  D
-E d|d|d|*|c| | | | |  E                E d|d|d|c|c|X|X| | |  E
-F b| | |c| | | | | |  F                F b|X|X|c| | | | | |  F
-G b|b| |c|c| | | | |  G                G b|b| |c|c| | | | |  G
-H b| | |*|c| | | | |  H                H b| | |c|c| | | | |  H
-I b| | | |c| | | | |  I                I b| | | |c| | | | |  I
-J b|b| | | | | | | |  J                J b| | | | | | | | |  J
-K b| | | | | | | | |  K                K  | | | | | | | | |  K
-L b| | | | | | | | |  L                L  | | | | | | | | |  L
-M b|*| | | | | | | |  M                M  | | | | | | | | |  M
-N b| | | | | | | | |  N                N  | | | | | | | | |  N
-O  | | | | | | | | |  O                O  | | | | | | | | |  O
-P  | | | | | | | | |  P                P  | | | | | | | | |  P
-Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
-R  | | | | | | | | |  R                R  | | | | | | | | |  R
-S  | | | | | | | | |  S                S  | | | | | | | | |  S
-T  | | | | | | | | |  T                T  | | | | | | | | |  T
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-
-F Fire at a square
-M Move a ship to another square (2 remaining)
-S Sonar scan (1 remaining)
-Player A, what would you like to do?
-
-Player A Where would you like to fire at?
-you hit a battleship
-     Your ocean                           Player computer's ocean
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
-B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
-C d|d|d|*|*| | | | |  C                C d|d|d|c|c| | | | |  C
-D *|d|d|c|c| | | | |  D                D d|d|d|c|c| | | | |  D
-E d|d|d|*|c| | | | |  E                E d|d|d|c|c|X|X| | |  E
-F b| | |c| | | | | |  F                F b|X|X|c| | | | | |  F
-G b|b| |c|c| | | | |  G                G b|b| |c|c| | | | |  G
-H b| | |*|c| | | | |  H                H b| | |c|c| | | | |  H
-I b| | | |c| | | | |  I                I b| | | |c| | | | |  I
-J b|b| | | | | | | |  J                J b|b| | | | | | | |  J
-K b| | | | | | | | |  K                K  | | | | | | | | |  K
-L b| | | | | | | | |  L                L  | | | | | | | | |  L
-M b|*| | | | | | | |  M                M  | | | | | | | | |  M
-N b| | | | | | | | |  N                N  | | | | | | | | |  N
-O  | | | | | | | | |  O                O  | | | | | | | | |  O
-P  | | | | | | | | |  P                P  | | | | | | | | |  P
-Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
-R  | | | | | | | | |  R                R  | | | | | | | | |  R
-S  | | | | | | | | |  S                S  | | | | | | | | |  S
-T  | | | | | | | | |  T                T  | | | | | | | | |  T
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-
-     Your ocean                           Player computer's ocean
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
-B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
-C d|d|d|*|*| | | | |  C                C d|d|d|c|c| | | | |  C
-D *|d|d|c|*| | | | |  D                D d|d|d|c|c| | | | |  D
-E d|d|d|*|c| | | | |  E                E d|d|d|c|c|X|X| | |  E
-F b| | |c| | | | | |  F                F b|X|X|c| | | | | |  F
-G b|b| |c|c| | | | |  G                G b|b| |c|c| | | | |  G
-H b| | |*|c| | | | |  H                H b| | |c|c| | | | |  H
-I b| | | |c| | | | |  I                I b| | | |c| | | | |  I
-J b|b| | | | | | | |  J                J b|b| | | | | | | |  J
-K b| | | | | | | | |  K                K  | | | | | | | | |  K
-L b| | | | | | | | |  L                L  | | | | | | | | |  L
-M b|*| | | | | | | |  M                M  | | | | | | | | |  M
-N b| | | | | | | | |  N                N  | | | | | | | | |  N
-O  | | | | | | | | |  O                O  | | | | | | | | |  O
-P  | | | | | | | | |  P                P  | | | | | | | | |  P
-Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
-R  | | | | | | | | |  R                R  | | | | | | | | |  R
-S  | | | | | | | | |  S                S  | | | | | | | | |  S
-T  | | | | | | | | |  T                T  | | | | | | | | |  T
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-
-F Fire at a square
-M Move a ship to another square (2 remaining)
-S Sonar scan (1 remaining)
-Player A, what would you like to do?
-
-Player A Where would you like to fire at?
-you hit a battleship
-     Your ocean                           Player computer's ocean
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-A s|s| |c| | | | | |  A                A s|s| |c| | | | | |  A
-B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
-C d|d|d|*|*| | | | |  C                C d|d|d|c|c| | | | |  C
-D *|d|d|c|*| | | | |  D                D d|d|d|c|c| | | | |  D
-E d|d|d|*|c| | | | |  E                E d|d|d|c|c|X|X| | |  E
-F b| | |c| | | | | |  F                F b|X|X|c| | | | | |  F
-G b|b| |c|c| | | | |  G                G b|b| |c|c| | | | |  G
-H b| | |*|c| | | | |  H                H b| | |c|c| | | | |  H
-I b| | | |c| | | | |  I                I b| | | |c| | | | |  I
+C d|d|*|c|c| | | | |  C                C d|d|d|c|c| | | | |  C
+D d|d|d|c|c| | | | |  D                D d|d|d|c|c|X|X| | |  D
+E d|d|d|c|*| | | | |  E                E d|d|d|c|c| | | | |  E
+F b| | |c| | | | | |  F                F b| | |c| | | | | |  F
+G *|b| |c|*| | | | |  G                G b|b| |c|c| | | | |  G
+H b| | |c|c| | | | |  H                H b| | |c|c| | | | |  H
+I *| | | |c| | | | |  I                I b| | | |c| | | | |  I
 J b|b| | | | | | | |  J                J b|b| | | | | | | |  J
 K b| | | | | | | | |  K                K b| | | | | | | | |  K
-L b| | | | | | | | |  L                L  | | | | | | | | |  L
-M b|*| | | | | | | |  M                M  | | | | | | | | |  M
-N b| | | | | | | | |  N                N  | | | | | | | | |  N
-O  | | | | | | | | |  O                O  | | | | | | | | |  O
-P  | | | | | | | | |  P                P  | | | | | | | | |  P
-Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
-R  | | | | | | | | |  R                R  | | | | | | | | |  R
-S  | | | | | | | | |  S                S  | | | | | | | | |  S
-T  | | | | | | | | |  T                T  | | | | | | | | |  T
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-
-     Your ocean                           Player computer's ocean
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-A s|*| |c| | | | | |  A                A s|s| |c| | | | | |  A
-B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
-C d|d|d|*|*| | | | |  C                C d|d|d|c|c| | | | |  C
-D *|d|d|c|*| | | | |  D                D d|d|d|c|c| | | | |  D
-E d|d|d|*|c| | | | |  E                E d|d|d|c|c|X|X| | |  E
-F b| | |c| | | | | |  F                F b|X|X|c| | | | | |  F
-G b|b| |c|c| | | | |  G                G b|b| |c|c| | | | |  G
-H b| | |*|c| | | | |  H                H b| | |c|c| | | | |  H
-I b| | | |c| | | | |  I                I b| | | |c| | | | |  I
-J b|b| | | | | | | |  J                J b|b| | | | | | | |  J
-K b| | | | | | | | |  K                K b| | | | | | | | |  K
-L b| | | | | | | | |  L                L  | | | | | | | | |  L
-M b|*| | | | | | | |  M                M  | | | | | | | | |  M
-N b| | | | | | | | |  N                N  | | | | | | | | |  N
-O  | | | | | | | | |  O                O  | | | | | | | | |  O
-P  | | | | | | | | |  P                P  | | | | | | | | |  P
-Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
-R  | | | | | | | | |  R                R  | | | | | | | | |  R
-S  | | | | | | | | |  S                S  | | | | | | | | |  S
-T  | | | | | | | | |  T                T  | | | | | | | | |  T
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-
-F Fire at a square
-M Move a ship to another square (2 remaining)
-S Sonar scan (1 remaining)
-Player A, what would you like to do?
-
-Player A Where would you like to fire at?
-you missed
-     Your ocean                           Player computer's ocean
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-A s|*| |c| | | | | |  A                A s|s| |c| | | | | |  A
-B s|s| |c| | | | | |  B                B s|s| |c| | | | | |  B
-C d|d|d|*|*| | | | |  C                C d|d|d|c|c| | | | |  C
-D *|d|d|c|*| | | | |  D                D d|d|d|c|c| | | | |  D
-E d|d|d|*|c| | | | |  E                E d|d|d|c|c|X|X| | |  E
-F b| | |c| | | | | |  F                F b|X|X|c| | | | | |  F
-G b|b| |c|c| | | | |  G                G b|b| |c|c| | | | |  G
-H b| | |*|c| | | | |  H                H b| | |c|c| | | | |  H
-I b| | | |c| | | | |  I                I b| | | |c| | | | |  I
-J b|b| | | | | | | |  J                J b|b| | | | | | | |  J
-K b| | | | | | | | |  K                K b|X| | | | | | | |  K
-L b| | | | | | | | |  L                L  | | | | | | | | |  L
-M b|*| | | | | | | |  M                M  | | | | | | | | |  M
-N b| | | | | | | | |  N                N  | | | | | | | | |  N
-O  | | | | | | | | |  O                O  | | | | | | | | |  O
-P  | | | | | | | | |  P                P  | | | | | | | | |  P
-Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
-R  | | | | | | | | |  R                R  | | | | | | | | |  R
-S  | | | | | | | | |  S                S  | | | | | | | | |  S
-T  | | | | | | | | |  T                T  | | | | | | | | |  T
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-
-     Your ocean                           Player computer's ocean
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-A s|*| |c| | | | | |  A                A s|s| |c| | | | | |  A
-B s|*| |c| | | | | |  B                B s|s| |c| | | | | |  B
-C d|d|d|*|*| | | | |  C                C d|d|d|c|c| | | | |  C
-D *|d|d|c|*| | | | |  D                D d|d|d|c|c| | | | |  D
-E d|d|d|*|c| | | | |  E                E d|d|d|c|c|X|X| | |  E
-F b| | |c| | | | | |  F                F b|X|X|c| | | | | |  F
-G b|b| |c|c| | | | |  G                G b|b| |c|c| | | | |  G
-H b| | |*|c| | | | |  H                H b| | |c|c| | | | |  H
-I b| | | |c| | | | |  I                I b| | | |c| | | | |  I
-J b|b| | | | | | | |  J                J b|b| | | | | | | |  J
-K b| | | | | | | | |  K                K b|X| | | | | | | |  K
-L b| | | | | | | | |  L                L  | | | | | | | | |  L
-M b|*| | | | | | | |  M                M  | | | | | | | | |  M
-N b| | | | | | | | |  N                N  | | | | | | | | |  N
-O  | | | | | | | | |  O                O  | | | | | | | | |  O
-P  | | | | | | | | |  P                P  | | | | | | | | |  P
-Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
-R  | | | | | | | | |  R                R  | | | | | | | | |  R
-S  | | | | | | | | |  S                S  | | | | | | | | |  S
-T  | | | | | | | | |  T                T  | | | | | | | | |  T
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-
-F Fire at a square
-M Move a ship to another square (2 remaining)
-S Sonar scan (1 remaining)
-Player A, what would you like to do?
-
-Player A Where would you like to fire at?
-you hit a battleship
-     Your ocean                           Player computer's ocean
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-A s|*| |c| | | | | |  A                A s|s| |c| | | | | |  A
-B s|*| |c| | | | | |  B                B s|s| |c| | | | | |  B
-C d|d|d|*|*| | | | |  C                C d|d|d|c|c| | | | |  C
-D *|d|d|c|*| | | | |  D                D d|d|d|c|c| | | | |  D
-E d|d|d|*|c| | | | |  E                E d|d|d|c|c|X|X| | |  E
-F b| | |c| | | | | |  F                F b|X|X|c| | | | | |  F
-G b|b| |c|c| | | | |  G                G b|b| |c|c| | | | |  G
-H b| | |*|c| | | | |  H                H b| | |c|c| | | | |  H
-I b| | | |c| | | | |  I                I b| | | |c| | | | |  I
-J b|b| | | | | | | |  J                J b|b| | | | | | | |  J
-K b| | | | | | | | |  K                K b|X| | | | | | | |  K
-L b| | | | | | | | |  L                L b| | | | | | | | |  L
-M b|*| | | | | | | |  M                M  | | | | | | | | |  M
-N b| | | | | | | | |  N                N  | | | | | | | | |  N
-O  | | | | | | | | |  O                O  | | | | | | | | |  O
-P  | | | | | | | | |  P                P  | | | | | | | | |  P
-Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
-R  | | | | | | | | |  R                R  | | | | | | | | |  R
-S  | | | | | | | | |  S                S  | | | | | | | | |  S
-T  | | | | | | | | |  T                T  | | | | | | | | |  T
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-
-     Your ocean                           Player computer's ocean
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-A s|*| |c| | | | | |  A                A s|s| |c| | | | | |  A
-B s|*| |c| | | | | |  B                B s|s| |c| | | | | |  B
-C d|d|d|*|*| | | | |  C                C d|d|d|c|c| | | | |  C
-D *|d|d|c|*| | | | |  D                D d|d|d|c|c| | | | |  D
-E d|d|d|*|c| | | | |  E                E d|d|d|c|c|X|X| | |  E
-F b| | |c| | | | | |  F                F b|X|X|c| | | | | |  F
-G b|b| |c|c| | | | |  G                G b|b| |c|c| | | | |  G
-H b| | |*|c| | | | |  H                H b| | |c|c| | | | |  H
-I b| | | |c| | | | |  I                I b| | | |c| | | | |  I
-J b|b| | | | | | | |  J                J b|b| | | | | | | |  J
-K b| | | | | | | | |  K                K b|X| | | | | | | |  K
-L b| | | | | | | | |  L                L b| | | | | | | | |  L
-M b|*| | | | | | | |  M                M  | | | | | | | | |  M
-N b| | | | | | | | |  N                N  | | | | | | | | |  N
-O  | | | | | | | | |  O                O  | | | | | | | | |  O
-P  | | | | | | | | |  P                P  | | | | | | | | |  P
-Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
-R  | | | | | | | | |  R                R  | | | | | | | | |  R
-S  | | | | | | | | |  S                S  | | | | | | | | |  S
-T  | | | | | | | | |  T                T  | | | | | | | | |  T
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-
-F Fire at a square
-M Move a ship to another square (2 remaining)
-S Sonar scan (1 remaining)
-Player A, what would you like to do?
-
-Player A Where would you like to fire at?
-you hit a battleship
-     Your ocean                           Player computer's ocean
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-A s|*| |c| | | | | |  A                A s|s| |c| | | | | |  A
-B s|*| |c| | | | | |  B                B s|s| |c| | | | | |  B
-C d|d|d|*|*| | | | |  C                C d|d|d|c|c| | | | |  C
-D *|d|d|c|*| | | | |  D                D d|d|d|c|c| | | | |  D
-E d|d|d|*|c| | | | |  E                E d|d|d|c|c|X|X| | |  E
-F b| | |c| | | | | |  F                F b|X|X|c| | | | | |  F
-G b|b| |c|c| | | | |  G                G b|b| |c|c| | | | |  G
-H b| | |*|c| | | | |  H                H b| | |c|c| | | | |  H
-I b| | | |c| | | | |  I                I b| | | |c| | | | |  I
-J b|b| | | | | | | |  J                J b|b| | | | | | | |  J
-K b| | | | | | | | |  K                K b|X| | | | | | | |  K
-L b| | | | | | | | |  L                L b| | | | | | | | |  L
-M b|*| | | | | | | |  M                M b| | | | | | | | |  M
-N b| | | | | | | | |  N                N  | | | | | | | | |  N
-O  | | | | | | | | |  O                O  | | | | | | | | |  O
-P  | | | | | | | | |  P                P  | | | | | | | | |  P
-Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
-R  | | | | | | | | |  R                R  | | | | | | | | |  R
-S  | | | | | | | | |  S                S  | | | | | | | | |  S
-T  | | | | | | | | |  T                T  | | | | | | | | |  T
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-
-     Your ocean                           Player computer's ocean
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-A s|*| |c| | | | | |  A                A s|s| |c| | | | | |  A
-B s|*| |c| | | | | |  B                B s|s| |c| | | | | |  B
-C d|d|d|*|*| | | | |  C                C d|d|d|c|c| | | | |  C
-D *|d|d|c|*| | | | |  D                D d|d|d|c|c| | | | |  D
-E d|d|d|*|c| | | | |  E                E d|d|d|c|c|X|X| | |  E
-F b| | |c| | | | | |  F                F b|X|X|c| | | | | |  F
-G b|b| |c|c| | | | |  G                G b|b| |c|c| | | | |  G
-H b| | |*|c| | | | |  H                H b| | |c|c| | | | |  H
-I b| | | |c| | | | |  I                I b| | | |c| | | | |  I
-J b|b| | | | | | | |  J                J b|b| | | | | | | |  J
-K b| | | | | | | | |  K                K b|X| | | | | | | |  K
-L b| | | | | | | | |  L                L b| | | | | | | | |  L
-M b|*| | | | | | | |  M                M b| | | | | | | | |  M
-N b| | | | | | | | |  N                N  | | | | | | | | |  N
-O  | | | | | | | | |  O                O  | | | | | | | | |  O
-P  | | | | | | | | |  P                P  | | | | | | | | |  P
-Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
-R  | | | | | | | | |  R                R  | | | | | | | | |  R
-S  | | | | | | | | |  S                S  | | | | | | | | |  S
-T  | | | | | | | | |  T                T  | | | | | | | | |  T
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-
-F Fire at a square
-M Move a ship to another square (2 remaining)
-S Sonar scan (1 remaining)
-Player A, what would you like to do?
-
-Player A Where would you like to fire at?
-you hit a battleship
-     Your ocean                           Player computer's ocean
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-A s|*| |c| | | | | |  A                A s|s| |c| | | | | |  A
-B s|*| |c| | | | | |  B                B s|s| |c| | | | | |  B
-C d|d|d|*|*| | | | |  C                C d|d|d|c|c| | | | |  C
-D *|d|d|c|*| | | | |  D                D d|d|d|c|c| | | | |  D
-E d|d|d|*|c| | | | |  E                E d|d|d|c|c|X|X| | |  E
-F b| | |c| | | | | |  F                F b|X|X|c| | | | | |  F
-G b|b| |c|c| | | | |  G                G b|b| |c|c| | | | |  G
-H b| | |*|c| | | | |  H                H b| | |c|c| | | | |  H
-I b| | | |c| | | | |  I                I b| | | |c| | | | |  I
-J b|b| | | | | | | |  J                J b|b| | | | | | | |  J
-K b| | | | | | | | |  K                K b|X| | | | | | | |  K
-L b| | | | | | | | |  L                L b| | | | | | | | |  L
-M b|*| | | | | | | |  M                M b|b| | | | | | | |  M
-N b| | | | | | | | |  N                N  | | | | | | | | |  N
-O  | | | | | | | | |  O                O  | | | | | | | | |  O
-P  | | | | | | | | |  P                P  | | | | | | | | |  P
-Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
-R  | | | | | | | | |  R                R  | | | | | | | | |  R
-S  | | | | | | | | |  S                S  | | | | | | | | |  S
-T  | | | | | | | | |  T                T  | | | | | | | | |  T
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-
-     Your ocean                           Player computer's ocean
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-A s|*| |c| | | | | |  A                A s|s| |c| | | | | |  A
-B s|*| |c| | | | | |  B                B s|s| |c| | | | | |  B
-C d|d|d|*|*| | | | |  C                C d|d|d|c|c| | | | |  C
-D *|d|d|c|*| | | | |  D                D d|d|d|c|c| | | | |  D
-E d|d|d|*|c| | | | |  E                E d|d|d|c|c|X|X| | |  E
-F b| | |c| | | | | |  F                F b|X|X|c| | | | | |  F
-G b|b| |c|c| | | | |  G                G b|b| |c|c| | | | |  G
-H b| | |*|c| | | | |  H                H b| | |c|c| | | | |  H
-I b| | | |c| | | | |  I                I b| | | |c| | | | |  I
-J *|b| | | | | | | |  J                J b|b| | | | | | | |  J
-K b| | | | | | | | |  K                K b|X| | | | | | | |  K
-L b| | | | | | | | |  L                L b| | | | | | | | |  L
-M b|*| | | | | | | |  M                M b|b| | | | | | | |  M
-N b| | | | | | | | |  N                N  | | | | | | | | |  N
-O  | | | | | | | | |  O                O  | | | | | | | | |  O
-P  | | | | | | | | |  P                P  | | | | | | | | |  P
-Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
-R  | | | | | | | | |  R                R  | | | | | | | | |  R
-S  | | | | | | | | |  S                S  | | | | | | | | |  S
-T  | | | | | | | | |  T                T  | | | | | | | | |  T
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-
-F Fire at a square
-M Move a ship to another square (2 remaining)
-S Sonar scan (1 remaining)
-Player A, what would you like to do?
-
-Player A Where would you like to fire at?
-you hit a battleship
-     Your ocean                           Player computer's ocean
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-A s|*| |c| | | | | |  A                A s|s| |c| | | | | |  A
-B s|*| |c| | | | | |  B                B s|s| |c| | | | | |  B
-C d|d|d|*|*| | | | |  C                C d|d|d|c|c| | | | |  C
-D *|d|d|c|*| | | | |  D                D d|d|d|c|c| | | | |  D
-E d|d|d|*|c| | | | |  E                E d|d|d|c|c|X|X| | |  E
-F b| | |c| | | | | |  F                F b|X|X|c| | | | | |  F
-G b|b| |c|c| | | | |  G                G b|b| |c|c| | | | |  G
-H b| | |*|c| | | | |  H                H b| | |c|c| | | | |  H
-I b| | | |c| | | | |  I                I b| | | |c| | | | |  I
-J *|b| | | | | | | |  J                J b|b| | | | | | | |  J
-K b| | | | | | | | |  K                K b|X| | | | | | | |  K
-L b| | | | | | | | |  L                L b| | | | | | | | |  L
-M b|*| | | | | | | |  M                M b|b| | | | | | | |  M
-N b| | | | | | | | |  N                N b| | | | | | | | |  N
+L *| | | | | | | | |  L                L b| | | | | | | | |  L
+M b|b| | | | | | | |  M                M b|b| | | | | | | |  M
+N b| | | | | | | | |  N                N b|X| | | | | | | |  N
 O  | | | | | | | | |  O                O  | | | | | | | | |  O
 P  | | | | | | | | |  P                P  | | | | | | | | |  P
 Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q

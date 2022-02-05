@@ -5,7 +5,17 @@ import java.io.IOException;
 import java.io.PrintStream;
 import java.io.Reader;
 import java.util.Random;
-
+/**
+   * Constructs a TextPlayer
+   * @param theBoard is a user's borad
+   * @param view is the board to displayy
+   * @param BufferedReader inputReader
+   * @param PrintStream out
+   * @param shipFactory
+   * @param playername
+   * @param shipsToPlace:an ArrayList of the ship names that we want to work from    
+   * @param shipCreationFns:Hashmap connect ship's name with 
+   */
 public class ComputerPlayer extends Player {
   final Board<Character> theBoard;
   final BoardTextView view;
@@ -13,6 +23,7 @@ public class ComputerPlayer extends Player {
   final PrintStream out;
   final AbstractShipFactory<Character> shipFactory;
   final String name;
+   Random rand=new Random(1); 
   public ComputerPlayer(Board<Character> theBoard, Reader inputSource, PrintStream out,
     AbstractShipFactory<Character> shipFactory, String name) {
     this.theBoard = theBoard;
@@ -28,7 +39,10 @@ public class ComputerPlayer extends Player {
   public Board<Character> getBoard(){
     return theBoard;
   }
-  public void doPlacementPhase() throws IOException {
+  /*
+   *  method to place all the ships
+   */
+   public void doPlacementPhase() throws IOException {
     Ship<Character> s1 = shipFactory.makeSubmarine(new Placement("a0h"));
     Ship<Character> s2 = shipFactory.makeSubmarine(new Placement("b0h"));
     Ship<Character> s3 = shipFactory.makeDestroyer(new Placement("c0h"));
@@ -50,8 +64,11 @@ public class ComputerPlayer extends Player {
     theBoard.tryAddShip(s9);
     theBoard.tryAddShip(s10);
   }
+  /*
+   *  method to generate a random coordinate and fire at the player's board
+   */
   public void playOneturn(Board<Character> enemyBoard,String myHeader, String enemyHeader) throws IOException{
-    Random rand=new Random();
+    // Random rand=new Random();
     int y=rand.nextInt(10);
     int x=rand.nextInt(20);
     Coordinate c=new Coordinate(x,y);

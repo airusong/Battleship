@@ -98,10 +98,11 @@ public class TextPlayer extends Player{
     out.println(prompt);
     try{
       String s = inputReader.readLine();
-      c=new Coordinate(s);
+      // c=new Coordinate(s);
        if(s==null){
           throw new EOFException();
        }
+       c=new Coordinate(s);
     }catch(IllegalArgumentException error) {
        throw new IllegalArgumentException("The coordinate is invalid");
         }
@@ -189,14 +190,14 @@ public class TextPlayer extends Player{
         out.println(view.displayMyBoardWithEnemyNextToIt(enemyView,myHeader,enemyHeader));
         break;
       }catch(IllegalArgumentException error){
-         out.println("The coordinate is out of bound"); 
+         out.println("The coordinate is wrong"); 
       }
     }
    }
    
   }
   /*
-   *  method to move the ship to a new place
+   *  method to move the ship to a new place, haven't implemented the function to flip or rotate the ship.
    */
   public boolean moveship() throws IOException{
     Ship<Character> shipname=null;//the original ship to be move
@@ -288,7 +289,7 @@ public class TextPlayer extends Player{
           else if(ship.getName().equals("Carrier")){
             car++;
           }
-          else if(ship.getName().equals("BattleShip")){
+          else{
             bat++;
           }
         }else{

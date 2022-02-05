@@ -1,7 +1,9 @@
 package ece651.sp22.as1134.battleship;
 
 import java.io.IOException;
-
+/* 
+ * abstract class player 
+ */
 public abstract class Player {
   abstract Board<Character> getBoard();
    

@@ -72,13 +72,7 @@ public class App {
     ComputerPlayer pp2=new ComputerPlayer(b4, input, System.out, factory,"computer");
     System.out.println("Which mode do you waht to choose\n1. player and player\n2. player and computer\n"+
                        "3. computer and player\n"+"4. computer and computer");
-    BufferedReader inputReader=new BufferedReader(new InputStreamReader(System.in));
-    //    Scanner scan = new Scanner(System.in);
-    // if (scan.hasNextInt()) {
-    //int i = scan.nextInt();
-    //  }
-    //scan.close();
-    String i=inputReader.readLine();
+    String i=input.readLine();
     App app=null;
     if(i.equals("1")){
       app = new App(p1, p2);

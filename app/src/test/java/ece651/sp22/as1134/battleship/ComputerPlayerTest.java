@@ -53,7 +53,7 @@ public class ComputerPlayerTest {
                     "  0|1|2|3|4|5|6|7|8|9\n";
 
     assertEquals(computerview.displayMyOwnBoard(),expected);
-    //assertEquals(playerview.displayEnemyBoard(), "");
+    //    assertEquals(playerview.displayEnemyBoard(), "");
   }
 
 }
